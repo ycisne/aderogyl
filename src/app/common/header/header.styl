@@ -1,0 +1,87 @@
+@require globalView
+
+.ad__header
+    position fixed
+    width 100%
+    top 0
+    z-index 1
+    &>.container
+        width 100%
+        padding 0
+    &-logo-sanofi
+        background rgba(255,255,255,0.8)
+        padding 5px 40px
+        text-align right
+        img
+            height 19px
+    &-logo-aderogyl
+        padding 100px 0 0 50px
+    &-menu
+        li, ul
+            list-style-type none
+            margin 0
+            padding 0
+        &-principal
+            li
+                position relative
+                a
+                    color transparent
+                    transition .3s
+                    font-size 45px
+                    padding-left 90px
+                    line-height 60px
+                    &:before
+                        content ''
+                        position absolute
+                        width 80px
+                        height 80px
+                        background url(../img/boton-menu.png)
+                        background-repeat no-repeat
+                        background-size cover
+                        top 0
+                        left 0
+                        transition .3s
+                    &:after
+                        visibility hidden
+                        opacity 0
+                        content ''
+                        position absolute
+                        width 150px
+                        height 150px
+                        background url(../img/boton-menu-resplandor.png)
+                        background-repeat no-repeat
+                        background-size cover
+                        top -42px
+                        left -26px
+                        transition .3s
+                        z-index 0
+                    &:hover,
+                    &.active
+                        color white
+                        text-shadow 5px 4px 10px rgba(0,0,0,0.5)
+                        text-decoration none
+                        line-height 90px
+                        &:before
+                            width 150px
+                            height 150px
+                            top -42px
+                            left -26px
+                    &.active
+                        cursor default
+                        &:after
+                            visibility visible
+                            opacity 1
+        &-redes
+            position fixed
+            bottom 20px
+            left 15px
+            a
+                display block
+                padding 15px
+                transition .3s
+                &:hover
+                    opacity .5
+                img
+                    width 30px
+                    height 30px
+                    display block

@@ -1,0 +1,45 @@
+doctype
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Aderogyl
+        // build:remove 
+        link(rel="stylesheet", type="text/css", href="node_modules/bootstrap/dist/css/bootstrap.css", data-bundle="dist/app/vendor/vendors.css")
+        link(rel="stylesheet", type="text/css", href="node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.css", data-bundle="dist/app/vendor/vendors.css")
+        // /build 
+
+        // build:template 
+        link(rel="stylesheet", type="text/css", href="app/vendor/vendors.css")
+        link(rel="stylesheet", type="text/css", href="app/assets/css/app.css")
+        // /build 
+
+        link(rel="stylesheet", type="text/css", href="https://use.fontawesome.com/releases/v5.2.0/css/all.css")
+        
+        
+        
+    body.ad
+        
+        // - Encabezado
+        include common/header/header.jade
+
+        // - Secciones
+        include views/que-es/que-es.jade
+        include views/beneficios/beneficios.jade
+        include views/presentaciones/presentaciones.jade
+        include views/preguntas-frecuentes/preguntas-frecuentes.jade
+
+        // - Pie de página
+        include common/footer/footer.jade
+
+        // build:remove 
+        script(type="text/javascript", src="node_modules/jquery/dist/jquery.js", data-bundle="dist/app/vendor/vendors.js", data-minify="true")
+        script(type="text/javascript", src="node_modules/popper.js/dist/umd/popper.js", data-bundle="dist/app/vendor/vendors.js", data-minify="true")
+        script(type="text/javascript", src="node_modules/bootstrap/dist/js/bootstrap.js", data-bundle="dist/app/vendor/vendors.js" data-minify="true")
+        // /build
+
+        // build:template 
+        script(type="text/javascript", src="app/vendor/vendors.js")
+        script(type="text/javascript", src="app/app.js")
+        // /build 

@@ -1,0 +1,68 @@
+@require globalView
+
+.ad__queEs
+    $parallax('../img/fondo1.jpg')
+    padding 5%
+    &-carrusel
+        position absolute
+        margin-left 57%
+        width calc(100% - 70%)
+        top 40%
+        z-index 1
+        .carousel-item
+            height 300px
+            width 100%
+        .left-carousel
+        .right-carousel
+            width 60px
+            height 93px
+            background-repeat no-repeat
+            background-size cover
+        .left-carousel
+            background url(../img/left-carousel.png)
+        .right-carousel
+            background url(../img/right-carousel.png)
+        .carousel-control-prev
+            opacity 1
+            left -65px
+        .carousel-control-next
+            opacity 1
+            right -65px
+        .ad__queEs-slide1,
+        .ad__queEs-slide2
+            color white
+            text-shadow 2px 3px 10px rgba(0,0,0,0.5)
+            font-size 20px
+            line-height 15px
+            padding 30px 0
+            text-align center
+        .ad__queEs-slide1
+            .linea1
+                font-size 100px
+                line-height 80px
+                font-family $font-secondary
+            .linea2
+                font-size 45px
+                line-height 15px
+            .linea3
+                font-size 73px
+                line-height 55px
+            .linea4
+                font-size 75px
+                line-height 20px
+                font-family $font-secondary
+        .ad__queEs-slide2
+            padding-top 60px
+            .linea1
+                font-size 100px
+                line-height 70px
+                font-family $font-secondary
+            .linea2
+                font-size 45px
+            .linea3
+                font-size 50px
+                line-height 25px
+                font-family $font-secondary
+    &-img
+        width 40%
+        margin auto

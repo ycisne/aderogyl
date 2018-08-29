@@ -1,0 +1,50 @@
+$minMax-media = {
+    min_320: "320px",
+    max_320: "479px",
+    min_480: "480px",
+    max_480: "567px",
+    min_568: "568px",
+    max_568: "767px",
+    min_tablet : "768px",
+    max_tablet : "1199px",
+    min_desktop: "1200px",
+    max_desktop: "1920px"
+}
+$min-max-media = {
+    min_mobile : "320px",
+    max_mobile : "767px",
+    min_tablet : "768px",
+    max_tablet : "1023px",
+    min_desktop: "1024px",
+    max_desktop: "1200px",
+    min_desktop_extended: "1201px"
+}
+$orientation = {
+    horizontal: 'landscape'
+    vertical: 'portrait'
+}
+$only-screen = "only screen and (min-width: "
+$only-screen-pixel-ratio = ", only screen  and (-webkit-min-device-pixel-ratio: 2) and (orientation: "
+$max-width = ") and (max-width: "
+$only-screen-min = "only screen and (max-width: "
+$media_queries = {
+  mobile    :  $only-screen + $min-max-media[min_mobile] + $max-width + $min-max-media[max_mobile] +"), " + $only-screen-min + $minMax-media[min_320] + ")",
+  /*mobile_landscape : $only-screen + $min-max-media[min_mobile_landscape] + $max-width + $min-max-media[max_mobile_landscape] +")" + $only-screen-pixel-ratio + $orientation[horizontal] + "), " + $only-screen-min + $minMax-media[min_320] + ")",
+  mobile_portrait  : $only-screen + $min-max-media[min_mobile_portrait] + $max-width + $min-max-media[max_mobile_portrait] +")" + $only-screen-pixel-ratio + $orientation[vertical] + ")",*/
+  desktop   : $only-screen + $min-max-media[min_desktop] + $max-width + $min-max-media[max_desktop] +")",
+  mobile_all    : $only-screen + $minMax-media[min_320] + $max-width + $minMax-media[max_568] +"), " + $only-screen-min + $minMax-media[min_320] + ")",
+  mobile320     : $only-screen + $minMax-media[min_320] + $max-width + $minMax-media[max_320] +"), " + $only-screen-min + $minMax-media[min_320] + ")",
+  mobile480     : $only-screen + $minMax-media[min_480] + $max-width + $minMax-media[max_480] +")",
+  mobile568     : $only-screen + $minMax-media[min_568] + $max-width + $minMax-media[max_568] +")",
+  tablet768     : $only-screen + $minMax-media[min_tablet] + $max-width + $minMax-media[max_tablet] +")",
+  tablet        : $only-screen + $min-max-media[min_tablet] + $max-width + $min-max-media[max_tablet] +")",
+  desktop1200   : $only-screen + $minMax-media[min_desktop] + $max-width + $minMax-media[max_desktop] +")",
+  desktop_extended: $only-screen + $min-max-media[min_desktop_extended] +")"
+}
+$responsive(breakpoints)
+    conditions = ()
+    for breakpoint in breakpoints
+        push(conditions, $media_queries[breakpoint])
+    conditions = join(", ", conditions)
+    @media conditions
+        {block}

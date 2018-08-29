@@ -1,0 +1,106 @@
+@require globalView
+
+.ad__beneficios
+    $parallax('../img/fondo2.jpg')
+    padding 5%
+    position relative
+    &-logo
+        position absolute
+        text-align right 
+        left 25%
+        &-infantil
+            width 200px
+    &-vitaminas
+        position relative
+        height 550px
+        margin-left 20%
+        margin-top 12%
+        &-a,
+        &-c,
+        &-d
+            position absolute
+            transition 1.5s
+            z-index 1
+            .ad__beneficios-vitaminas-descripcion
+                left 0
+                width 200px
+                visibility hidden
+                opacity 0
+            &:hover
+                .ad__beneficios-vitaminas-icono
+                    transform rotate(45deg)
+                .ad__beneficios-vitaminas-descripcion
+                    width 450px
+                    visibility visible
+                    opacity 1
+        &-a
+            top 5%
+            left 15%
+            .ad__beneficios-vitaminas-title
+                color $color-Orange-Tangerine
+            &:hover
+                left -10%
+                .ad__beneficios-vitaminas-descripcion
+                    top calc(50% - 75px)
+                    left 200px
+                    padding-left 60px
+        &-c
+            bottom 0
+            left calc(50% - 250px)
+            &:hover
+                left 10%
+                .ad__beneficios-vitaminas-descripcion
+                    top calc(50% - 80px)
+                    left 215px
+                    padding-left 80px
+                    width 600px
+            .ad__beneficios-vitaminas-title
+                color $color-Orange-Tangerine
+        &-d
+            top 0
+            left 50%
+            &:hover
+                left 40%
+                .ad__beneficios-vitaminas-descripcion
+                    top calc(50% - 100px)
+                    left 230px
+                    padding-left 80px
+            .ad__beneficios-vitaminas-title
+                color $color-Green-Citrus
+        &-icono
+            background-repeat no-repeat
+            background-size contain
+            width 250px
+            height 250px
+            transition .3s
+            &.vitamina-a
+                background-image url(../img/vitamina-A.png)
+            &.vitamina-c
+                width 300px
+                height 300px
+                background-image url(../img/vitamina-C.png)
+            &.vitamina-d
+                width 280px
+                height 280px
+                background-image url(../img/vitamina-D.png)
+        &-descripcion
+            background $color-Brown-Maroon-transparent
+            border-radius 20px
+            padding 20px
+            position absolute
+            z-index -1
+            font-size 30px
+            line-height 30px
+            color white
+        &-title
+            font-family $font-secondary
+            font-size 40px
+            line-height 45px
+    &-footer
+        color white
+        font-size 16px
+        position absolute
+        bottom 10px
+        width 100%
+        text-align right
+        right 20%
