@@ -30,7 +30,7 @@
         .ad__queEs-slide1,
         .ad__queEs-slide2
             color white
-            text-shadow 2px 3px 10px rgba(0,0,0,0.5)
+            $text-shadow()
             font-size 20px
             line-height 15px
             padding 30px 0
@@ -66,12 +66,18 @@
         height 100%
         margin auto
         position relative
+        &-caption
+            position absolute
+            bottom 10%
+            left 16%
+            text-align right 
     &-logo-sanofi
         background white
         padding 5px 40px
         text-align right
         position absolute
         top 0
+        left 0
         width 100%
         .container
             width 100%

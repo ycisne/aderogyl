@@ -1,24 +1,9 @@
-$placeholder()
-    &::-webkit-input-placeholder
-        {block}
-    &:-moz-placeholder
-        {block}
-    &::-moz-placeholder
-        {block} 
-    &:-ms-input-placeholder
-       {block}
-
 $ieSelector(selector)
     @media all and (-ms-high-contrast:none)
      {selector}
         {block}
     *::-ms-backdrop, {selector}
         {block}
-
-$ellipsis()
-    white-space nowrap
-    overflow hidden
-    text-overflow ellipsis
 
 $parallax(img)
     background url(img)
@@ -32,3 +17,6 @@ $parallax(img)
     display flex
     align-items center
     position relative
+
+$text-shadow()
+    text-shadow 2px 2px 5px rgba(0,0,0,0.7)

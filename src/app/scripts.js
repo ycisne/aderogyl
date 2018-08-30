@@ -11,26 +11,42 @@
         $scrollItems = $itemsMenu.map(function(){
             var item = $($(this).attr("href"));
             if (item.length) { return item; }
-        });
+        }),
+        $menuHeader = $('.ad__header-left-menu'),
+        $dataFixed = 'data-fixed-menu',
+        $preguntas = $('.ad__faqs-listado'),
+        $itemsPreguntas = $preguntas.find('a'),
+        $itemModalFaq = $('.ad__faqs-modal-title a');
 
     /////////////////////////
 
     /// Mover la página a la sección deseada
-    function scrollIt(section, offset, duration){
-        var element = $(section),
-            off = offset || 0,
-            dur = duration || 1000;
-        $('body, html').animate({scrollTop: element.offset().top - off }, dur);
+    function scrollIt(section, duration){
+        var dur = duration || 1000;
+        $('body, html').animate({scrollTop: $(section).offset().top }, dur);
     }
 
     /// Mover la página en el click del menú
-    function clickMenu(){
-        $itemsMenu.click(function(e){
-            $itemsMenu.removeClass($claseActiva);
+    function clickMenu(items, isMenu, isFaq, isModal){
+        items.click(function(e){
+            items.removeClass($claseActiva);
             $(this).addClass($claseActiva);
             var anchor = $(this).attr('href');
-            if(anchor) { scrollIt(anchor); }
-            logoInfantil($(this).attr($dataLogoInfantil));
+            if(isMenu){
+                if(anchor) { scrollIt(anchor); }
+                logoInfantil($(this).attr($dataLogoInfantil));
+            }
+            if(isFaq){
+                $('body').css('overflow', 'hidden');
+                $(anchor).css({
+                    visibility: 'visible',
+                    opacity: 1
+                });
+            }
+            if(isModal){
+                $('body').removeAttr('style');
+                $(anchor).removeAttr('style');
+            }
             e.preventDefault();
         });
     }
@@ -44,13 +60,26 @@
         }
     }
 
+    /// Quitar el fixed del menú
+    function noFixed(fixed, scrollTop){
+        if (fixed) {
+            $menuHeader.css({
+                position: 'absolute',
+                top: scrollTop
+            });
+        } else {
+            $menuHeader.removeAttr('style');
+        }
+    }
+
     /// Unir el scroll para poner la clase activa 
     $(window).scroll(function(){
-        var fromTop = $(this).scrollTop() + $margenScroll;
-        var cur = $scrollItems.map(function(){
-            if ($(this).offset().top < fromTop)
-                return this;
-        });
+        var scrollTop = $(this).scrollTop(),
+            fromTop = scrollTop + $margenScroll,
+            cur = $scrollItems.map(function(){
+                if ($(this).offset().top < fromTop)
+                    return this;
+            });
         
         cur = cur[cur.length-1];
         var id = cur && cur.length ? cur[0].id : "";
@@ -60,17 +89,19 @@
             $itemsMenu.removeClass($claseActiva);
             itemActivo.addClass($claseActiva);
             logoInfantil(itemActivo.attr($dataLogoInfantil));
+            noFixed(itemActivo.attr($dataFixed), scrollTop);
             setTimeout(function(){
-                scrollIt('#'+id);
-            }, 500);
-            
+                //scrollIt('#'+id, 2000);
+            }, 1000);
         }
     });
 
     /// Iniciar
     $(document).ready(function(){
         scrollIt('body');
-        clickMenu();
+        clickMenu($itemsMenu, true);
+        clickMenu($itemsPreguntas, false, true);
+        clickMenu($itemModalFaq, false, false, true);
         $logoInfantil.hide();
         
     });

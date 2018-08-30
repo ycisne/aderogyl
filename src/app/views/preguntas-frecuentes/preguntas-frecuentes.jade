@@ -1,15 +1,32 @@
 section.ad__faqs#preguntas-frecuentes
-    .ad_faqs-listado
+    .ad__faqs-listado
         ul
             li
-                a(href="#") ¿Cada cuánto debo tomar ADerogyl&reg;?
+                a(href="#pregunta1") ¿Cada cuánto debo tomar ADerogyl
+                    sup &reg; 
+                    | ?
             li
-                a(href="#") ¿Cómo debo abrir la ampolleta?
+                a(href="#pregunta2") ¿Cómo debo abrir la ampolleta?
             li
-                a(href="#") ¿Con qué debo mezclar ADerogyl&reg; SOLUCIÓN?
+                a(href="#pregunta3") ¿Con qué debo mezclar ADerogyl
+                    sup &reg; 
+                    | SOLUCIÓN?
             li
-                a(href="#") ¿Puedo consumir ADerogyl&reg; solución durante el embarazo?
+                a(href="#pregunta4") ¿Puedo consumir ADerogyl
+                    sup &reg; 
+                    | solución durante el embarazo?
             li
-                a(href="#") ¿A partir de qué edad puedo tomar ADerogyl&reg;?
+                a(href="#pregunta5") ¿A partir de qué edad puedo tomar ADerogyl
+                    sup &reg; 
+                    | ?
             li
-                a(href="#") ¿Dónde puedo comprar ADerogyl&reg;?
+                a(href="#pregunta6") ¿Dónde puedo comprar ADerogyl
+                    sup &reg; 
+                    | ?
+    .ad__faqs-modales
+        include preguntas/pregunta1.jade
+        include preguntas/pregunta2.jade
+        include preguntas/pregunta3.jade
+        include preguntas/pregunta4.jade
+        include preguntas/pregunta5.jade
+        include preguntas/pregunta6.jade
