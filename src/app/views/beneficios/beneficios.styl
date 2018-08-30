@@ -2,25 +2,28 @@
 
 .ad__beneficios
     $parallax('../img/fondo2.jpg')
-    padding 5%
-    position relative
     &-logo
         position absolute
         text-align right 
         left 25%
+        align-self flex-start
+        margin-top 3.5%
         &-infantil
             width 200px
     &-vitaminas
         position relative
-        height 550px
+        height calc(100% - 20%)
         margin-left 20%
-        margin-top 12%
+        margin-top 20%
+        width 100%
+        z-index 1
         &-a,
         &-c,
         &-d
             position absolute
             transition 1.5s
             z-index 1
+            width 100%
             .ad__beneficios-vitaminas-descripcion
                 left 0
                 width 200px
@@ -34,55 +37,48 @@
                     visibility visible
                     opacity 1
         &-a
-            top 5%
-            left 15%
+            top 5% !important
+            left 15% !important
             .ad__beneficios-vitaminas-title
                 color $color-Orange-Tangerine
             &:hover
-                left -10%
+                left -10% !important
                 .ad__beneficios-vitaminas-descripcion
                     top calc(50% - 75px)
-                    left 200px
-                    padding-left 60px
+                    left 227px
+                    padding-left 52px
         &-c
             bottom 0
-            left calc(50% - 250px)
+            left 15% !important 
+            top inherit !important
             &:hover
-                left 10%
+                left 0 !important
                 .ad__beneficios-vitaminas-descripcion
                     top calc(50% - 80px)
-                    left 215px
+                    left 272px
                     padding-left 80px
                     width 600px
             .ad__beneficios-vitaminas-title
                 color $color-Orange-Tangerine
         &-d
-            top 0
-            left 50%
+            top 0 !important
+            left 40% !important
             &:hover
-                left 40%
+                left 32% !important 
                 .ad__beneficios-vitaminas-descripcion
                     top calc(50% - 100px)
-                    left 230px
+                    left 243px
                     padding-left 80px
             .ad__beneficios-vitaminas-title
                 color $color-Green-Citrus
         &-icono
-            background-repeat no-repeat
-            background-size contain
-            width 250px
-            height 250px
             transition .3s
             &.vitamina-a
-                background-image url(../img/vitamina-A.png)
+                width 20%
             &.vitamina-c
-                width 300px
-                height 300px
-                background-image url(../img/vitamina-C.png)
+                width 25%
             &.vitamina-d
-                width 280px
-                height 280px
-                background-image url(../img/vitamina-D.png)
+                width 23%
         &-descripcion
             background $color-Brown-Maroon-transparent
             border-radius 20px
