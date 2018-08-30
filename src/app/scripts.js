@@ -16,15 +16,14 @@
         $dataFixed = 'data-fixed-menu',
         $preguntas = $('.ad__faqs-listado'),
         $itemsPreguntas = $preguntas.find('a'),
-        $itemModalFaq = $('.ad__faqs-modal-title a');
+        $itemModalFaq = $('.ad__faqs-modal-title a'),
+        $legales = $('.ad__footer-legales'),
+        $itemsLegales = $legales.find('a'),
+        $cerrarLegales = $('.ad__legales-close a');
+
 
     /////////////////////////
 
-    /// Mover la página a la sección deseada
-    function scrollIt(section, duration){
-        var dur = duration || 1000;
-        $('body, html').animate({scrollTop: $(section).offset().top }, dur);
-    }
 
     /// Mover la página en el click del menú
     function clickMenu(items, isMenu, isFaq, isModal){
@@ -42,12 +41,30 @@
                     visibility: 'visible',
                     opacity: 1
                 });
+                bindKeyEvent(anchor);
             }
             if(isModal){
-                $('body').removeAttr('style');
-                $(anchor).removeAttr('style');
+                closeModal(anchor);
             }
             e.preventDefault();
+        });
+    }
+
+    /// Cerrar el modal
+    function closeModal(anchor){
+        $('body').removeAttr('style');
+        $(anchor).removeAttr('style');
+    }
+
+    /// Atachar el evento keypress
+    function bindKeyEvent(anchor){
+        $(document).on('keydown', function(e){
+            var code = e.keyCode || e.which;
+            console.log(code, anchor);
+            if(code === 27){
+                $(document).off('keydown');
+                closeModal(anchor);
+            }
         });
     }
 
@@ -70,6 +87,12 @@
         } else {
             $menuHeader.removeAttr('style');
         }
+    }
+
+    /// Mover la página a la sección deseada
+    function scrollIt(section, duration){
+        var dur = duration || 1000;
+        $('body, html').animate({scrollTop: $(section).offset().top }, dur).off();
     }
 
     /// Unir el scroll para poner la clase activa 
@@ -102,8 +125,10 @@
         clickMenu($itemsMenu, true);
         clickMenu($itemsPreguntas, false, true);
         clickMenu($itemModalFaq, false, false, true);
-        $logoInfantil.hide();
+        clickMenu($itemsLegales, false, true);
+        clickMenu($cerrarLegales, false, false, true);
         
+        $logoInfantil.hide();
     });
 
 })(jQuery);

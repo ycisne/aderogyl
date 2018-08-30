@@ -20,8 +20,12 @@ footer.ad__footer
     .ad__footer-legales
         ul
             li
-                a(href="#") AVISO LEGAL
+                a(href="#avisoLegal") AVISO LEGAL
             li
-                a(href="#") AVISO DE FARMACOVIGILANCIA
+                a(href="#avisoFarmacovigilancia") AVISO DE FARMACOVIGILANCIA
             li
-                a(href="#") AVISO DE PRIVACIDAD
+                a(href="#avisoPrivacidad") AVISO DE PRIVACIDAD
+    .ad__footer-modales
+        include ../legales/aviso-legal.jade
+        include ../legales/aviso-de-farmacovigilancia.jade
+        include ../legales/aviso-de-privacidad.jade
