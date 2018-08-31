@@ -94,7 +94,8 @@
     function closeModalAndShow(anchor, show){
         $(show).css({
             visibility: 'visible',
-            opacity: 1
+            opacity: 1,
+            display: 'flex'
         });
         closeModal(anchor);
     }
@@ -137,7 +138,8 @@
         $('body').css('overflow', 'hidden');
         $(anchor).css({
             visibility: 'visible',
-            opacity: 1
+            opacity: 1,
+            display: 'flex'
         });
         bindKeyEvent(anchor, hide);
     }

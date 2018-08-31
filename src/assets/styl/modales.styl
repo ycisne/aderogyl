@@ -3,18 +3,19 @@
 .ad
     &__modal
         visibility hidden
-        position fixed
         opacity 0
+        display none
+        position fixed
         background $color-Blue-Smalt-transparent
         color white
         width 100%
         height 100%
-        display flex
         justify-content center
         align-items center
         transition 1s
         &-container
             width 60%
+            flex-flow row wrap
             &-legales
                 height 90%
                 position relative
@@ -26,6 +27,7 @@
         &-title
             display flex
             align-items center
+            width 100%
             h1
                 width calc(100% - 40px)
                 padding 15px
