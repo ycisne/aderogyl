@@ -3,48 +3,82 @@
     /// Variables
     var lastId = null,
         $margenScroll = 30,
-        $logoInfantil = $('.ad__header-logo-infantil'),
+        $claseActiva = 'active',
+
+        /// Menú principal
         $menu = $('.ad__header-menu-principal'),
         $itemsMenu = $menu.find('a'),
-        $claseActiva = 'active',
+        $menuHeader = $('.ad__header-left-menu'),
+        $dataFixed = 'data-fixed-menu',
+
+        /// Para el logo infantil
+        $logoInfantil = $('.ad__header-logo-infantil'),
         $dataLogoInfantil = 'data-infantil',
+
+        /// Para buscar el item al que se debe hace el scroll
         $scrollItems = $itemsMenu.map(function(){
             var item = $($(this).attr("href"));
             if (item.length) { return item; }
         }),
-        $menuHeader = $('.ad__header-left-menu'),
-        $dataFixed = 'data-fixed-menu',
+
+        /// Preguntas frecuentes
         $preguntas = $('.ad__faqs-listado'),
         $itemsPreguntas = $preguntas.find('a'),
         $itemModalFaq = $('.ad__faqs-modal-title a'),
+        
+        /// Legales
         $legales = $('.ad__footer-legales'),
         $itemsLegales = $legales.find('a'),
-        $cerrarLegales = $('.ad__legales-close a');
+        $cerrarLegales = $('.ad__legales-close a'),
+
+        /// Presentaciones
+        $presentaciones = $('.ad__presentacion-btn'),
+        $itemsPresentacion = $presentaciones.find('a'),
+        $cerrarPresentacion = $('.ad__modal-presentacion-carrusel .ad__modal-close a');
 
 
     /////////////////////////
 
+    /// Atachar el evento keypress
+    function bindKeyEvent(anchor, hide){
+        $(document).on('keydown', function(e){
+            var code = e.keyCode || e.which;
+            if(code === 27){
+                $(document).off('keydown');
+                if(hide){
+                    closeModalAndShow(anchor, hide);
+                } else {
+                    closeModal(anchor);
+                }
+            }
+        });
+    }
 
     /// Mover la página en el click del menú
-    function clickMenu(items, isMenu, isFaq, isModal){
+    function clickMenu(items, tipoModal){
         items.click(function(e){
             items.removeClass($claseActiva);
             $(this).addClass($claseActiva);
-            var anchor = $(this).attr('href');
-            if(isMenu){
-                if(anchor) { scrollIt(anchor); }
-                logoInfantil($(this).attr($dataLogoInfantil));
-            }
-            if(isFaq){
-                $('body').css('overflow', 'hidden');
-                $(anchor).css({
-                    visibility: 'visible',
-                    opacity: 1
-                });
-                bindKeyEvent(anchor);
-            }
-            if(isModal){
-                closeModal(anchor);
+            if(tipoModal){
+                var anchor = $(this).attr('href');
+                switch(tipoModal){
+                    case 'menu':
+                        scrollToSection(anchor, $(this).attr($dataLogoInfantil));
+                        break;
+                    case 'faq':
+                    case 'legales':
+                        showModal(anchor);
+                        break;
+                    case 'presentacion':
+                        showModalAndHide(anchor, $(this).attr('data-hide-presentacion'));
+                        break;
+                    case 'closeModal':
+                        closeModal(anchor);
+                        break;
+                    case 'closeModalAndShow':
+                        closeModalAndShow(anchor, $(this).attr('data-show-presentacion'));
+                        break;
+                }
             }
             e.preventDefault();
         });
@@ -56,16 +90,13 @@
         $(anchor).removeAttr('style');
     }
 
-    /// Atachar el evento keypress
-    function bindKeyEvent(anchor){
-        $(document).on('keydown', function(e){
-            var code = e.keyCode || e.which;
-            console.log(code, anchor);
-            if(code === 27){
-                $(document).off('keydown');
-                closeModal(anchor);
-            }
+    /// Cerrar modal y mostrar presentación
+    function closeModalAndShow(anchor, show){
+        $(show).css({
+            visibility: 'visible',
+            opacity: 1
         });
+        closeModal(anchor);
     }
 
     /// Mostrar / Ocultar el logo infantil
@@ -95,6 +126,31 @@
         $('body, html').animate({scrollTop: $(section).offset().top }, dur).off();
     }
 
+    /// Ejecutar la función de hacer scroll
+    function scrollToSection(anchor, logo){
+        if(anchor) { scrollIt(anchor); }
+        logoInfantil(logo);
+    }
+
+    /// Mostar modal
+    function showModal(anchor, hide){
+        $('body').css('overflow', 'hidden');
+        $(anchor).css({
+            visibility: 'visible',
+            opacity: 1
+        });
+        bindKeyEvent(anchor, hide);
+    }
+
+    /// Mostrar modal y ocultar presentación
+    function showModalAndHide(anchor, hide){
+        $(hide).css({
+            visibility: 'hidden',
+            opacity: 0
+        });
+        showModal(anchor, hide);
+    }
+
     /// Unir el scroll para poner la clase activa 
     $(window).scroll(function(){
         var scrollTop = $(this).scrollTop(),
@@ -122,12 +178,13 @@
     /// Iniciar
     $(document).ready(function(){
         scrollIt('body');
-        clickMenu($itemsMenu, true);
-        clickMenu($itemsPreguntas, false, true);
-        clickMenu($itemModalFaq, false, false, true);
-        clickMenu($itemsLegales, false, true);
-        clickMenu($cerrarLegales, false, false, true);
-        
+        clickMenu($itemsMenu, 'menu');
+        clickMenu($itemsPreguntas, 'faq');
+        clickMenu($itemModalFaq, 'closeModal');
+        clickMenu($itemsLegales, 'legales');
+        clickMenu($cerrarLegales, 'closeModal');
+        clickMenu($itemsPresentacion, 'presentacion');
+        clickMenu($cerrarPresentacion, 'closeModalAndShow');
         $logoInfantil.hide();
     });
 

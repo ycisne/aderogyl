@@ -1,6 +1,195 @@
 @require globalView
 
-.ad__presentaciones
-    $parallax('../img/fondo1.jpg')
-    &-container
-        display flex
+.ad
+    &__presentaciones
+        $parallax('../img/fondo1.jpg')
+        &-container
+            display flex
+            margin-left 25%
+            margin-top 10%
+            width 50%
+            align-items flex-end
+        &-modales 
+            position fixed
+            top 0
+            left 0
+            z-index 1
+    &__presentacion
+        position relative
+        transition .3s
+        &-copy
+            position absolute
+            bottom 16%
+            line-height 1.1em
+        &-btn
+            width 200px
+            margin 5% auto
+        &-infantil
+            width 44%
+            .ad-caption
+                left -3%
+        &-adulto
+            width 56%
+            .ad-caption
+                left 36%
+    &__modal
+        &-container
+            display flex
+            align-items flex-start
+            position relative
+            .ad__presentacion
+                z-index 1
+            .ad__presentacion-via
+                position absolute
+                top -5%
+            .ad__presentacion-copy
+                bottom 1%
+            .ad__modal-presentacion-carrusel
+                width 64%
+                background $color-Blue-PrussianBlue
+                padding 30px 0 0 14%
+                margin-left -12%
+                border-radius 20px
+                .carousel-inner
+                    overflow visible
+                .carousel-control-prev,
+                .carousel-control-next
+                    top inherit 
+                    bottom -25px
+                    width  40px
+                    opacity 1
+                    &:hover
+                        opacity .5
+                .carousel-control-prev
+                    left calc(50% - 40px)
+                .carousel-control-next
+                    right calc(50% - 40px)
+            .ad__modal-close
+                position absolute
+                right 28px
+                top -2px
+                width 40px
+                z-index 1
+            .carousel-item
+                font-size 1.3em
+                line-height 1.5em
+                background $color-Blue-PrussianBlue
+                height 560px
+                h2
+                    color $color-Yellow-GoldenYellow
+                    small 
+                        font-size .6em
+                        display block
+                        color white
+                &.ad__carrusel-infantil-slide2
+                    line-height 1.2em
+            .ad__carrusel-ingredientes
+                display flex
+                &-left
+                    width 40%
+                    padding 10px
+                    ul
+                        margin-bottom 0
+                &-right
+                    width 60%
+                    padding 10px
+                    border-left 3px solid $color-Yellow-GoldenYellow
+                    p
+                        margin-bottom 4px
+            .ad__carrusel-contenido
+                padding-right 30px
+                h3
+                    color $color-Blue-PacificBlue
+                ul, li
+                    list-style-type none
+                    margin 0
+                    padding 0
+                li
+                    position relative
+                    padding-left 20px
+                    &:before
+                        content ''
+                        position absolute
+                        width 5px
+                        height 5px
+                        background $color-Blue-PacificBlue
+                        top 14px
+                        left 0
+            .ad__carrusel-contenido-highlighted
+                color $color-Yellow-GoldenYellow
+                margin 10px 0
+            .ad__carrusel-indicaciones
+                ul, li
+                    list-style-type none
+                    margin 0
+                    padding 0
+                li
+                    position relative
+                    padding-left 20px
+                    &:before
+                        content ''
+                        position absolute
+                        width 5px
+                        height 5px
+                        background $color-Yellow-GoldenYellow
+                        top 14px
+                        left 0
+                h4
+                    color $color-Red-Alizarin
+                    font-size 1.9rem
+                    margin 15px 0
+                &-ribbon-rojo
+                    background-image url(../img/ribbon-rojo.png)
+                    background-repeat no-repeat
+                    background-size cover
+                    margin-right -22px
+                    margin-left -57px
+                    height 65px
+                    color white
+                    font-family sans-serif
+                    padding-left 110px
+                    z-index 1
+                    img 
+                        height 40px
+                        margin-left 20px
+                &-content
+                    display flex
+                    font-family sans-serif
+                    font-size .6em
+                    line-height 1.5em
+                    text-align center
+                    background $color-Blue-RegalBlue
+                    padding 15px 15px 15px 50px
+                    margin-left -40px
+                    margin-top -24px
+                    z-index -1
+                &-gotero
+                    width 20%
+                &-left,
+                &-right
+                    width 40%
+                    padding 15px
+                &-right
+                    border-left 3px solid $color-Yellow-GoldenYellow
+                .indicaciones-gotas
+                    img 
+                        height 19px
+                .indicaciones-gotasText
+                    display block
+                    color $color-Yellow-GoldenYellow
+                &-footer
+                    text-align center
+                    font-family sans-serif
+                    font-size .6em
+        &-infantil
+            width 48%
+            margin-top 5%
+        &-adulto
+            width 45%
+            margin-top 7%
+            margin-left -10%
+        
+            .ad__carrusel-indicaciones-left
+                img 
+                    width 15px
+                    margin 2px
