@@ -13,7 +13,7 @@
     &-logo
         padding 80px 0 0 50px
     &-menu
-        width 16%
+        width 350px
         margin-top -3%
         li, ul
             list-style-type none
@@ -26,59 +26,39 @@
                     color transparent
                     transition .3s
                     font-size 45px
-                    padding-left 90px
-                    line-height 1em
+                    display flex
                     span 
-                        display inline-block
-                        padding .3em 0
-                        line-height 1.2em
+                        display block
+                        padding 18px 0 0 0
+                        line-height 1.1em
+                        width calc(100% - 80px)
                     &:before
                         content ''
-                        position absolute
                         width 80px
                         height 80px
-                        background url(../img/boton-menu.png)
+                        background-image url(../img/boton-menu.png)
                         background-repeat no-repeat
-                        background-size cover
-                        top 0
-                        left 0
+                        background-size 100% auto
+                        background-position center center
                         transition .3s
-                    &:after
-                        visibility hidden
-                        opacity 0
-                        content ''
-                        position absolute
-                        width 150px
-                        height 150px
-                        background url(../img/boton-menu-resplandor.png)
-                        background-repeat no-repeat
-                        background-size cover
-                        top -42px
-                        left -26px
-                        transition .3s
-                        z-index 0
                     &:hover,
                     &.active
                         color white
                         $text-shadow()
                         text-decoration none
                         &:before
-                            width 150px
-                            height 150px
-                            top -42px
-                            left -26px
+                            background-size 185% auto
                     &.active
                         cursor default
-                        &:after
-                            visibility visible
-                            opacity 1
+                        &:before
+                            background-image url(../img/boton-menu-resplandor.png)
         &-redes
             position fixed
             bottom 20px
             left 10px
             a
                 display block
-                padding 15px
+                padding 10px 15px
                 transition .3s
                 &:hover
                     opacity .5
