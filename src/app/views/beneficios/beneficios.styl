@@ -2,6 +2,8 @@
 
 .ad__beneficios
     $parallax('../img/fondo2.jpg')
+    padding-right 0
+    overflow hidden
     .ad-dodge-color
         margin-left 25%
         width 50%
@@ -20,75 +22,126 @@
             z-index 1
             .ad__beneficios-vitaminas-descripcion
                 left 0
-                width 200px
-                visibility hidden
-                opacity 0
+                width 90%
+                display none
             &:hover
                 .ad__beneficios-vitaminas-descripcion
-                    width 450px
-                    visibility visible
-                    opacity 1
+                    display block
+                    +$responsive(desktop1600 desktop_extended)
+                        width 120%
         &-a
             top 7%
             left 10%
             .ad__beneficios-vitaminas-title
                 color $color-Orange-Tangerine
             &:hover
-                left -15%
+                left -5%
+                +$responsive(desktop1280)
+                    left -2%
+                +$responsive(desktop1600 desktop_extended)
+                    left -15%
                 .ad__beneficios-vitaminas-icono
                     transform rotate(28deg)
                 .ad__beneficios-vitaminas-descripcion
-                    top calc(50% - 75px)
-                    left 179px
-                    padding-left 60px
+                    left 23%
+                    top 4%
+                    padding-left 15%
+                    +$responsive(tablet768 desktop1024)
+                        width 70%
+                        font-size 1.3em
+                    +$responsive(desktop1280)
+                        left 27%
+                        padding-left 21%
+                    +$responsive(desktop1600)
+                        left 20%
+                        top 8%
+                        padding-left 40%
+                    +$responsive(desktop_extended)
+                        top 15%
+                        left 47%
+                        padding-left 14%
         &-c
             bottom 0
             left 22%
+            +$responsive(tablet768 desktop1024)
+                font-size 0.8em
             &:hover
                 left 0
                 .ad__beneficios-vitaminas-icono
                     transform rotate(-20deg)
                 .ad__beneficios-vitaminas-descripcion
-                    top calc(50% - 82px)
-                    left 192px
-                    padding-left 85px
-                    width 600px
+                    width 120%
+                    left 28%
+                    top 9%
+                    padding-left 15%
+                    +$responsive(desktop1280 desktop1600 desktop_extended)
+                        top 16%
+                        left 49%
+                        padding-left 18%
+                        width 150%
+                    +$responsive(desktop1280)
+                        left 46%
             .ad__beneficios-vitaminas-title
                 color $color-Orange-Tangerine
         &-d
             top 0
-            left 35%
+            left 47%
+            +$responsive(tablet768 desktop1024)
+                font-size 0.8em
+            +$responsive(desktop1600 desktop_extended)
+                left 35%
             &:hover
-                left 32%
+                left 30%
                 .ad__beneficios-vitaminas-icono
                     transform rotate(18deg)
                 .ad__beneficios-vitaminas-descripcion
-                    top calc(50% - 100px)
-                    left 195px
-                    padding-left 85px
+                    left 30%
+                    padding-left 19%
+                    top 5%
+                    +$responsive(desktop1280)
+                        top 6%
+                        left 36%
+                        padding-left 22%
+                        width 110%
+                    +$responsive(desktop1600 desktop_extended)
+                        top 10%
+                        left 51%
+                        padding-left 23%
             .ad__beneficios-vitaminas-title
                 color $color-Green-Citrus
         &-icono
             transition .3s
             &.vitamina-a
-                width 60%
+                width 40%
+                +$responsive(desktop1280)
+                    width 47%
+                +$responsive(desktop1600 desktop_extended)
+                    width 60%
             &.vitamina-c
-                width 70%
+                width 45%
+                +$responsive(desktop1280)
+                    width 63%
+                +$responsive(desktop1600 desktop_extended)
+                    width 70%
             &.vitamina-d
-                width 75%
+                width 50%
+                +$responsive(desktop1280)
+                    width 60%
+                +$responsive(desktop1600 desktop_extended)
+                    width 75%
         &-descripcion
             background $color-Brown-Maroon-transparent
             border-radius 20px
-            padding 20px
+            padding 10px 20px
             position absolute
             z-index -1
-            font-size 30px
-            line-height 30px
+            font-size 1.7em
+            line-height 1.1em
             color white
         &-title
             font-family $font-secondary
-            font-size 40px
-            line-height 45px
+            font-size 1.3em
+            line-height 1.2em
     &-footer
         position absolute
         bottom 10px

@@ -14,8 +14,14 @@
         align-items center
         transition 1s
         &-container
-            width 60%
+            width 80%
             flex-flow row wrap
+            +$responsive(desktop1280)
+                width 75%
+            +$responsive(desktop1600)
+                width 70%
+            +$responsive(desktop_extended)
+                width 60%
             &-legales
                 height 90%
                 position relative

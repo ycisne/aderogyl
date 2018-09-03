@@ -46,12 +46,10 @@
                 bottom 1%
             .ad__modal-presentacion-carrusel
                 width 64%
-                background $color-Blue-PrussianBlue
-                padding 30px 0 0 14%
+                padding 0
                 margin-left -12%
-                border-radius 20px
                 .carousel-inner
-                    overflow visible
+                    padding 0 40px
                 .carousel-control-prev,
                 .carousel-control-next
                     top inherit 
@@ -66,17 +64,20 @@
                     right calc(50% - 40px)
             .ad__modal-close
                 position absolute
-                right 28px
+                right 60px
                 top -2px
                 width 40px
                 z-index 1
             .carousel-item
                 font-size 1.3em
                 line-height 1.5em
-                background $color-Blue-PrussianBlue
-                height 560px
+                height 580px
+                background $color-Blue-PrussianBlue-transparent
+                border-radius 20px
+                padding 0
                 h2
                     color $color-Yellow-GoldenYellow
+                    padding 20px 0 0 14%
                     small 
                         font-size .6em
                         display block
@@ -85,6 +86,8 @@
                     line-height 1.2em
             .ad__carrusel-ingredientes
                 display flex
+                margin-left 14%
+                margin-bottom 15px
                 &-left
                     width 40%
                     padding 10px
@@ -98,6 +101,7 @@
                         margin-bottom 4px
             .ad__carrusel-contenido
                 padding-right 30px
+                margin-left 16%
                 h3
                     color $color-Blue-PacificBlue
                 ul, li
@@ -123,6 +127,8 @@
                     list-style-type none
                     margin 0
                     padding 0
+                ul
+                    margin-left 16%
                 li
                     position relative
                     padding-left 20px
@@ -138,20 +144,33 @@
                     color $color-Red-Alizarin
                     font-size 1.9rem
                     margin 15px 0
+                    margin-left 16%
                 &-ribbon-rojo
                     background-image url(../img/ribbon-rojo.png)
                     background-repeat no-repeat
                     background-size cover
-                    margin-right -22px
-                    margin-left -57px
+                    margin-right -24px
                     height 65px
                     color white
                     font-family sans-serif
-                    padding-left 110px
+                    padding-left 31%
+                    font-weight 700
                     z-index 1
                     img 
                         height 40px
                         margin-left 20px
+                &-ribbon-amarillo
+                    background-image url(../img/ribbon-amarillo.png)
+                    background-repeat no-repeat
+                    background-size 120% auto
+                    height 85px
+                    margin-left -43px
+                    color $color-Blue-RegalBlue
+                    font-size 1.2em
+                    text-align center
+                    line-height 1.5em
+                    font-family sans-serif
+                    font-weight 700
                 &-content
                     display flex
                     font-family sans-serif
@@ -159,9 +178,8 @@
                     line-height 1.5em
                     text-align center
                     background $color-Blue-RegalBlue
-                    padding 15px 15px 15px 50px
-                    margin-left -40px
-                    margin-top -24px
+                    padding 15px 15px 15px 16%
+                    margin-top -25px
                     z-index -1
                 &-gotero
                     width 20%
@@ -181,15 +199,70 @@
                     text-align center
                     font-family sans-serif
                     font-size .6em
+                    padding 5px 0 0 14%
         &-infantil
             width 48%
             margin-top 5%
         &-adulto
-            width 45%
-            margin-top 7%
-            margin-left -10%
-        
+            width 51%
+            margin-top 4%
+            margin-left 2%
+            .ad__modal-close
+                right 35px
             .ad__carrusel-indicaciones-left
+                padding 0
+                width 30%
                 img 
                     width 15px
                     margin 2px
+            .ad__carrusel-indicaciones-right
+                width 70%
+                border none 
+                padding 0 0 0 5px
+                font-size 1.1em
+                span 
+                    display block
+                    line-height 1.1em
+                .indicaciones-ampolletasText
+                    font-size 2.3em
+                    font-weight 700
+                .indicaciones-ampolletasTime
+                    font-size 1.3em
+                    font-weight 700
+                    color $color-Yellow-GoldenYellow
+                    line-height 1.5em
+                .indicaciones-tratamiento
+                    font-size 1.5em
+                    line-height 1.5em
+            .ad__modal-presentacion-carrusel
+                width 54%
+                margin-left 0
+                position relative
+            .ad__presentacion
+                width 53%
+                margin-top 3%
+                margin-left -12%
+            .carousel-item
+                height 610px
+                h2
+                    padding 20px 14% 0 30px
+            .ad__carrusel-indicaciones
+                ul
+                    margin-left 35px
+                    margin-right 16%
+                h4
+                    color $color-Yellow-GoldenYellow
+                    margin-left 30px
+                &-content
+                    margin-top -40px
+                    background none
+                    padding 15px 16% 15px 30px
+            .ad__carrusel-ingredientes
+                margin-left 30px
+                font-size .9em
+                line-height 1.3em
+            .ad__carrusel-contenido
+                font-size .9em
+                line-height 1.3em
+                margin-left 30px
+                margin-right 8%

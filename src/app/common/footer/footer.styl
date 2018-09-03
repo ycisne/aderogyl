@@ -13,9 +13,11 @@
     padding 8% 30px 30px 30px
     flex-flow row wrap
     color white
-    font-size .8em
+    font-size .65em
     font-family sans-serif
     $text-shadow()
+    +$responsive(desktop1280 desktop1600 desktop_extended)
+        font-size .8em
     p
         margin 0
     &-left

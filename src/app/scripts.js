@@ -94,8 +94,7 @@
     function closeModalAndShow(anchor, show){
         $(show).css({
             visibility: 'visible',
-            opacity: 1,
-            display: 'flex'
+            opacity: 1
         });
         closeModal(anchor);
     }
@@ -112,12 +111,11 @@
     /// Quitar el fixed del menú
     function noFixed(fixed, scrollTop){
         if (fixed) {
-            $menuHeader.css({
-                position: 'absolute',
+            $menuHeader.addClass('menuAbsolute').css({
                 top: scrollTop
             });
         } else {
-            $menuHeader.removeAttr('style');
+            $menuHeader.removeClass('menuAbsolute').removeAttr('style');
         }
     }
 
