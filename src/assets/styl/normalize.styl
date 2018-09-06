@@ -1,5 +1,4 @@
 @require globalStyl
-
 body, html
     height 100%
     font-family $font-primary
@@ -42,8 +41,12 @@ img
     padding .2em
     text-transform uppercase
     $text-shadow()
-    font-size 1.6em
+    font-size 1.3em
     text-align center
+    +$responsive(desktop1280)
+        font-size 1.5em
+    +$responsive(desktop1600 desktop_extended)
+        font-size 1.6em
     a
         color white
         transition .3s
