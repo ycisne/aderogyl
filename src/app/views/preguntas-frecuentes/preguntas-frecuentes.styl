@@ -28,6 +28,12 @@
                 background-size contain
                 width 1.5em
                 height 1.5em
+                cursor pointer
+                transition transform .3s
+            &:hover
+                &:before
+                    background-image url(../img/plus-hover.svg)
+                    transform rotate(-180deg)
             a 
                 padding 0 .6em
                 color white
@@ -70,9 +76,13 @@
                     background-size contain
                     width .7em
                     height .7em
+                    transition transform .3s
                 &:hover
                     text-decoration none
                     opacity .5
+                    &:before
+                        background-image url(../img/minus-hover.svg)
+                        transform rotate(-180deg)
         &-content
             display flex
             font-size 1.5em

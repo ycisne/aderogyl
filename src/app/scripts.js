@@ -34,13 +34,20 @@
         /// Presentaciones
         $presentaciones = $('.ad__presentacion-btn'),
         $itemsPresentacion = $presentaciones.find('a'),
-        $cerrarPresentacion = $('.ad__modal-presentacion-carrusel .ad__modal-close a');
+        $cerrarPresentacion = $('.ad__modal-presentacion-carrusel .ad__modal-close a'),
+
+        /// Video
+        $videoBtn = $('.ad__queEs-video a'),
+        $videoModal = $('#videoComercial'),
+        $videoBtnClose = $('.ad__video-modal-content .close'),
+        $videoModalIframe = $('#video'),
+        $videoSrc = null;
 
 
     /////////////////////////
 
     /// Atachar el evento keypress
-    function bindKeyEvent(anchor, hide){
+    function bindKeyEvent(anchor, hide, isVideo){
         $(document).on('keydown', function(e){
             var code = e.keyCode || e.which;
             if(code === 27){
@@ -48,7 +55,7 @@
                 if(hide){
                     closeModalAndShow(anchor, hide);
                 } else {
-                    closeModal(anchor);
+                    closeModal(anchor, isVideo);
                 }
             }
         });
@@ -78,6 +85,9 @@
                     case 'closeModalAndShow':
                         closeModalAndShow(anchor, $(this).attr('data-show-presentacion'));
                         break;
+                    case 'closeVideo':
+                        closeModal(anchor, true);
+                        break;
                 }
             }
             e.preventDefault();
@@ -85,17 +95,25 @@
     }
 
     /// Cerrar el modal
-    function closeModal(anchor){
-        $('body').removeAttr('style');
-        $(anchor).removeAttr('style');
+    function closeModal(anchor, isVideo){
+        $(anchor).animate({
+            opacity: 0
+        }, 100, function(){
+            $('body').removeAttr('style');
+        });
+        setTimeout(function(){
+            $(anchor).removeAttr('style');
+            if(isVideo){
+                $videoModalIframe.attr('src', '');
+            }
+        }, 1000);
     }
 
     /// Cerrar modal y mostrar presentación
     function closeModalAndShow(anchor, show){
-        $(show).css({
-            visibility: 'visible',
-            opacity: 1
-        });
+        $(show)
+            .css({visibility: 'visible'})
+            .animate({opacity: 1}, 100);
         closeModal(anchor);
     }
 
@@ -119,6 +137,15 @@
         }
     }
 
+    /// Abrir el video
+    function openVideo(){
+        $videoBtn.click(function(){
+            $videoSrc = $(this).data('src');
+            $videoModalIframe.attr('src', $videoSrc + '?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1');
+            showModal($videoModal, null, true);
+        });
+    }
+
     /// Mover la página a la sección deseada
     function scrollIt(section, duration){
         var dur = duration || 1000;
@@ -132,14 +159,13 @@
     }
 
     /// Mostar modal
-    function showModal(anchor, hide){
+    function showModal(anchor, hide, isVideo){
         $('body').css('overflow', 'hidden');
         $(anchor).css({
             visibility: 'visible',
-            opacity: 1,
             display: 'flex'
-        });
-        bindKeyEvent(anchor, hide);
+        }).animate({ opacity: 1}, 100);
+        bindKeyEvent(anchor, hide, isVideo);
     }
 
     /// Mostrar modal y ocultar presentación
@@ -185,6 +211,8 @@
         clickMenu($cerrarLegales, 'closeModal');
         clickMenu($itemsPresentacion, 'presentacion');
         clickMenu($cerrarPresentacion, 'closeModalAndShow');
+        openVideo($videoBtn);
+        clickMenu($videoBtnClose, 'closeVideo');
         $logoInfantil.hide();
     });
 

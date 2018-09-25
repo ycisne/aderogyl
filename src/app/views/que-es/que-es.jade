@@ -3,31 +3,38 @@ section.ad__queEs#que-es
         .container
             a(href="#")
                 img(src="app/assets/img/sanofi.png")
+    .ad__queEs-residentes Este sitio es para residentes de México
+    .ad__queEs-video
+        a(href="#videoComercial", data-src="https://www.youtube.com/embed/wwlsr2E_P1M")
+            img(src="app/assets/img/play-btn.png")
+            span Ver Comercial
+    .ad-dodge-color
+        img(src="app/assets/img/destellos.png")
     .ad__queEs-img
-        .ad-dodge-color
-            img(src="app/assets/img/shines.png")
-        img(src="app/assets/img/ampolleta.png")
+        img(src="app/assets/img/5-ampolleta.png")
         .ad__queEs-img-caption.ad-caption
             span Aderogyl
                 sup &reg; 
                 | Solución.
             br
             span registro sanitario no.: 38878 SSA VI
-    .ad__queEs-carrusel
-        .carousel.slide#carousel-queEs(data-ride="carousel")
-            .carousel-inner
-                .carousel-item.ad__queEs-slide1.active
-                    p.linea1 AUXILIAR
-                    p.linea2 EN LA PREVENCIÓN
-                    p.linea3 Y TRATAMIENTO
-                    p.linea4 DE LA GRIPE
-                .carousel-item.ad__queEs-slide2
-                    p.linea1 REFUERZA
-                    p.linea2 LAS DEFENSAS Y FORTALECE
-                    p.linea3 EL SISTEMA INMUNE
-            a.carousel-control-prev(href="#carousel-queEs", role="button", data-slide="prev")
-                span.left-carousel
-                span.sr-only Anterior
-            a.carousel-control-next(href="#carousel-queEs", role="button", data-slide="next")
-                span.right-carousel
-                span.sr-only Siguiente
+    //- .ad__queEs-carrusel
+    //-     .carousel.slide#carousel-queEs(data-ride="carousel")
+    //-         .carousel-inner
+    //-             .carousel-item.ad__queEs-slide1.active
+    //-                 p.linea1 AUXILIAR
+    //-                 p.linea2 EN LA PREVENCIÓN
+    //-                 p.linea3 Y TRATAMIENTO
+    //-                 p.linea4 DE LA GRIPE
+    //-             .carousel-item.ad__queEs-slide2
+    //-                 p.linea1 REFUERZA
+    //-                 p.linea2 LAS DEFENSAS Y FORTALECE
+    //-                 p.linea3 EL SISTEMA INMUNE
+    //-         a.carousel-control-prev(href="#carousel-queEs", role="button", data-slide="prev")
+    //-             span.left-carousel
+    //-             span.sr-only Anterior
+    //-         a.carousel-control-next(href="#carousel-queEs", role="button", data-slide="next")
+    //-             span.right-carousel
+    //-             span.sr-only Siguiente
+    .ad__queEs-modales
+        include que-es/video.jade
