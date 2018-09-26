@@ -35,6 +35,7 @@
         $presentaciones = $('.ad__presentacion-btn'),
         $itemsPresentacion = $presentaciones.find('a'),
         $cerrarPresentacion = $('.ad__modal-presentacion-carrusel .ad__modal-close a'),
+        $dataAddPresentacion = 'data-add-class',
 
         /// Video
         $videoBtn = $('.ad__queEs-video a'),
@@ -76,14 +77,14 @@
                     case 'legales':
                         showModal(anchor);
                         break;
-                    case 'presentacion':
-                        showModalAndHide(anchor, $(this).attr('data-hide-presentacion'));
+                    case 'showPresentacion':
+                        showHidePresentacion(anchor, $(this).attr($dataAddPresentacion));
                         break;
                     case 'closeModal':
                         closeModal(anchor);
                         break;
-                    case 'closeModalAndShow':
-                        closeModalAndShow(anchor, $(this).attr('data-show-presentacion'));
+                    case 'hidePresentacion':
+                        showHidePresentacion(anchor);
                         break;
                     case 'closeVideo':
                         closeModal(anchor, true);
@@ -139,7 +140,8 @@
 
     /// Abrir el video
     function openVideo(){
-        $videoBtn.click(function(){
+        $videoBtn.click(function(e){
+            e.preventDefault();
             $videoSrc = $(this).data('src');
             $videoModalIframe.attr('src', $videoSrc + '?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1');
             showModal($videoModal, null, true);
@@ -168,13 +170,16 @@
         bindKeyEvent(anchor, hide, isVideo);
     }
 
-    /// Mostrar modal y ocultar presentación
-    function showModalAndHide(anchor, hide){
-        $(hide).css({
-            visibility: 'hidden',
-            opacity: 0
-        });
-        showModal(anchor, hide);
+    /// Mostrar u ocultar presentación
+    function showHidePresentacion(anchor, clase){
+        if(clase) {
+            $(anchor).removeClass().addClass(clase);
+        } else {
+            $(anchor).addClass('ad__transition');
+            setTimeout(function(){
+                $(anchor).removeClass();
+            }, 1000);
+        }
     }
 
     /// Unir el scroll para poner la clase activa 
@@ -209,8 +214,8 @@
         clickMenu($itemModalFaq, 'closeModal');
         clickMenu($itemsLegales, 'legales');
         clickMenu($cerrarLegales, 'closeModal');
-        clickMenu($itemsPresentacion, 'presentacion');
-        clickMenu($cerrarPresentacion, 'closeModalAndShow');
+        clickMenu($itemsPresentacion, 'showPresentacion');
+        clickMenu($cerrarPresentacion, 'hidePresentacion');
         openVideo($videoBtn);
         clickMenu($videoBtnClose, 'closeVideo');
         $logoInfantil.hide();

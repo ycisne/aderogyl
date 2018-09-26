@@ -1,8 +1,9 @@
 @require globalView
 
+#presentaciones
+    $parallax('../img/fondo1.jpg')
 .ad
     &__presentaciones
-        $parallax('../img/fondo1.jpg')
         &-container
             display flex
             margin-left 25%
@@ -45,17 +46,18 @@
             display flex
             align-items flex-start
             position relative
+            top 0
             .ad__presentacion
                 z-index 1
             .ad__presentacion-via
                 position absolute
                 top -5%
-            .ad__presentacion-copy
-                bottom 1%
+                display none
             .ad__modal-presentacion-carrusel
                 width 75%
                 padding 0
                 margin-left -12%
+                display none
                 +$responsive(desktop1280)
                     width 71%
                     margin-left -15%
@@ -84,6 +86,7 @@
                 +$responsive(desktop_extended)
                     right 53px
             .carousel-item
+                color white
                 font-size 1.3em
                 line-height 1.5em
                 height 540px
@@ -181,6 +184,7 @@
                     margin-left -25px
                     color $color-Blue-RegalBlue
                     text-align center
+                    font-size 29px
                 &-ribbon-amarillo,
                 &-ribbon-rojo
                     background-repeat no-repeat
@@ -223,34 +227,27 @@
                     font-size .6em
                     padding 5px 0 0 14%
         &-infantil
-            width 70%
+            width 48%
             font-size .8em
-            margin-left 23%
+            margin-left 25%
+            position absolute
             +$responsive(desktop1280)
-                width 58%
                 margin-top 8%
-                margin-left 10%
             +$responsive(desktop1600)
-                width 48%
                 margin-top 8%
-                margin-left 0
             +$responsive(desktop_extended)
-                width 48%
-                margin-top 5%
-                margin-left 0
+                margin-top 8%
                 font-size 1em
         &-adulto
-            width 75%
-            margin-top 4%
-            margin-left -13%
+            width 51%
+            margin-top 6%
+            margin-left 21%
+            position absolute
+            display flex
+            flex-flow row wrap
+            justify-content flex-end
             +$responsive(desktop1280)
-                width 66%
-                margin-left 4%
                 margin-top 1%
-            +$responsive(desktop1600)
-                width 58%
-            +$responsive(desktop_extended)
-                width 51%
             .ad__modal-close
                 right 9px
             .ad__carrusel-indicaciones-left
@@ -286,6 +283,37 @@
                     line-height 1.5em
                     +$responsive(desktop1600 desktop_extended)
                         font-size 1.5em
+            .ad__carrusel-banner
+                $backgroundImg('../img/fondo-rojo.png', 100%, 120px)
+                color white
+                margin-top -21px
+                padding-top 5px
+                span
+                    display block
+                    transform rotate(-2deg)
+                .indicaciones-text
+                    &1
+                        font-size 16px
+                        line-height 16px
+                    &2
+                        font-size 43px
+                        line-height 32px
+                        font-weight bold
+                    &3
+                        font-size 26px
+                        line-height 31px
+                        font-weight bold
+                    &4
+                        font-size 25px
+                        font-weight bold
+                        color $color-Yellow-GoldenYellow
+                        line-height 46px
+                        text-align right 
+                        padding-right 38px
+                    &5
+                        transform none
+                        font-size 16px
+                        margin-top 15px
             .ad__modal-presentacion-carrusel
                 width 66%
                 margin-left 0
@@ -306,7 +334,7 @@
                     margin-top 12%
                 +$responsive(desktop_extended)
                     width 53%
-                    margin-top 8%
+                    margin-top 11%
             .carousel-item
                 height 590px
                 +$responsive(desktop1280)
@@ -335,3 +363,67 @@
                 line-height 1.3em
                 margin-left 30px
                 margin-right 13%
+@keyframes viewModal
+    0%
+        opacity 0
+    100%
+        opacity 1
+@keyframes hideModal
+    0%
+        opacity 1
+    100%
+        opacity 0
+.ad__adulto,
+.ad__infantil
+    .ad__modal
+        display block
+        left 0
+        top 0
+        visibility visible
+        z-index 1
+        animation viewModal 1s linear .3s 1 normal forwards
+.ad__adulto
+    .ad__modal-infantil
+        z-index -1
+    .ad__modal-adulto
+        z-index 1
+        .ad__modal-presentacion-carrusel
+            display block
+            opacity 0
+            animation viewModal .3s linear .1s 1 normal forwards
+        .ad__presentacion-btn
+            opacity 1
+            animation hideModal .3s linear .1s 1 normal forwards
+        .ad__presentacion-via
+            display block
+            opacity 0
+            animation viewModal .3s linear .1s 1 normal forwards
+.ad__infantil
+    .ad__modal-adulto
+        z-index -1
+    .ad__modal-infantil
+        z-index 1
+        .ad__modal-presentacion-carrusel
+            display block
+            opacity 0
+            animation viewModal .3s linear .1s 1 normal forwards
+        .ad__presentacion-btn
+            opacity 1
+            animation hideModal .3s linear .1s 1 normal forwards
+        .ad__presentacion-via
+            display block
+            opacity 0
+            animation viewModal .3s linear .1s 1 normal forwards
+.ad__transition
+    .ad__modal
+        opacity 1 !important
+        animation hideModal .3s linear .1s 1 normal forwards !important
+    .ad__modal-presentacion-carrusel
+        opacity 1 !important
+        animation hideModal .3s linear .1s 1 normal forwards !important
+    .ad__presentacion-btn
+        opacity 0 !important
+        animation viewModal .3s linear .1s 1 normal forwards !important
+    .ad__presentacion-via
+        opacity 1 !important
+        animation hideModal .3s linear .1s 1 normal forwards !important

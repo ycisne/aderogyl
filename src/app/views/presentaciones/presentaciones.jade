@@ -1,25 +1,4 @@
-section.ad__presentaciones#presentaciones
-    .ad__presentaciones-container
-        .ad__presentacion.ad__presentacion-infantil#ad__presentacion-infantil
-            .ad__presentacion-img
-                img(src="app/assets/img/aderogyl-infantil.png")
-            .ad__presentacion-copy.ad-caption Aderogyl
-                sup &reg; 
-                | C Solución.
-                br
-                | registro sanitario no.: 52096 SSA VI
-            .ad__presentacion-btn.ad-button
-                a(href="#presentacionInfantil") ¿CÓMO TOMARLO?
-        .ad__presentacion.ad__presentacion-adulto#ad__presentacion-adulto
-            .ad__presentacion-img
-                img(src="app/assets/img/aderogyl-adulto.png")
-            .ad__presentacion-copy.ad-caption Aderogyl
-                sup &reg; 
-                | Solución.
-                br
-                | registro sanitario no.: 38878 SSA VI
-            .ad__presentacion-btn.ad-button
-                a(href="#presentacionAdulto") ¿CÓMO TOMARLO?
-    .ad__presentaciones-modales
-        include presentaciones/infantil.jade
-        include presentaciones/adulto.jade
+section#presentaciones
+    .ad__modal
+    include presentaciones/infantil.jade
+    include presentaciones/adulto.jade
