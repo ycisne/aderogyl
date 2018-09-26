@@ -18,6 +18,14 @@ $parallax(img)
     align-items center
     position relative
 
+$backgroundImg($img, $width, $height)
+    width $width
+    background-image url($img)
+    background-size contain
+    background-repeat no-repeat
+    height $height
+    background-position 0 0
+
 $text-shadow()
     text-shadow 2px 2px 5px rgba(0,0,0,0.7)
 

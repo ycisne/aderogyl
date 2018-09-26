@@ -29,7 +29,7 @@
                 width 1.5em
                 height 1.5em
                 cursor pointer
-                transition transform .3s
+                transition transform .5s
             &:hover
                 &:before
                     background-image url(../img/plus-hover.svg)
@@ -39,12 +39,12 @@
                 color white
                 font-size 1.8em
                 $text-shadow()
-                transition .3em
+                transition color 1s
                 +$responsive(desktop1600 desktop_extended)
                     font-size 2.3em
                 &:hover
                     text-decoration none
-                    opacity .8
+                    color $color-Green-Citrus
     &-modales
         position fixed
         top 0
@@ -58,7 +58,7 @@
                 font-size 1.9em
                 text-transform uppercase
                 $text-shadow()
-                transition .3s
+                transition color 1s
                 display flex
                 align-items center
                 margin 0 0 40px 60px
@@ -76,10 +76,10 @@
                     background-size contain
                     width .7em
                     height .7em
-                    transition transform .3s
+                    transition transform .5s
                 &:hover
                     text-decoration none
-                    opacity .5
+                    color $color-Green-Citrus
                     &:before
                         background-image url(../img/minus-hover.svg)
                         transform rotate(-180deg)
@@ -99,7 +99,7 @@
         padding 0 20px
         p
             margin 0 1.7em
-            margin-top -1.5em
+            //margin-top -1.5em
     &1-center,
     &4-center,
     &5-center
@@ -121,8 +121,8 @@
             margin 0.3em 1.5em
     &2-left
         width 40%
-        img 
-            margin-bottom -50px
+        //img 
+            //margin-bottom -50px
     &2-right
         width 60%
         text-align center
@@ -132,8 +132,8 @@
         width 45%
         padding-right 5%
         align-self center
-        img
-            margin-bottom -50px
+        //img
+            //margin-bottom -50px
     &3-right
         width 55%
         position relative
@@ -162,8 +162,8 @@
     &6-left
         width 30%
         align-self center
-        img
-            margin-bottom -40px
+        //img
+            //margin-bottom -40px
     &6-right
         text-align center
         img

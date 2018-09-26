@@ -80,17 +80,107 @@
                 font-size 50px
                 line-height 25px
                 font-family $font-secondary
-    &-img
-        height 100%
-        margin auto
+    &-mainImg
+        margin 7% 15% 1% 25%
         position relative
+        display flex
+        justify-content center
+        flex-flow row wrap
+        align-items flex-end
+        z-index -1
+    &-img
+        width 40%
+        z-index 2
         &-caption
-            position absolute
-            bottom 10%
-            left 12%
-            text-align right
-            +$responsive(desktop1280 desktop1600 desktop_extended)
-                left 16%
+            width 70%
+            margin-right 30%
+            margin-bottom 3%
+            text-align center
+    &-frase
+        width 60%
+        margin-left -12%
+        z-index 1
+        display flex
+        flex-flow row wrap
+        color white
+        $text-shadow()
+        text-transform uppercase
+        &1
+            $backgroundImg('../img/fondo-azul.png', 100%, 140px)
+            font-size 80px
+            padding-left 70px
+            padding-top 5px
+            z-index 2
+            font-family $font-secondary
+            span 
+                transform rotate(-2deg)
+                display inline-block
+        &2
+            $backgroundImg('../img/fondo-rojo.png', 100%, 150px)
+            font-size 75px
+            margin-top -40px
+            z-index 1
+            padding 10px 0 0 92px
+            span 
+                transform rotate(-4deg)
+                display inline-block
+
+        &3
+            width 100%
+            z-index 3
+            height 150px
+            padding 5px 0 20px 125px
+            font-size 80px
+            margin-top -50px
+            margin-bottom 40px
+            display flex
+            transform rotate(-4deg)
+            .frase3
+                &-item1
+                    color $color-Yellow-GoldenYellow
+                    margin-right 10px
+                    font-family $font-secondary 
+                    font-size 100px
+                    line-height 110px
+                &-item2
+                    margin 0 5px
+                &-item3
+                    color $color-Yellow-GoldenYellow
+                    margin-left 10px
+                    font-family $font-secondary 
+                    line-height 112px
+    &-slogans
+        width 100%
+        display flex
+        align-items flex-start
+    &-slogan
+        width 50%
+        color white
+        font-size 35px
+        text-transform uppercase
+        $text-shadow()
+        text-align center
+        display flex
+        flex-flow row wrap
+        &-top
+            $backgroundImg('../img/fondo-azul2.png', 100%, 80px)
+            background-position: center top
+            z-index 2
+            span 
+                transform rotate(-1deg)
+                margin-top 10px
+                display inline-block
+        &-bottom
+            $backgroundImg('../img/fondo-rojo2.png', 100%, 100px)
+            background-position: center top
+            margin-top -55px
+            z-index 1
+            span 
+                transform rotate(-2deg)
+                display inline-block
+                margin-top 38px
+                margin-right 10px
+                font-size 25px
     &-logo-sanofi
         background white
         padding 4px 40px
@@ -121,7 +211,37 @@
         position fixed
         top 0
         left 0
-        z-index 1
+        z-index 2
+    &-video
+        position absolute
+        top 66px
+        right 20px
+        display flex
+        justify-content flex-end
+        z-index 2
+        a
+            $backgroundImg('../img/fondo-rojo.png', 240px, 90px)
+            .video-text
+                display flex
+                transform rotate(-4deg)
+                font-size 30px
+                text-transform uppercase
+                color white
+                align-items center
+                $text-shadow()
+                margin 5px 15px
+                transition color 1s
+                .video-ico
+                    $backgroundImg('../img/ico-play.png', 32px, 32px)
+                span 
+                    margin-left 10px
+            &:hover
+                text-decoration none
+                .video-text
+                    color $color-Yellow-GoldenYellow
+                    .video-ico
+                        background-image url('../img/ico-play-hover.png')
+
 .ad__video-modal-content
     width 100%
     position relative
