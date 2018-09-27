@@ -54,7 +54,7 @@
                 top -5%
                 display none
             .ad__modal-presentacion-carrusel
-                width 75%
+                width 60%
                 padding 0
                 margin-left -12%
                 display none
@@ -77,10 +77,12 @@
                     right calc(45% - 40px)
             .ad__modal-close
                 position absolute
-                right 13px
+                right 135px
                 top 15px
                 width 40px
                 z-index 1
+                +$responsive(desktop1280)
+                    right 13px
                 +$responsive(desktop1600)
                     right 45px
                 +$responsive(desktop_extended)
@@ -89,15 +91,11 @@
                 color white
                 font-size 1.3em
                 line-height 1.5em
-                height 540px
+                height 560px
                 background $color-Blue-PrussianBlue-transparent
                 border-radius 20px
                 padding 0
                 border 20px solid $color-Blue-Smalt-transparent
-                +$responsive(desktop1280)
-                    height 560px
-                +$responsive(desktop1600)
-                    height 560px
                 +$responsive(desktop_extended)
                     height 600px
                 h2
@@ -171,20 +169,6 @@
                     font-size 1.9rem
                     margin 15px 0
                     margin-left 20%
-                &-ribbon-rojo
-                    background-image url(../img/ribbon-rojo.png)
-                    margin-right -25px
-                    color white
-                    padding-left 31%
-                    img 
-                        height 40px
-                        margin-left 20px
-                &-ribbon-amarillo
-                    background-image url(../img/ribbon-amarillo.png)
-                    margin-left -25px
-                    color $color-Blue-RegalBlue
-                    text-align center
-                    font-size 29px
                 &-ribbon-amarillo,
                 &-ribbon-rojo
                     background-repeat no-repeat
@@ -193,6 +177,29 @@
                     font-family sans-serif
                     font-weight 700
                     z-index 1
+                &-ribbon-rojo
+                    background-image url(../img/ribbon-rojo.png)
+                    margin-right -25px
+                    background-position right top
+                    color white
+                    padding-left 31%
+                    +$responsive(desktop1280 desktop1600)
+                        height 73px
+                    img 
+                        height 40px
+                        margin-left 20px
+                &-ribbon-amarillo
+                    background-image url(../img/ribbon-amarillo.png)
+                    background-position left top
+                    margin-left -25px
+                    color $color-Blue-RegalBlue
+                    text-align center
+                    font-size 29px
+                    height 77px
+                    line-height 40px
+                    +$responsive(desktop_extended)
+                        height 65px
+                        line-height 35px
                 &-content
                     display flex
                     font-family sans-serif
@@ -205,6 +212,7 @@
                     z-index -1
                     +$responsive(desktop1600)
                         padding-left 15%
+                        padding-right 12px
                 &-gotero
                     width 20%
                 &-left,
@@ -227,29 +235,87 @@
                     font-size .6em
                     padding 5px 0 0 14%
         &-infantil
-            width 48%
+            width 75%
             font-size .8em
-            margin-left 25%
+            margin-left 22%
+            margin-top 8%
             position absolute
             +$responsive(desktop1280)
-                margin-top 8%
+                margin-top 15%
+                width 55%
+            +$responsive(desktop1600 desktop_extended)
+                width 48%
+                margin-left 25%
             +$responsive(desktop1600)
-                margin-top 8%
+                margin-top 15%
             +$responsive(desktop_extended)
-                margin-top 8%
+                margin-top 11%
                 font-size 1em
+            .ad__presentacion-copy
+                +$responsive(desktop1600)
+                    font-size 1.25em
+                    bottom 14%
+            .ad__carrusel-indicaciones-content
+                padding 15px 0 15px 16%
+                +$responsive(desktop1280 desktop1600 desktop_extended)
+                    padding 15px 15px 15px 20%
+                +$responsive(desktop1280)
+                    margin-top -32px
+            .ad__carrusel-indicaciones-left
+                padding 5px
+                +$responsive(desktop1280 desktop1600 desktop_extended)
+                    padding 15px
+            .ad__carrusel-indicaciones-right
+                padding 5px 15px 5px 5px
+                +$responsive(desktop1280)
+                    width 45%
+                +$responsive(desktop1280 desktop1600 desktop_extended)
+                    padding 15px
+            .carousel-item
+                width 
         &-adulto
-            width 51%
-            margin-top 6%
-            margin-left 21%
+            width 83%
+            margin-top 7%
             position absolute
             display flex
             flex-flow row wrap
             justify-content flex-end
             +$responsive(desktop1280)
-                margin-top 1%
+                margin-top 15%
+                margin-left 17%
+                width 58%
+            +$responsive(desktop1600)
+                margin-top 15%
+                margin-left 19%
+                width 51%
+            +$responsive(desktop_extended)
+                width 51%
+                margin-left 21%
+                margin-top 9%
+            .ad__presentacion-copy
+                font-size .8em
+                +$responsive(desktop1280)
+                    bottom 18%
+                +$responsive(desktop1600 desktop_extended)
+                    font-size 1em
+            .ad__presentacion-btn
+                font-size 1.05em
+                margin-top 8%
+                +$responsive(desktop1280)
+                    font-size 1.2em
+                    margin-top 12%
+                +$responsive(desktop1600)
+                    font-size 1.28em
+                    margin-top 5.5%
+                +$responsive(desktop_extended)
+                    font-size 1.6em
+                    margin-top 4%
             .ad__modal-close
                 right 9px
+            .ad__carrusel-indicaciones-content
+                padding-right 12% !important
+                +$responsive(desktop_extended)
+                    padding-right 20% !important
             .ad__carrusel-indicaciones-left
                 padding 0
                 width 30%
@@ -286,42 +352,54 @@
             .ad__carrusel-banner
                 $backgroundImg('../img/fondo-rojo.png', 100%, 120px)
                 color white
-                margin-top -21px
+                margin-top -27px
                 padding-top 5px
+                +$responsive(desktop_extended)
+                    margin-top -17px
                 span
                     display block
                     transform rotate(-2deg)
                 .indicaciones-text
                     &1
-                        font-size 16px
-                        line-height 16px
+                        font-size 1.15em
+                        line-height 1em
                     &2
-                        font-size 43px
-                        line-height 32px
+                        font-size 3.1em
+                        line-height .75em
                         font-weight bold
+                        +$responsive(desktop1280)
+                            font-size 2.8em
                     &3
-                        font-size 26px
-                        line-height 31px
+                        font-size 1.9em
+                        line-height 1.19em
                         font-weight bold
+                        +$responsive(desktop1280)
+                            font-size 1.7em
+                        +$responsive(desktop1600)
+                            font-size 1.5em
                     &4
-                        font-size 25px
+                        font-size 1.8em
                         font-weight bold
                         color $color-Yellow-GoldenYellow
-                        line-height 46px
+                        line-height 1.83em
                         text-align right 
-                        padding-right 38px
+                        padding-right 1.83em
+                        transform rotate(-4deg)
+                        +$responsive(desktop1280)
+                            font-size 1.5em
                     &5
                         transform none
-                        font-size 16px
-                        margin-top 15px
+                        font-size 1.15em
+                        +$responsive(desktop1280)
+                            margin-top -6px
+                        +$responsive(desktop1600)
+                            margin-top 10px
+                        +$responsive(desktop_extended)
+                            margin-top 15px
             .ad__modal-presentacion-carrusel
-                width 66%
+                width 59%
                 margin-left 0
                 position relative
-                +$responsive(desktop1280)
-                    width 62%
-                +$responsive(desktop1600 desktop_extended)
-                    width 54%
             .ad__presentacion
                 width 43%
                 margin-top 16%
@@ -336,11 +414,9 @@
                     width 53%
                     margin-top 11%
             .carousel-item
-                height 590px
+                height 610px
                 +$responsive(desktop1280)
-                    height 580px
-                +$responsive(desktop1600 desktop_extended)
-                    height 610px
+                    height 590px
                 h2
                     padding 20px 14% 0 30px
             .ad__carrusel-indicaciones
@@ -363,6 +439,8 @@
                 line-height 1.3em
                 margin-left 30px
                 margin-right 13%
+                +$responsive(desktop1280)
+                    margin-right 5%
 @keyframes viewModal
     0%
         opacity 0

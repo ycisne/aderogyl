@@ -2,7 +2,10 @@
 
 .ad__queEs
     $parallax('../img/fondo1.jpg')
-    &-carrusel
+    font-size 0.75em
+    +$responsive(desktop1280 desktop1600 desktop_extended)
+        font-size 1em
+    /*&-carrusel
         position absolute
         margin-left 60%
         width 30%
@@ -79,23 +82,34 @@
             .linea3
                 font-size 50px
                 line-height 25px
-                font-family $font-secondary
+                font-family $font-secondary*/
     &-mainImg
-        margin 7% 15% 1% 25%
+        margin 5% 8% 1% 21%
         position relative
         display flex
         justify-content center
         flex-flow row wrap
         align-items flex-end
         z-index -1
+        +$responsive(desktop1280)
+            margin-right 3%
+        +$responsive(desktop_extended)
+            margin 7% 15% 1% 25%
     &-img
         width 40%
         z-index 2
         &-caption
-            width 70%
-            margin-right 30%
             margin-bottom 3%
             text-align center
+            +$responsive(desktop1280)
+                width 90%
+                margin-right 10%
+            +$responsive(desktop1600)
+                width 80%
+                margin-right 20%
+            +$responsive(desktop_extended)
+                width 70%
+                margin-right 30%
     &-frase
         width 60%
         margin-left -12%
@@ -105,22 +119,26 @@
         color white
         $text-shadow()
         text-transform uppercase
+        +$responsive(desktop1280)
+            margin-left -15%
         &1
-            $backgroundImg('../img/fondo-azul.png', 100%, 140px)
-            font-size 80px
-            padding-left 70px
-            padding-top 5px
+            $backgroundImg('../img/fondo-azul.png', 100%, 1.75em)
+            // 140px
+            font-size 4.4em // 80px
+            padding-left 0.87em // 70px
+            padding-top 0.0625em // 5px
             z-index 2
             font-family $font-secondary
             span 
                 transform rotate(-2deg)
                 display inline-block
         &2
-            $backgroundImg('../img/fondo-rojo.png', 100%, 150px)
-            font-size 75px
-            margin-top -40px
+            $backgroundImg('../img/fondo-rojo.png', 100%, 2em)
+            // 150px
+            font-size 4.16em // 75px
+            margin-top -0.53em // -40px
             z-index 1
-            padding 10px 0 0 92px
+            padding 0.13em 0 0 1.22em // 10px 0 0 92px
             span 
                 transform rotate(-4deg)
                 display inline-block
@@ -128,62 +146,72 @@
         &3
             width 100%
             z-index 3
-            height 150px
-            padding 5px 0 20px 125px
-            font-size 80px
-            margin-top -50px
-            margin-bottom 40px
+            height 1.875em // 150px
+            padding 0.0625em 0 0.25em 1.565em // 5px 0 20px 125px
+            font-size 4.4em // 80px
+            margin-top -0.625em // -50px
+            margin-bottom 0.5em // 40px
             display flex
             transform rotate(-4deg)
             .frase3
                 &-item1
                     color $color-Yellow-GoldenYellow
-                    margin-right 10px
+                    margin-right 0.1em // 10px
                     font-family $font-secondary 
-                    font-size 100px
-                    line-height 110px
+                    font-size 1.25em // 100px
+                    line-height 1.1em // 110px
                 &-item2
-                    margin 0 5px
+                    margin 0 0.0625em // 0 5px
                 &-item3
                     color $color-Yellow-GoldenYellow
-                    margin-left 10px
+                    margin-left 0.125em // 10px
                     font-family $font-secondary 
-                    line-height 112px
+                    line-height 1.4em // 112px
     &-slogans
-        width 100%
         display flex
         align-items flex-start
+        +$responsive(desktop1280)
+            width 90%
+            margin-right 10%
+        +$responsive(desktop1600)
+            width 80%
+            margin-right 20%
+        +$responsive(desktop_extended)
+            width 70%
+            margin-right 30%
     &-slogan
         width 50%
         color white
-        font-size 35px
+        font-size 1.94em // 35px
         text-transform uppercase
         $text-shadow()
         text-align center
         display flex
         flex-flow row wrap
         &-top
-            $backgroundImg('../img/fondo-azul2.png', 100%, 80px)
+            $backgroundImg('../img/fondo-azul2.png', 100%, 2.28em)
+            // 80px
             background-position: center top
             z-index 2
             span 
                 transform rotate(-1deg)
-                margin-top 10px
+                margin-top 0.28em // 10px
                 display inline-block
         &-bottom
-            $backgroundImg('../img/fondo-rojo2.png', 100%, 100px)
+            $backgroundImg('../img/fondo-rojo2.png', 100%, 2.857em)
+            // 100px
             background-position: center top
-            margin-top -55px
+            margin-top -1.571em // -55px
             z-index 1
             span 
                 transform rotate(-2deg)
                 display inline-block
-                margin-top 38px
-                margin-right 10px
-                font-size 25px
+                margin-top 1.52em // 38px
+                margin-right 0.4em // 10px
+                font-size 0.714em // 25px
     &-logo-sanofi
         background white
-        padding 4px 40px
+        padding 0.22em 2.22em // 4px 40px
         text-align right
         position absolute
         top 0
@@ -194,19 +222,19 @@
             padding 0
             margin 0
         img
-            height 19px
+            height 1.05em // 19px
     &-residentes
         background $color-Blue-DarkCerulean 
-        padding 5px 40px
+        padding 0.33em 2.66em // 5px 40px
         text-align right 
         color white
         $text-shadow()
         text-transform uppercase
         position absolute
-        top 35px
+        top 2.33em // 35px
         left 0
         width 100%
-        font-size .8em
+        font-size 0.83em // 15px
     &-modales
         position fixed
         top 0
@@ -214,27 +242,37 @@
         z-index 2
     &-video
         position absolute
-        top 66px
-        right 20px
+        top 3.66em // 66px
+        right 1.1em // 20px
         display flex
         justify-content flex-end
         z-index 2
         a
-            $backgroundImg('../img/fondo-rojo.png', 240px, 90px)
+            $backgroundImg('../img/fondo-rojo.png', 13.33em, 5em)
+            // 240px 90px
+            /*+$responsive(desktop1024)
+                width 180px
+                height 60px*/
             .video-text
                 display flex
                 transform rotate(-4deg)
-                font-size 30px
+                font-size 1.66em // 30px
                 text-transform uppercase
                 color white
                 align-items center
                 $text-shadow()
-                margin 5px 15px
+                margin 0.166em 0.5em // 5px 15px
                 transition color 1s
+                /*+$responsive(desktop1024)
+                    font-size 20px*/
                 .video-ico
-                    $backgroundImg('../img/ico-play.png', 32px, 32px)
+                    $backgroundImg('../img/ico-play.png', 1.066em, 1.066em)
+                    // 32px 32px
+                    /*+$responsive(desktop1024)
+                        width 25px
+                        height 25px*/
                 span 
-                    margin-left 10px
+                    margin-left 0.33em // 10px
             &:hover
                 text-decoration none
                 .video-text
@@ -248,7 +286,7 @@
     .close
         position absolute
         top 0
-        right 10px
+        right 0.27em // 10px
         z-index 2
         color white
-        font-size 2em
+        font-size 2em // 36px

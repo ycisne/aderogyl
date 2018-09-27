@@ -174,6 +174,13 @@
     function showHidePresentacion(anchor, clase){
         if(clase) {
             $(anchor).removeClass().addClass(clase);
+            $(document).on('keydown', function(e){
+                var code = e.keyCode || e.which;
+                if(code === 27){
+                    $(document).off('keydown');
+                    showHidePresentacion(anchor);
+                }
+            });
         } else {
             $(anchor).addClass('ad__transition');
             setTimeout(function(){
