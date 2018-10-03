@@ -1,32 +1,43 @@
 header.ad__header
+    .ad__header-top-menu
+        .ad__header-logo-sanofi
+            a(href="#")
+                img(src="app/assets/img/sanofi.png", alt="SANOFI")
+        .ad__header-residentes Este sitio es para residentes de México
+        .ad__header-video
+            a(href="#videoComercial", data-src="https://www.youtube.com/embed/2BKj9GkyTgw")
+                span.video-text
+                    span.video-ico
+                    span Ver Comercial
     .ad__header-left-menu
-        .container
-            .ad__header-logo.col-12.col-lg-4.col-md-6
-                .ad__header-logo-aderogyl
-                    img(src="app/assets/img/logo-aderogyl.png")
-                .ad__header-logo-infantil
-                    img(src="app/assets/img/logo-aderogyl-c.png")
-            nav.ad__header-menu
-                ul.ad__header-menu-principal
-                    li 
-                        a.active(href="#que-es") 
-                            span ¿QUÉ ES?
-                    li 
-                        a(href="#beneficios", data-infantil="true") 
-                            span BENEFICIOS
-                    li
-                        a(href="#presentaciones") 
-                            span PRESENTACIONES
-                    li
-                        a(href="#preguntas-frecuentes", data-fixed-menu="true") 
-                            span PREGUNTAS FRECUENTES
-                ul.ad__header-menu-redes
-                    li
-                        a(href="#")
-                            img(src="app/assets/img/ico_facebook.svg")
-                    li
-                        a(href="#")
-                            img(src="app/assets/img/ico_instagram.svg")
-                    li
-                        a(href="#")
-                            img(src="app/assets/img/ico_youtube.svg")
+        .ad__header-logo
+            .ad__header-logo-aderogyl
+                img(src="app/assets/img/logo-aderogyl.png", alt="ADerogyl")
+            .ad__header-logo-infantil
+                img(src="app/assets/img/logo-aderogyl-c.png", alt="ADerogyl C")
+        nav.ad__header-menu
+            ul.ad__header-menu-principal
+                li 
+                    a.active(href="#que-es") 
+                        span ¿QUÉ ES?
+                li 
+                    a(href="#beneficios", data-infantil="true") 
+                        span BENEFICIOS
+                li
+                    a(href="#presentaciones") 
+                        span PRESENTACIONES
+                li
+                    a(href="#preguntas-frecuentes", data-fixed-menu="true") 
+                        span PREGUNTAS FRECUENTES
+            ul.ad__header-menu-redes
+                li
+                    a(href="#")
+                        img(src="app/assets/img/ico_facebook.svg", alt="Facebook")
+                //-li
+                    a(href="#")
+                        img(src="app/assets/img/ico_instagram.svg", alt="Instagram")
+                li
+                    a(href="#")
+                        img(src="app/assets/img/ico_youtube.svg", alt="YouTube")
+.ad__header-modales
+        include header/video.jade

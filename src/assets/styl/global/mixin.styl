@@ -29,6 +29,19 @@ $backgroundImg($img, $width, $height)
 $text-shadow()
     text-shadow 2px 2px 5px rgba(0,0,0,0.7)
 
+$scrollbar($color)
+    &::-webkit-scrollbar
+        width 10px
+    &::-webkit-scrollbar-track
+        background alpha($color, 0.2)
+        border-radius 5px
+    &::-webkit-scrollbar-thumb
+        background alpha($color, 0.8)
+        border-radius 3px
+        transition .3s
+    &::-webkit-scrollbar-thumb:hover
+        background $color
+
 
 @keyframes fadeIn
     0%

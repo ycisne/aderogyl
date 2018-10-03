@@ -3,86 +3,10 @@
 .ad__queEs
     $parallax('../img/fondo1.jpg')
     font-size 0.75em
-    +$responsive(desktop1280 desktop1600 desktop_extended)
+    +$responsive(desktop1600)
+        font-size .8em
+    +$responsive(desktop1280 desktop_extended)
         font-size 1em
-    /*&-carrusel
-        position absolute
-        margin-left 60%
-        width 30%
-        top 40%
-        z-index 1
-        +$responsive(desktop1024)
-            width 25%
-            margin-left 62%
-        .carousel-item
-            height 50%
-            width 100%
-        .left-carousel
-        .right-carousel
-            width 60px
-            height 93px
-            background-repeat no-repeat
-            background-size cover
-            +$responsive(desktop1024)
-                width 50px
-                height 80px
-        .left-carousel
-            background-image url(../img/left-carousel.png)
-        .right-carousel
-            background-image url(../img/right-carousel.png)
-        .carousel-control-prev
-            opacity 1
-            left -65px
-        .carousel-control-next
-            opacity 1
-            right -65px
-        .ad__queEs-slide1,
-        .ad__queEs-slide2
-            color white
-            $text-shadow()
-            font-size 20px
-            line-height 15px
-            padding 30px 0
-            text-align center
-        .ad__queEs-slide1
-            .linea1
-                font-size 5.1em
-                line-height .8em
-                font-family $font-secondary
-                +$responsive(desktop1024)
-                    font-size 3em
-                    line-height 0.5em
-            .linea2
-                font-size 3em
-                line-height .3em
-                +$responsive(desktop1024)
-                    font-size 1.8em
-                    line-height 0.3em
-            .linea3
-                font-size 3.7em
-                line-height .8em
-                +$responsive(desktop1024)
-                    font-size 2.2em
-                    line-height 0.5em
-            .linea4
-                font-size 3.8em
-                line-height .3em
-                font-family $font-secondary
-                +$responsive(desktop1024)
-                    font-size 2.2em
-                    line-height 0.3em
-        .ad__queEs-slide2
-            padding-top 60px
-            .linea1
-                font-size 100px
-                line-height 70px
-                font-family $font-secondary
-            .linea2
-                font-size 45px
-            .linea3
-                font-size 50px
-                line-height 25px
-                font-family $font-secondary*/
     &-mainImg
         margin 5% 8% 1% 21%
         position relative
@@ -90,15 +14,15 @@
         justify-content center
         flex-flow row wrap
         align-items flex-end
-        z-index -1
         +$responsive(desktop1280)
             margin-right 3%
         +$responsive(desktop_extended)
             margin 7% 15% 1% 25%
     &-img
-        width 40%
+        width 60%
         z-index 2
         &-caption
+            width 100%
             margin-bottom 3%
             text-align center
             +$responsive(desktop1280)
@@ -112,15 +36,18 @@
                 margin-right 30%
     &-frase
         width 60%
-        margin-left -12%
+        margin-left -15%
         z-index 1
         display flex
         flex-flow row wrap
         color white
         $text-shadow()
         text-transform uppercase
-        +$responsive(desktop1280)
-            margin-left -15%
+        +$responsive(desktop1600)
+            width 50%
+            margin-left -10%
+        +$responsive(desktop_extended)
+            margin-left -12%
         &1
             $backgroundImg('../img/fondo-azul.png', 100%, 1.75em)
             // 140px
@@ -209,84 +136,3 @@
                 margin-top 1.52em // 38px
                 margin-right 0.4em // 10px
                 font-size 0.714em // 25px
-    &-logo-sanofi
-        background white
-        padding 0.22em 2.22em // 4px 40px
-        text-align right
-        position absolute
-        top 0
-        left 0
-        width 100%
-        .container
-            width 100%
-            padding 0
-            margin 0
-        img
-            height 1.05em // 19px
-    &-residentes
-        background $color-Blue-DarkCerulean 
-        padding 0.33em 2.66em // 5px 40px
-        text-align right 
-        color white
-        $text-shadow()
-        text-transform uppercase
-        position absolute
-        top 2.33em // 35px
-        left 0
-        width 100%
-        font-size 0.83em // 15px
-    &-modales
-        position fixed
-        top 0
-        left 0
-        z-index 2
-    &-video
-        position absolute
-        top 3.66em // 66px
-        right 1.1em // 20px
-        display flex
-        justify-content flex-end
-        z-index 2
-        a
-            $backgroundImg('../img/fondo-rojo.png', 13.33em, 5em)
-            // 240px 90px
-            /*+$responsive(desktop1024)
-                width 180px
-                height 60px*/
-            .video-text
-                display flex
-                transform rotate(-4deg)
-                font-size 1.66em // 30px
-                text-transform uppercase
-                color white
-                align-items center
-                $text-shadow()
-                margin 0.166em 0.5em // 5px 15px
-                transition color 1s
-                /*+$responsive(desktop1024)
-                    font-size 20px*/
-                .video-ico
-                    $backgroundImg('../img/ico-play.png', 1.066em, 1.066em)
-                    // 32px 32px
-                    /*+$responsive(desktop1024)
-                        width 25px
-                        height 25px*/
-                span 
-                    margin-left 0.33em // 10px
-            &:hover
-                text-decoration none
-                .video-text
-                    color $color-Yellow-GoldenYellow
-                    .video-ico
-                        background-image url('../img/ico-play-hover.png')
-
-.ad__video-modal-content
-    width 100%
-    position relative
-    .close
-        position absolute
-        top 0
-        right 0.27em // 10px
-        z-index 2
-        color white
-        font-size 2em // 36px

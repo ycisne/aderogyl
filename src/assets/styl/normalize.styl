@@ -11,6 +11,7 @@ body
     background-position bottom center
     background-repeat no-repeat
     background-size cover
+    $scrollbar(#999)
 .ad-brillo
     background-image url(../img/fondo1.jpg)
 
@@ -33,27 +34,30 @@ img
     left 25%
     z-index 1
     animation fadeIn 3s infinite ease-out
-
-.ad-caption
-    font-size 1em
-    color white
-    text-transform uppercase
-
-.ad-button
-    background $color-Blue-PrussianBlue
-    border-radius .7em
-    padding .2em
-    text-transform uppercase
-    $text-shadow()
-    font-size 1.3em
-    text-align center
-    +$responsive(desktop1280)
-        font-size 1.5em
-    +$responsive(desktop1600 desktop_extended)
-        font-size 1.6em
-    a
-        color white
-        transition .3s
-        &:hover
-            text-decoration none
-            opacity .5
+.carousel-fade
+    .item
+        opacity 0
+        transition opacity 1
+    .item.active,
+    .next.left
+    .prev.right
+        opacity 1
+    .active.left
+    .active.right
+        left 0
+        opacity 0
+        z-index 1
+.overflowHidden
+    overflow hidden
+    padding-right 10px
+    .ad__header-top-menu,
+    .ad__queEs,
+    .ad__beneficios,
+    #presentaciones,
+    .ad__faqs,
+    .ad_footer
+        width calc(100% - 10px)
+    .ad__header-logo
+        width calc(35% - 60px)
+    .ad__header-menu
+        width calc(20% - 10px)

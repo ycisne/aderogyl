@@ -8,7 +8,9 @@
         /// Menú principal
         $menu = $('.ad__header-menu-principal'),
         $itemsMenu = $menu.find('a'),
-        $menuHeader = $('.ad__header-left-menu'),
+        $topHeader = $('.ad__header-top-menu'),
+        $menuHeader = $('.ad__header-menu'),
+        $logoHeader = $('.ad__header-logo'),
         $dataFixed = 'data-fixed-menu',
 
         /// Para el logo infantil
@@ -38,7 +40,7 @@
         $dataAddPresentacion = 'data-add-class',
 
         /// Video
-        $videoBtn = $('.ad__queEs-video a'),
+        $videoBtn = $('.ad__header-video a'),
         $videoModal = $('#videoComercial'),
         $videoBtnClose = $('.ad__video-modal-content .close'),
         $videoModalIframe = $('#video'),
@@ -100,7 +102,7 @@
         $(anchor).animate({
             opacity: 0
         }, 100, function(){
-            $('body').removeAttr('style');
+            $('body').removeClass('overflowHidden');
         });
         setTimeout(function(){
             $(anchor).removeAttr('style');
@@ -130,10 +132,16 @@
     /// Quitar el fixed del menú
     function noFixed(fixed, scrollTop){
         if (fixed) {
+            var top = 80 - $topHeader.outerHeight();
+            var logo = $logoHeader.outerHeight();
+            $logoHeader.addClass('menuAbsolute').css({
+                top: top + scrollTop
+            });
             $menuHeader.addClass('menuAbsolute').css({
-                top: scrollTop
+                top: top + logo + scrollTop
             });
         } else {
+            $logoHeader.removeClass('menuAbsolute').removeAttr('style');
             $menuHeader.removeClass('menuAbsolute').removeAttr('style');
         }
     }
@@ -162,7 +170,7 @@
 
     /// Mostar modal
     function showModal(anchor, hide, isVideo){
-        $('body').css('overflow', 'hidden');
+        $('body').addClass('overflowHidden');
         $(anchor).css({
             visibility: 'visible',
             display: 'flex'
@@ -173,6 +181,7 @@
     /// Mostrar u ocultar presentación
     function showHidePresentacion(anchor, clase){
         if(clase) {
+            $('body').addClass('overflowHidden');
             $(anchor).removeClass().addClass(clase);
             $(document).on('keydown', function(e){
                 var code = e.keyCode || e.which;
@@ -185,6 +194,7 @@
             $(anchor).addClass('ad__transition');
             setTimeout(function(){
                 $(anchor).removeClass();
+                $('body').removeClass('overflowHidden');
             }, 1000);
         }
     }
@@ -206,7 +216,7 @@
             $itemsMenu.removeClass($claseActiva);
             itemActivo.addClass($claseActiva);
             logoInfantil(itemActivo.attr($dataLogoInfantil));
-            noFixed(itemActivo.attr($dataFixed), scrollTop);
+            //noFixed(itemActivo.attr($dataFixed), scrollTop);
             setTimeout(function(){
                 //scrollIt('#'+id, 2000);
             }, 1000);

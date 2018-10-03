@@ -23,7 +23,7 @@
             align-items center
             &:before
                 content ''
-                background-image url(../img/plus.svg)
+                background-image url(../img/arrow.svg)
                 background-repeat no-repeat
                 background-size contain
                 width 1.5em
@@ -32,8 +32,8 @@
                 transition transform .5s
             &:hover
                 &:before
-                    background-image url(../img/plus-hover.svg)
-                    transform rotate(-180deg)
+                    background-image url(../img/arrow-hover.svg)
+                    transform rotate(-45deg)
             a 
                 padding 0 .6em
                 color white
@@ -49,7 +49,7 @@
         position fixed
         top 0
         left 0
-        z-index 1
+        z-index 5
     &-modal
         &-title
             width 100%
@@ -71,7 +71,7 @@
                     margin-left 25px
                 &:before
                     content ''
-                    background-image url(../img/minus.svg)
+                    background-image url(../img/arrow.svg)
                     background-repeat no-repeat
                     background-size contain
                     width .7em
@@ -81,8 +81,8 @@
                     text-decoration none
                     color $color-Green-Citrus
                     &:before
-                        background-image url(../img/minus-hover.svg)
-                        transform rotate(-180deg)
+                        background-image url(../img/arrow-hover.svg)
+                        transform rotate(45deg)
         &-content
             display flex
             font-size 1.5em

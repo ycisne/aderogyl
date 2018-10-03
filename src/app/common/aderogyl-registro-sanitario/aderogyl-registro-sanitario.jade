@@ -1,0 +1,11 @@
+mixin caption($isBr = false, $regSan = '38878 SSA VI', $isC = false)
+    .ad-caption
+        span.ad-caption-aderogyl ADerogyl
+        span
+            sup &reg; 
+            if $isC
+                | #{$isC} 
+            | Solución.
+            if $isBr
+                br
+            | Registro Sanitario No.: #{$regSan}
