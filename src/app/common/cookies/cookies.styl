@@ -1,0 +1,102 @@
+@require globalView
+
+.ad__cookies
+    background $color-Green-Citrus
+    color white
+    font-family $font-alternative
+    position fixed
+    width 100%
+    z-index 4
+    height 70px
+    overflow hidden
+    top -100px
+    display none
+    &-container
+        width 100%
+        margin auto
+        padding 15px 40px
+        font-size .9em
+        display flex
+        align-items center
+    &-content
+        color $color-Blue-Smalt
+        width calc(100% - 280px)
+        padding 0 20px
+        font-size .9em
+        border-left 1px solid $color-Blue-Smalt
+        border-right 1px solid $color-Blue-Smalt
+    h2
+        font-size 1em
+        color $color-Blue-Smalt
+        font-weight 500
+        width 200px
+    &-button
+        text-align right 
+        width 80px
+        a
+            background $color-Blue-Smalt
+            color white
+            padding 5px 20px
+            transition .3s
+            &:hover
+                background $color-Orange-Tangerine
+                text-decoration none
+@keyframes viewCookies
+    0%
+        top -70px
+    100%
+        top 0
+@keyframes viewCookiesTopMenu
+    0%
+        top 0
+    100%
+        top 70px
+@keyframes viewCookiesHeaderMenu
+    0%
+        top 30%
+    100%
+        top calc(30% + 70px)
+@keyframes hideCookies
+    0%
+        top 0
+    100%
+        top -70px
+@keyframes hideCookiesTopMenu
+    0%
+        top 70px
+    100%
+        top 0
+@keyframes hideCookiesHeaderMenu
+    0%
+        top calc(30% + 70px)
+    100%
+        top 30%
+.ad__has-cookies
+    .ad__cookies
+        display block
+        top -70px
+        animation viewCookies 1s linear .1s 1 normal forwards
+    .ad__header-top-menu
+        top 0
+        animation viewCookiesTopMenu 1s linear .1s 1 normal forwards
+    .ad__header-menu
+        top 30%
+        animation viewCookiesHeaderMenu 1s linear .1s 1 normal forwards
+    .ad__header-logo
+        top 0
+        animation viewCookiesTopMenu 1s linear .1s 1 normal forwards
+.ad__no-cookies
+    .ad__cookies
+        display block
+        top 0 !important
+        animation hideCookies 1s linear .1s 1 normal forwards !important
+    .ad__header-top-menu
+        top 70px !important
+        animation hideCookiesTopMenu 1s linear .1s 1 normal forwards !important 
+    .ad__header-menu
+        top calc(30% + 70px) !important
+        animation hideCookiesHeaderMenu 1s linear .1s 1 normal forwards !important
+    .ad__header-logo
+        top 70px !important
+        animation hideCookiesTopMenu 1s linear .1s 1 normal forwards !important
+    

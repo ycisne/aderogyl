@@ -1,0 +1,38 @@
+@require globalView
+
+.ad
+    &__legales
+        &-title
+            display flex
+            align-items center
+            width 100%
+            h1
+                width calc(100% - 40px)
+                padding 15px
+                text-align center
+                $text-shadow()
+        &-close
+            width 40px
+            a
+                transition .3s
+                &:hover
+                    opacity .5
+        &-content
+            overflow auto
+            height 80%
+            padding 5px 15px
+            font-size 16px
+            $text-shadow()
+            font-family $font-alternative
+            font-weight 300
+            $scrollbar(#fff)
+            h2
+                font-size 1.5em
+                margin 10px 0
+                font-family $font-alternative-condensed
+            h3
+                font-size 1.3em
+                margin 10px 0
+                font-family $font-alternative-condensed
+            p
+                margin 10px 0

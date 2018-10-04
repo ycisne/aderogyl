@@ -19,10 +19,14 @@
             position absolute
             transition 1.5s
             z-index 1
+
             .ad__beneficios-vitaminas-descripcion
                 left 0
                 width 90%
                 display none
+                font-size 1em
+                +$responsive(desktop1280 desktop1600 desktop_extended)
+                    font-size 1.2em
             &:hover
                 .ad__beneficios-vitaminas-descripcion
                     display block
@@ -31,6 +35,8 @@
         &-a
             top 7%
             left 10%
+            +$responsive(desktop1600)
+                top -7%
             .ad__beneficios-vitaminas-title
                 color $color-Orange-Tangerine
             &:hover
@@ -38,7 +44,7 @@
                 +$responsive(desktop1280 desktop1600)
                     left -2%
                 +$responsive(desktop_extended)
-                    left -15%
+                    left -5%
                 .ad__beneficios-vitaminas-icono
                     transform rotate(28deg)
                 .ad__beneficios-vitaminas-descripcion
@@ -46,7 +52,6 @@
                     top 10%
                     padding-left 15%
                     width 90%
-                    font-size 1.2em
                     +$responsive(desktop1280 desktop1600)
                         left 27%
                         padding-left 21%
@@ -57,16 +62,14 @@
         &-c
             bottom 0
             left 22%
-            +$responsive(tablet768 desktop1024)
-                font-size 0.8em
             &:hover
                 left 0
                 .ad__beneficios-vitaminas-icono
                     transform rotate(-20deg)
                 .ad__beneficios-vitaminas-descripcion
-                    width 120%
+                    width 125%
                     left 28%
-                    top 9%
+                    top 12%
                     padding-left 15%
                     +$responsive(desktop1280 desktop1600 desktop_extended)
                         top 16%
@@ -80,8 +83,8 @@
         &-d
             top 0
             left 47%
-            +$responsive(tablet768 desktop1024)
-                font-size 0.8em
+            +$responsive(desktop1600)
+                top -12%
             +$responsive(desktop_extended)
                 left 35%
             &:hover
@@ -91,14 +94,14 @@
                 .ad__beneficios-vitaminas-descripcion
                     left 30%
                     padding-left 19%
-                    top 5%
+                    top 12%
                     +$responsive(desktop1280 desktop1600)
-                        top 6%
+                        top 14%
                         left 36%
                         padding-left 22%
                         width 110%
                     +$responsive(desktop_extended)
-                        top 10%
+                        top 21%
                         left 51%
                         padding-left 23%
             .ad__beneficios-vitaminas-title
@@ -132,7 +135,7 @@
             font-size 1.5em
             line-height 1.1em
             color white
-            font-family $font-roboto-condensed
+            font-family $font-alternative-condensed
         &-title
             font-family $font-secondary
             font-size 1.3em
