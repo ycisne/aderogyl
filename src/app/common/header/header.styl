@@ -42,8 +42,7 @@
                         width calc(100% - 80px)
                         +$responsive(desktop1600 desktop_extended)
                             padding-top 18px
-                    &:before
-                        content ' '
+                    .boton-menu
                         width 25%
                         height 60px
                         background-image url(../img/boton-menu.png)
@@ -51,7 +50,8 @@
                         background-size 70% auto
                         background-position center center
                         transition .3s
-                        +$responsive(desktop_extended)
+                        margin -10px 0
+                        +$responsive(desktop1600 desktop_extended)
                             width 21%
                             height 80px
                     &:hover,
@@ -59,16 +59,16 @@
                         color white
                         $text-shadow()
                         text-decoration none
-                        &:before
+                        .boton-menu
                             background-size 120% auto
                     &.active
                         cursor default
-                        &:before
+                        .boton-menu
                             background-image url(../img/boton-menu-resplandor.png)
         &-redes
             a
                 display block
-                padding 10px 15px
+                padding 10px 25px
                 transition .3s
                 &:hover
                     opacity .5

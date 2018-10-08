@@ -24,25 +24,20 @@
             text-transform uppercase
             display flex
             align-items center
-            &:before
-                content ' '
+            .bullet-faq
                 background-image url(../img/arrow.svg)
                 background-repeat no-repeat
                 background-size contain
-                width 1.5em
-                height 1.5em
+                width .7em
+                height .7em
                 cursor pointer
                 transition transform .5s
+                display inline-block
+                margin-right .3em
             &:hover
-                &:before
+                .bullet-faq
                     background-image url(../img/arrow-hover.svg)
                     transform rotate(-45deg)
-            /*&:hover
-                img
-                    transform rotate(-45deg)
-            img
-                margin-right .5em
-                transition transform .5s*/
             a 
                 padding 0 .6em
                 color white
