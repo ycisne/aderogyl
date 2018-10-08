@@ -60,7 +60,6 @@ function closeModalAndShow(anchor, show){
 /// Mostar modal
 function showModal(anchor, hide, isVideo){
     preventWheel();
-    //$('body').addClass('overflowHidden');
     $(anchor).css({
         visibility: 'visible',
         display: 'flex'
@@ -71,23 +70,25 @@ function showModal(anchor, hide, isVideo){
 /// Mostrar u ocultar presentación
 function showHidePresentacion(anchor, clase){
     if(clase) {
-        preventWheel();
-        //$('body').addClass('overflowHidden');
-        $(anchor).removeClass().addClass(clase);
-        $(document).on('keydown', function(e){
-            var code = e.keyCode || e.which;
-            if(code === 27){
-                $(document).off('keydown');
-                showHidePresentacion(anchor);
-            }
-        });
+        $('body, html').animate({
+            scrollTop: $(anchor).offset().top 
+        }, 1000,
+        function(){
+            preventWheel();
+            $(anchor).removeClass().addClass(clase);
+            $(document).on('keydown', function(e){
+                var code = e.keyCode || e.which;
+                if(code === 27){
+                    $(document).off('keydown');
+                    showHidePresentacion(anchor);
+                }
+            });
+        }).off();
     } else {
         $(anchor).addClass('ad__transition');
         setTimeout(function(){
             $(anchor).removeClass();
             restoreWheel();
-            //$('body').removeClass('overflowHidden');
-
         }, 1000);
     }
 }
