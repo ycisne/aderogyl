@@ -37,6 +37,12 @@
                 &:before
                     background-image url(../img/arrow-hover.svg)
                     transform rotate(-45deg)
+            /*&:hover
+                img
+                    transform rotate(-45deg)
+            img
+                margin-right .5em
+                transition transform .5s*/
             a 
                 padding 0 .6em
                 color white
@@ -77,18 +83,17 @@
                     margin-left 25px
                 &:before
                     content ''
-                    background-image url(../img/arrow.svg)
+                    background-image url(../img/close-modal.png)
                     background-repeat no-repeat
                     background-size contain
-                    width .7em
-                    height .7em
+                    width .8em
+                    height .8em
                     transition transform .5s
                 &:hover
                     text-decoration none
                     color $color-Green-Citrus
                     &:before
-                        background-image url(../img/arrow-hover.svg)
-                        transform rotate(45deg)
+                        opacity .5
         &-content
             display flex
             font-size 1em
