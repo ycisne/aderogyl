@@ -2,7 +2,9 @@ module.exports = {
     js: {
         options: {
             banner: '/*! versión <%= versionTemplate %> - ' +
-                    '<%= grunt.template.today("dd-mm-yyyy hh:MM") %> */\n\r'
+                    '<%= grunt.template.today("dd-mm-yyyy hh:MM") %> */\n\r' +
+                    '(function ($) {',
+            footer: '})(jQuery);'
         },
         src: ['dist/mapping/js/**/*.js'],
         dest: 'dist/app/app.js', 

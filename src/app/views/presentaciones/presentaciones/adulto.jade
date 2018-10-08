@@ -65,19 +65,15 @@
                                     span Vehículo cbp
                                     span.float-right 3 mL
                             p.ad__carrusel-contenido-highlighted *Total de ácido ascórbico (Vitamina C) 499.65 mg
-            a.carousel-control-prev(href="#carrusel-adulto", role="button", data-slide="prev")
-                span
-                    img(src="app/assets/img/left-modal.png")
-                span.sr-only Anterior
-            a.carousel-control-next(href="#carrusel-adulto", role="button", data-slide="next")
-                span
-                    img(src="app/assets/img/right-modal.png")
-                span.sr-only Siguiente
+            a.carousel-control-prev(href="#carrusel-adulto", role="button", data-slide="prev", alt="Anterior", title="Anterior")
+                img(src="app/assets/img/left-modal.png")
+            a.carousel-control-next(href="#carrusel-adulto", role="button", data-slide="next", alt="Siguiente", title="Siguiente")
+                img(src="app/assets/img/right-modal.png")
     .ad__presentacion.ad__presentacion-adulto
         .ad__presentacion-via.ad-caption Vía de administración: Oral
         .ad__presentacion-img
             img(src="app/assets/img/aderogyl-adulto.png")
         include ../../../common/aderogyl-registro-sanitario/aderogyl-registro-sanitario.jade
-        +caption(true, '', '', 'ad__presentacion-copy')
+        +caption(true, '38878 SSA VI', '', 'ad__presentacion-copy')
         .ad__presentacion-btn.ad-button
             a(href="#presentaciones", data-add-class="ad__adulto") ¿CÓMO TOMARLO?

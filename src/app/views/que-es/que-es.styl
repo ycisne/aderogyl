@@ -25,15 +25,6 @@
             width 100%
             margin-bottom 3%
             text-align center
-            +$responsive(desktop1280)
-                width 90%
-                margin-right 10%
-            +$responsive(desktop1600)
-                width 80%
-                margin-right 20%
-            +$responsive(desktop_extended)
-                width 70%
-                margin-right 30%
     &-frase
         width 60%
         margin-left -15%
@@ -97,6 +88,7 @@
     &-slogans
         display flex
         align-items flex-start
+        font-family $font-alternative-condensed
         +$responsive(desktop1280)
             width 90%
             margin-right 10%
@@ -124,6 +116,8 @@
                 transform rotate(-1deg)
                 margin-top 0.28em // 10px
                 display inline-block
+                font-size .7em
+                line-height 2.2em
         &-bottom
             $backgroundImg('../img/fondo-rojo2.png', 100%, 2.857em)
             // 100px
@@ -135,4 +129,5 @@
                 display inline-block
                 margin-top 1.52em // 38px
                 margin-right 0.4em // 10px
-                font-size 0.714em // 25px
+                font-size 0.5em
+                line-height 3.2em

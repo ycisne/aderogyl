@@ -1,8 +1,9 @@
 @require globalView
 
 .ad-caption
-    font-size 18px
+    font-size 12px
     color white
     text-transform uppercase
-    &-aderogyl
-        font-family $font-alternative
+    font-family $font-alternative
+    +$responsive(desktop1280 desktop1600 desktop_extended)
+        font-size 16px

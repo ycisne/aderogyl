@@ -14,17 +14,25 @@
     &-container
         width 100%
         margin auto
-        padding 15px 40px
+        padding 0 40px
         font-size .9em
         display flex
         align-items center
+        height 70px
     &-content
         color $color-Blue-Smalt
         width calc(100% - 280px)
         padding 0 20px
-        font-size .9em
+        font-size: 0.7em;
+        line-height: 1.1em;
         border-left 1px solid $color-Blue-Smalt
         border-right 1px solid $color-Blue-Smalt
+        +$responsive(desktop1280)
+            font-size .8em
+        +$responsive(desktop1600)
+            font-size .9em
+        +$responsive(desktop_extended)
+            font-size 1em
     h2
         font-size 1em
         color $color-Blue-Smalt
@@ -41,6 +49,7 @@
             &:hover
                 background $color-Orange-Tangerine
                 text-decoration none
+/// IE
 @css {
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         .ad__cookies-content {

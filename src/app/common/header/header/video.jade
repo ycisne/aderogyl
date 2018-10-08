@@ -3,5 +3,8 @@
         .ad__video-modal-content
             a.close(href="#videoComercial")
                 span(aria-hidden="true") &times;
+            .ad__video-video
             .embed-responsive.embed-responsive-16by9
-                iframe.embed-responsive-item(src="", id="video", allowscriptaccess="always")
+                video(autoplay, src="", controls, id="video")
+                    | Tu navegador no soporta este video
+                //-iframe.embed-responsive-item(src="", id="video", allowscriptaccess="always")
