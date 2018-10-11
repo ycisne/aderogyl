@@ -4,14 +4,15 @@
     width 75%
     padding 15% 30px 0 0
     margin-left 25%
-    min-height 80%
-    height auto
     display flex
     align-items center
     position relative
     z-index 2
     &-listado
         z-index 1
+        margin-right 5%
+        +$responsive(desktop1280 desktop1600 desktop_extended)
+            margin-right 15%
         sup 
             font-size .6em
             top -.8em
@@ -20,10 +21,6 @@
             margin 0
             padding 0
         li
-            position relative
-            text-transform uppercase
-            display flex
-            align-items center
             .bullet-faq
                 background-image url(../img/arrow.svg)
                 background-repeat no-repeat
@@ -38,12 +35,14 @@
                 .bullet-faq
                     background-image url(../img/arrow-hover.svg)
                     transform rotate(-45deg)
-            a 
+            .ad__faqs-title 
                 padding 0 .6em
                 color white
                 font-size 1.8em
                 $text-shadow()
                 transition color 1s
+                text-transform uppercase
+                cursor pointer
                 +$responsive(desktop1600 desktop_extended)
                     font-size 2.3em
                 &:hover
@@ -56,47 +55,14 @@
         z-index 5
         .ad__modal
             background $color-Blue-Smalt
-    &-modal
-        &-title
-            width 100%
-            sup 
-                font-size .6em
-                top -.8em
-            a
-                color white
-                font-size 1.9em
-                text-transform uppercase
-                $text-shadow()
-                transition color 1s
-                display flex
-                align-items center
-                margin 0 0 40px 60px
-                +$responsive(desktop1280)
-                    font-size 2em
-                +$responsive(desktop1600 desktop_extended)
-                    font-size 2.4em
-                span 
-                    display inline-block
-                    margin-left 25px
-                &:before
-                    content ''
-                    background-image url(../img/close-modal.png)
-                    background-repeat no-repeat
-                    background-size contain
-                    width .8em
-                    height .8em
-                    transition transform .5s
-                &:hover
-                    text-decoration none
-                    color $color-Green-Citrus
-                    &:before
-                        opacity .5
+    &-acordeon
         &-content
             display flex
             font-size 1em
             line-height 1.3em
             font-family $font-alternative-condensed
             font-weight 300
+            color white
             $text-shadow()
             +$responsive(desktop1280 desktop1600)
                 font-size 1.3em
@@ -105,6 +71,8 @@
             sup 
                 font-size .6em
                 top -.8em
+        &-container
+            padding 30px 0
     &1-left,
     &4-left,
     &5-left
@@ -112,7 +80,6 @@
         padding 0 20px
         p
             margin 0 1.7em
-            //margin-top -1.5em
     &1-center,
     &4-center,
     &5-center
@@ -150,9 +117,11 @@
         padding-right 5%
         align-self center
     &3-right
-        width 55%
+        width 40%
         position relative
         text-align center
+        +$responsive(desktop1280 desktop1600 desktop_extended)
+            width 55%
         .ad-dodge-color
             display flex
             align-items flex-start
@@ -179,3 +148,17 @@
         text-align center
         img
             width 75%
+
+.ad__collapse
+    overflow hidden
+    transition max-height .2s ease-out
+    max-height 0
+&.acordeonActivo
+    .ad__faqs-title
+        color $color-Green-Citrus !important
+    .bullet-faq
+        background-image url(../img/arrow-hover.svg)
+        transform rotate(-45deg)
+    .ad__collapse
+        max-height 500px
+        transition max-height .2s ease-in    

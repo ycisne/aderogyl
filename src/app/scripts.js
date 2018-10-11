@@ -4,8 +4,8 @@ $(document).ready(function(){
     readCookie();
     scrollIt('body');
     clickMenu($itemsMenu, 'menu');
-    clickMenu($itemsPreguntas, 'faq');
-    clickMenu($itemModalFaq, 'closeModal');
+    //clickMenu($itemsPreguntas, 'faq');
+    //clickMenu($itemModalFaq, 'closeModal');
     clickMenu($itemsLegales, 'legales');
     clickMenu($cerrarLegales, 'closeModal');
     clickMenu($itemsPresentacion, 'showPresentacion');
@@ -14,5 +14,6 @@ $(document).ready(function(){
     clickMenu($videoBtnClose, 'closeVideo');
     clickMenu($addCookiesBtn, 'addCookie');
     $logoInfantil.hide();
+    activeAcordeon('#accordion li', 'acordeonActivo');
     // document.cookie = 'aceptarAderogyl=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
 });
