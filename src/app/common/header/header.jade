@@ -12,12 +12,15 @@ header.ad__header
                     span.video-ico
                     span Ver Comercial
     .ad__header-left-menu
+        button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse", aria-controls="navbar-collapse", aria-expanded="false", aria-label="Navegación")
+            span.glyphicon.glyphicon-menu-hamburger
+        nav.navbar-collapse.collapse
         .ad__header-logo
             .ad__header-logo-aderogyl
                 img(src="app/assets/img/logo-aderogyl.png", alt="ADerogyl")
             .ad__header-logo-infantil
                 img(src="app/assets/img/logo-aderogyl-c.png", alt="ADerogyl C")
-        nav.ad__header-menu
+        nav.ad__header-menu.navbar-collapse.collapse
             ul.ad__header-menu-principal
                 li 
                     a.active(href="#que-es") 
@@ -32,7 +35,7 @@ header.ad__header
                         em.boton-menu
                         span PRESENTACIONES
                 li
-                    a(href="#preguntas-frecuentes", data-fixed-menu="true") 
+                    a(href="#preguntas-frecuentes") 
                         em.boton-menu
                         span PREGUNTAS FRECUENTES
             ul.ad__header-menu-redes

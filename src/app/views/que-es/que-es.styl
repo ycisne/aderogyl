@@ -14,6 +14,8 @@
         justify-content center
         flex-flow row wrap
         align-items flex-end
+        +$responsive(mobile_all)
+            margin 15% 0 1% 0
         +$responsive(desktop1280)
             margin-right 3%
         +$responsive(desktop_extended)
@@ -21,6 +23,8 @@
     &-img
         width 60%
         z-index 2
+        +$responsive(mobile_all)
+            width 45%
         &-caption
             width 100%
             margin-bottom 3%
@@ -118,12 +122,16 @@
                 display inline-block
                 font-size .7em
                 line-height 2.2em
+                +$responsive(mobile_all)
+                    font-size .55em
         &-bottom
             $backgroundImg('../img/fondo-rojo2.png', 100%, 2.857em)
             // 100px
             background-position: center top
             margin-top -1.571em // -55px
             z-index 1
+            +$responsive(mobile_all)
+                height 2.5em
             span 
                 transform rotate(-2deg)
                 display inline-block
@@ -131,3 +139,6 @@
                 margin-right 0.4em // 10px
                 font-size 0.5em
                 line-height 3.2em
+                +$responsive(mobile_all)
+                    line-height 3em
+                    font-size .42em

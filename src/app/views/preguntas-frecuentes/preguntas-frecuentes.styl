@@ -8,9 +8,15 @@
     align-items center
     position relative
     z-index 2
+    +$responsive(mobile_all)
+        $parallax('../img/fondo1.jpg')
+        font-size .8em
+        margin 20% 0 2% 0
+        height 110%
     &-listado
         z-index 1
-        margin-right 5%
+        +$responsive(desktop_all)
+            margin-right 5%
         +$responsive(desktop1280 desktop1600 desktop_extended)
             margin-right 15%
         sup 
@@ -31,6 +37,7 @@
                 transition transform .5s
                 display inline-block
                 margin-right .3em
+                margin-top .4em
             &:hover
                 .bullet-faq
                     background-image url(../img/arrow-hover.svg)
@@ -43,6 +50,7 @@
                 transition color 1s
                 text-transform uppercase
                 cursor pointer
+                display flex
                 +$responsive(desktop1600 desktop_extended)
                     font-size 2.3em
                 &:hover
@@ -78,14 +86,20 @@
     &5-left
         width 38%
         padding 0 20px
+        +$responsive(mobile_all)
+            padding 0
         p
             margin 0 1.7em
+            +$responsive(mobile_all)
+                margin 5px 0
     &1-center,
     &4-center,
     &5-center
         width 24%
         padding 10px
         position relative
+        +$responsive(mobile_all)
+            padding 0
         .ad-dodge-color
             display flex
             align-items flex-start
@@ -102,24 +116,37 @@
     &5-right
         width 38%
         padding 10px
+        +$responsive(mobile_all)
+            padding 0
         p
             margin 0.3em 1.5em
+            +$responsive(mobile_all)
+                margin 5px
     &2-left
         width 40%
         padding-right 15px
+        +$responsive(mobile_all)
+            padding 0
     &2-right
         width 60%
         text-align center
         img 
             width 33%
+            +$responsive(mobile_all)
+                width 50%
     &3-left
         width 45%
         padding-right 5%
         align-self center
+        +$responsive(mobile_all)
+            width 50%
+            padding 0
     &3-right
         width 40%
         position relative
         text-align center
+        +$responsive(mobile_all)
+            width 45%
         +$responsive(desktop1280 desktop1600 desktop_extended)
             width 55%
         .ad-dodge-color
@@ -133,22 +160,57 @@
     &4-left,
     &4-right
         width 36%
+    &4-left
+        +$responsive(mobile_all)
+            p
+                margin left 0
+                margin-right 10px
     &4-center
         width 28%
+        +$responsive(mobile_all)
+            padding 0
+    &4-right
+        +$responsive(mobile_all)
+            padding 0
+            p
+                margin-right 0
+                margin-left 10px
     &5-left,
     &5-right
         width 35%
+        +$responsive(mobile_all)
+            padding 0
+    &5-left
+        +$responsive(mobile_all)
+            p
+                margin-left 0
     &5-center
         width 40%
         margin-left -7%
+        +$responsive(mobile_all)
+            margin-left -5%
+            padding 0
+    &5-right
+        +$responsive(mobile_all)
+            p
+                margin-left 10px
+                margin-right 0
     &6-left
         width 30%
         align-self center
+        +$responsive(mobile_all)
+            width 60%
+            margin-right -15%
     &6-right
         text-align center
+        +$responsive(mobile_all)
+            text-align left
         img
             width 75%
-
+#pregunta4
+    .bullet-faq
+        width 1em
+        height 1em
 .ad__collapse
     overflow hidden
     transition max-height .2s ease-out

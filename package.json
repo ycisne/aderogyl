@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Sitio ADerogyl",
   "main": "index.js",
-  "lastUpdate": "Tuesday, August 28, 2018, CST 01:30 am",
+  "lastUpdate": "Monday, October 15, 2018, CST 11:20 am",
   "author": "Yadira Cisneros",
   "license": "ISC",
   "devDependencies": {
@@ -36,6 +36,7 @@
     "grunt-contrib-jade": "^1.0.0",
     "jade": "^1.11.0",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.4"
+    "popper.js": "^1.14.4",
+    "retinajs": "^2.1.3"
   }
 }

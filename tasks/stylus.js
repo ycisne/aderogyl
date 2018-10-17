@@ -9,7 +9,8 @@ module.exports = {
             define: {
                 global: '../../../../assets/styl/global/*',
                 globalView: '../../../assets/styl/global/*',
-                globalStyl: 'global/*'
+                globalStyl: 'global/*',
+                retina: '../../../../node_modules/retinajs/dist/retina'
             }
 
         },

@@ -4,6 +4,8 @@
     $parallax('../img/fondo1.jpg')
     font-size 1em
     z-index 3
+    +$responsive(mobile_all)
+        flex-flow row wrap
     &.ad__adulto,
     &.ad__infantil
         z-index 4
@@ -53,17 +55,30 @@
                     text-decoration none
                     opacity .5
         &-infantil
-            width 36%
-            margin-top 16%
+            width 45%
+            margin 0
+            +$responsive(mobile_all)
+                height 460px
+            +$responsive(desktop1024)
+                width 36%
+                margin-top 16%
             +$responsive(desktop1280 desktop1600 desktop_extended)
                 width 44%
                 margin-top 5%
             .ad-caption
                 left -3%
+                +$responsive(mobile_all)
+                    left 0
+                    font-size .75em
+                    top 5% !important
         &-adulto
             width 56%
             .ad-caption
                 left 36%
+                +$responsive(mobile_all)
+                    top 11% !important
+                    left inherit 
+                    right -24%
     &__modal
         &-container
             display flex
@@ -280,6 +295,8 @@
                 .indicaciones-gotas
                     img 
                         height 16px
+                        +$responsive(mobile_all)
+                            height 11px
                         +$responsive(desktop_extended)
                             height 19px
                 .indicaciones-gotasText
@@ -296,6 +313,10 @@
             margin-left 22%
             margin-top 8%
             position absolute
+            +$responsive(mobile_all)
+                width 100%
+                margin 20% 0 5% 0
+                position relative
             +$responsive(desktop1280)
                 margin-top 15%
                 width 55%
@@ -308,27 +329,97 @@
                 margin-left 25%
                 margin-top 9%
                 font-size 1em
+            .ad__presentacion-img
+                +$responsive(mobile_all)
+                    margin-top 35%
+            .ad__presentacion-btn
+                +$responsive(mobile_all)
+                    font-size 1.5em
+                    margin 0 auto
             .ad__presentacion-copy
                 +$responsive(desktop1600)
                     bottom 13%
+            .ad__carrusel-indicaciones
+                +$responsive(mobile_all)
+                    font-size .9em
+                    line-height 1.5em
+                ul
+                    +$responsive(mobile_all)
+                        margin 0 20px
+                h4
+                    +$responsive(mobile_all)
+                        font-size 1.5em
+                        margin 10px 0 10px 35px
+            .ad__carrusel-indicaciones-ribbon-rojo
+                +$responsive(mobile_all)
+                    padding-left 35px
+                img 
+                    +$responsive(mobile_all)
+                        height 35px
             .ad__carrusel-indicaciones-content
-                padding 15px 0 15px 16%
+                padding 5px
+                +$responsive(mobile_all)
+                    margin-top -33px
+                +$responsive(desktop1024)
+                    padding 15px 0 15px 16%
                 +$responsive(desktop1280 desktop1600 desktop_extended)
                     padding 15px 15px 15px 15%
                 +$responsive(desktop1280)
                     margin-top -32px
+            .ad__carrusel-indicaciones-gotero
+                +$responsive(mobile_all)
+                    align-self center
+                    width 15%
             .ad__carrusel-indicaciones-left
                 padding 5px
                 +$responsive(desktop1280 desktop1600 desktop_extended)
                     padding 15px
             .ad__carrusel-indicaciones-right
                 padding 5px 15px 5px 5px
+                +$responsive(mobile_all)
+                    width 45%
                 +$responsive(desktop1280)
                     width 45%
                 +$responsive(desktop1280 desktop1600 desktop_extended)
                     padding 15px
+            .ad__carrusel-indicaciones-footer
+                +$responsive(mobile_all)
+                    padding 10px 5px
+                    p
+                        margin 0 10px
+                        line-height 1.5em
+                        font-size 1.2em
             .carousel-item
-                width 
+                +$responsive(mobile_all)
+                    height 460px
+                    h2
+                        font-size 1.5em
+                        padding 10px 20px
+                        margin-bottom 0
+            .ad__modal-presentacion-carrusel
+                +$responsive(mobile_all)
+                    width 70%
+                    margin 0 -5% 0 -10%
+                    font-size .9em
+            .ad__modal-close
+                +$responsive(mobile_all)
+                    right -2%
+                    top 4%
+            .ad__carrusel-ingredientes
+                +$responsive(mobile_all)
+                    margin-left 0
+            .ad__carrusel-ingredientes-left
+                +$responsive(mobile_all)
+                    width 50%
+                    ul
+                        margin-left 0
+                        padding-left 25px
+            .ad__carrusel-contenido
+                +$responsive(mobile_all)
+                    padding 0 15px 0 25px
+                    margin 0
+                    h3
+                        font-size 1.7em
         &-adulto
             width 80%
             margin-top 9%
@@ -337,6 +428,10 @@
             display flex
             flex-flow row wrap
             justify-content flex-end
+            +$responsive(mobile_all)
+                position relative
+                width 100%
+                margin 24% 0 5% -110%
             +$responsive(desktop1280)
                 margin-top 11%
                 margin-left 16%
@@ -351,12 +446,19 @@
                 margin-top 7%
             .ad__presentacion-img
                 width 111%
+                +$responsive(mobile_all)
+                    width 135%
+                    margin-top 39%
             .ad__presentacion-copy
                 +$responsive(desktop1280)
                     bottom 18%
             .ad__presentacion-btn
-                font-size 1.6em
+                font-size 1.2em
                 margin-top 8%
+                +$responsive(mobile_all)
+                    margin 0 0 0 35%
+                +$responsive(desktop1024)
+                    font-size 1.6em
                 +$responsive(desktop1280)
                     margin-top 7%
                 +$responsive(desktop1600)
@@ -367,10 +469,14 @@
             .ad__modal-close
                 right 9px
                 top 3%
-            .ad__carrusel-indicaciones
-                font-size .9em
+                +$responsive(mobile_all)
+                    top 0
+                    left 0
+                    right inherit
             .ad__carrusel-indicaciones-content
                 padding-right 20% !important
+                +$responsive(mobile_all)
+                    padding: 10px !important
             .ad__carrusel-indicaciones-left
                 padding 0
                 width 30%
@@ -409,6 +515,8 @@
                 color white
                 margin-top -27px
                 padding-top 5px
+                +$responsive(mobile_all)
+                    margin-top -22px
                 +$responsive(desktop_extended)
                     margin-top -17px
                 span
@@ -416,20 +524,26 @@
                     transform rotate(-2deg)
                 .indicaciones-text
                     &1
-                        font-size 1.5em
+                        font-size 1em
                         line-height 1em
+                        +$responsive(desktop1024)
+                            font-size 1.5em
                         +$responsive(desktop1280 desktop1600 desktop_extended)
                             font-size 1.9em
                     &2
-                        font-size 3.5em
+                        font-size 2.5em
                         line-height .9em
                         font-weight bold
+                        +$responsive(desktop1024 desktop1600)
+                            font-size 3.5em
                         +$responsive(desktop1280 desktop_extended)
                             font-size 4em
                     &3
-                        font-size 1.5em
+                        font-size 1.1em
                         line-height 1.1em
                         font-weight bold
+                        +$responsive(desktop1024)
+                            font-size 1.5em
                         +$responsive(desktop1280)
                             font-size 2em
                         +$responsive(desktop1600)
@@ -444,6 +558,9 @@
                         text-align right 
                         padding-right 1.83em
                         transform rotate(-4deg)
+                        +$responsive(mobile_all)
+                            margin-top -14px
+                            margin-bottom 7px
                     &5
                         transform none
                         font-size 1.3em
@@ -458,6 +575,10 @@
                 margin-top 0
                 margin-right -5%
                 position relative
+                +$responsive(mobile_all)
+                    width 64%
+                    margin 0 -13% 0 -5%
+                    font-size .9em
                 +$responsive(desktop1280)
                     width 85%
                     margin-left -20%
@@ -472,6 +593,10 @@
                 width 43%
                 margin-top 16%
                 margin-left -12%
+                +$responsive(mobile_all)
+                    width 46%
+                    margin 0
+                    height 460px
                 +$responsive(desktop1280)
                     width 47%
                     margin-top 13%
@@ -484,13 +609,31 @@
             .carousel-item
                 h2
                     padding 20px 14% 0 30px
+                +$responsive(mobile_all)
+                    height 460px
+                    h2
+                        font-size 1.2em
+                        padding 10px 20px
+                        margin-bottom 0
+                    &.ad__carrusel-adulto-slide2
+                        h2
+                            padding 7px 20px 0 15px
+                            margin-bottom 2px
             .ad__carrusel-indicaciones
+                font-size .9em
                 ul
                     margin-left 35px
                     margin-right 21%
                 h4
                     color $color-Yellow-GoldenYellow
                     margin-left 30px
+                +$responsive(mobile_all)
+                    font-size .8em
+                    ul
+                        margin 10px
+                    h4
+                        font-size 1.5em
+                        margin 10px 10px 10px 29px
                 &-content
                     background none
                     padding 15px 20% 15px 30px
@@ -499,11 +642,34 @@
                 line-height 1.3em
                 margin-right 20%
                 font-size 0.7em
+                +$responsive(mobile_all)
+                    margin 0
+                    font-size .55em
+            .ad__carrusel-ingredientes-left
+                +$responsive(mobile_all)
+                    width 42%
+                    padding 5px
+                    ul
+                        padding-left 16px
+            .ad__carrusel-ingredientes-right
+                +$responsive(mobile_all)
+                    padding 2px 12px
             .ad__carrusel-contenido
                 line-height 1.3em
                 margin-left 30px
                 margin-right 20%
                 font-size 0.7em
+                +$responsive(mobile_all)
+                    margin 10px 
+                    padding-right 9px
+                    font-size .55em
+                    h3
+                        font-size 1.7em
+                        margin-bottom 5px
+                    li
+                        padding-left 10px
+                    p.ad__carrusel-contenido-highlighted
+                        margin 0
 @keyframes viewModal
     0%
         opacity 0

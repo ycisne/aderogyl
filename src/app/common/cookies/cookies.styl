@@ -11,6 +11,8 @@
     overflow hidden
     top -100px
     display none
+    +$responsive(mobile_all)
+        height 90px
     &-container
         width 100%
         margin auto
@@ -19,6 +21,10 @@
         display flex
         align-items center
         height 70px
+        +$responsive(mobile_all)
+            flex-flow row wrap
+            padding 10px
+            height 90px
     &-content
         color $color-Blue-Smalt
         width calc(100% - 280px)
@@ -27,6 +33,10 @@
         line-height: 1.1em;
         border-left 1px solid $color-Blue-Smalt
         border-right 1px solid $color-Blue-Smalt
+        +$responsive(mobile_all)
+            border none
+            width 100%
+            padding 0
         +$responsive(desktop1280)
             font-size .8em
         +$responsive(desktop1600)
@@ -38,9 +48,18 @@
         color $color-Blue-Smalt
         font-weight 500
         width 200px
+        +$responsive(mobile_all)
+            width 100%
+            font-size .8em
+            margin 0 0 5px 0
     &-button
         text-align right 
         width 80px
+        +$responsive(mobile_all)
+            position absolute
+            top 5px
+            right 3px
+            font-size .8em
         a
             background $color-Blue-Smalt
             color white
@@ -63,24 +82,49 @@
         top -70px
     100%
         top 0
+@keyframes viewCookies_mobile
+    0%
+        top -90px
+    100%
+        top 0
 @keyframes viewCookiesTopMenu
     0%
         top 0
     100%
         top 70px
+@keyframes viewCookiesTopMenu_mobile
+    0%
+        top 0
+    100%
+        top 90px
 @keyframes viewCookiesHeaderMenu
     0%
         top 30%
     100%
         top calc(30% + 70px)
+@keyframes viewCookiesHeaderMenu_mobile
+    0%
+        top 30%
+    100%
+        top calc(30% + 90px)
 @keyframes hideCookies
     0%
         top 0
     100%
         top -70px
+@keyframes hideCookies_mobile
+    0%
+        top 0
+    100%
+        top -90px
 @keyframes hideCookiesTopMenu
     0%
         top 70px
+    100%
+        top 0
+@keyframes hideCookiesTopMenu_mobile
+    0%
+        top 90px
     100%
         top 0
 @keyframes hideCookiesHeaderMenu
@@ -88,32 +132,55 @@
         top calc(30% + 70px)
     100%
         top 30%
+@keyframes hideCookiesHeaderMenu_mobile
+    0%
+        top calc(30% + 90px)
+    100%
+        top 30%
 .ad__has-cookies
     .ad__cookies
         display block
-        top -70px
-        animation viewCookies 1s linear .1s 1 normal forwards
-    .ad__header-top-menu
+        +$responsive(mobile_all)
+            top -90px
+            animation viewCookies_mobile 1s linear .1s 1 normal forwards
+        +$responsive(desktop_all)
+            top -70px
+            animation viewCookies 1s linear .1s 1 normal forwards
+    .ad__header-top-menu,
+    .ad__header-logo,
+    .navbar-toggle
         top 0
-        animation viewCookiesTopMenu 1s linear .1s 1 normal forwards
+        +$responsive(mobile_all)
+            animation viewCookiesTopMenu_mobile 1s linear .1s 1 normal forwards
+        +$responsive(desktop_all)
+            animation viewCookiesTopMenu 1s linear .1s 1 normal forwards
     .ad__header-menu
         top 30%
-        animation viewCookiesHeaderMenu 1s linear .1s 1 normal forwards
-    .ad__header-logo
-        top 0
-        animation viewCookiesTopMenu 1s linear .1s 1 normal forwards
+        +$responsive(mobile_all)
+            animation viewCookiesHeaderMenu_mobile 1s linear .1s 1 normal forwards
+        +$responsive(desktop_all)
+            animation viewCookiesHeaderMenu 1s linear .1s 1 normal forwards
 .ad__no-cookies
     .ad__cookies
         display block
         top 0 !important
-        animation hideCookies 1s linear .1s 1 normal forwards !important
-    .ad__header-top-menu
-        top 70px !important
-        animation hideCookiesTopMenu 1s linear .1s 1 normal forwards !important 
+        +$responsive(mobile_all)
+            animation hideCookies_mobile 1s linear .1s 1 normal forwards !important
+        +$responsive(desktop_all)
+            animation hideCookies 1s linear .1s 1 normal forwards !important
+    .ad__header-top-menu,
+    .ad__header-logo,
+    .navbar-toggle
+        +$responsive(mobile_all)
+            top 90px !important
+            animation hideCookiesTopMenu_mobile 1s linear .1s 1 normal forwards !important 
+        +$responsive(desktop_all)
+            top 70px !important
+            animation hideCookiesTopMenu 1s linear .1s 1 normal forwards !important 
     .ad__header-menu
-        top calc(30% + 70px) !important
-        animation hideCookiesHeaderMenu 1s linear .1s 1 normal forwards !important
-    .ad__header-logo
-        top 70px !important
-        animation hideCookiesTopMenu 1s linear .1s 1 normal forwards !important
-    
+        +$responsive(mobile_all)
+            top calc(30% + 90px) !important
+            animation hideCookiesHeaderMenu_mobile 1s linear .1s 1 normal forwards !important
+        +$responsive(desktop_all)
+            top calc(30% + 70px) !important
+            animation hideCookiesHeaderMenu 1s linear .1s 1 normal forwards !important

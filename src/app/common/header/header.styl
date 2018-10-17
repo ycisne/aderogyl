@@ -7,16 +7,40 @@
         top 0
         z-index 4
         padding 80px 0 30px 50px
+        +$responsive(mobile_all)
+            width 50%
+            padding 50px 0 0 15px
         +$responsive(desktop1280 desktop_extended)
             width calc(30% - 50px)
     .menuAbsolute
         position absolute
         z-index 3
+    &-left-menu
+        .navbar-toggle
+            background $color-Blue-DarkCerulean
+            border $color-Blue-DarkCerulean
+            position fixed
+            top 0
+            left 0
+            padding 10px 15px
+            color white
+            font-size .8em
+            z-index 5
+            display none
+            +$responsive(mobile_all)
+                display block
     &-menu
         position fixed
         width 20%
         top 30%
         z-index 4
+        +$responsive(desktop_all)
+            display block !important
+        +$responsive(mobile_all)
+            background $color-Blue-RegalBlue
+            width 100%
+            margin-top -27.2%
+            font-family $font-alternative-condensed
         li, ul
             list-style-type none
             margin 0
@@ -29,6 +53,10 @@
                     transition .3s
                     font-size 1.7em
                     display flex
+                    +$responsive(mobile_all)
+                        color white
+                        font-size 1em
+                        height 50px
                     +$responsive(desktop1280)
                         font-size 1.8em
                     +$responsive(desktop1600)
@@ -51,6 +79,9 @@
                         background-position center center
                         transition .3s
                         margin 0 0 -10px 0
+                        +$responsive(mobile_all)
+                            width 13%
+                            height 50px
                         +$responsive(desktop1600 desktop_extended)
                             width 21%
                             height 80px
@@ -59,23 +90,36 @@
                         color white
                         $text-shadow()
                         text-decoration none
-                        .boton-menu
-                            background-size 120% auto
+                        +$responsive(mobile_all)
+                            color $color-Green-Citrus
+                        +$responsive(desktop_all)
+                            .boton-menu
+                                background-size 120% auto
                     &.active
                         cursor default
                         .boton-menu
                             background-image url(../img/boton-menu-resplandor.png)
         &-redes
+            +$responsive(mobile_all)
+                display flex
+                justify-content flex-end
+                background $color-Blue-DarkCerulean
+                padding 0 15px
             a
                 display block
                 padding 10px 25px
                 transition .3s
+                +$responsive(mobile_all)
+                    padding 10px
                 &:hover
                     opacity .5
                 img
                     width 30px
                     height 30px
                     display block
+                    +$responsive(mobile_all)
+                        width 20px
+                        height 20px
     &-top-menu
         position fixed
         width 100%
@@ -86,8 +130,14 @@
         padding 0.22em 2.22em // 4px 40px
         text-align right
         width 100%
+        position relative
+        +$responsive(mobile_all)
+            padding 0 7px
+            line-height 1.2em
         img
             height 1.05em // 19px
+            +$responsive(mobile_all)
+                height .7em
     &-residentes
         background $color-Blue-DarkCerulean 
         padding 0.33em 2.66em // 5px 40px
@@ -97,6 +147,10 @@
         text-transform uppercase
         width 100%
         font-size 0.83em // 15px
+        +$responsive(mobile_all)
+            padding 2px 7px
+            font-size .6em
+            font-family $font-alternative-condensed
     &-modales
         position fixed
         top 0
@@ -109,6 +163,10 @@
         display flex
         justify-content flex-end
         z-index 3
+        +$responsive(mobile_all)
+            top 3.22em
+            font-size .7em
+            right 0
         a
             $backgroundImg('../img/fondo-rojo.png', 13.33em, 5em)
             // 240px 90px

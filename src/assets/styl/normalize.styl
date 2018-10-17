@@ -61,3 +61,13 @@ img
         width calc(35% - 60px)
     .ad__header-menu
         width calc(20% - 10px)
+
+.ad
+    &__mobile
+        display block
+        +$responsive(desktop1024 desktop1280 desktop1600 desktop_extended)
+            display none
+    &__desktop
+        display none
+        +$responsive(desktop1024 desktop1280 desktop1600 desktop_extended)
+            display block
