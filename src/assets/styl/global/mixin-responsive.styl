@@ -22,6 +22,7 @@ $only-screen-max = " only screen and (max-width: "
 $only-screen-min = " only screen and (min-width: "
 $media_queries = {
   mobile_all    : $only-screen + $minMax-media[min_480] + $max-width + $minMax-media[max_tablet768] +"), " + $only-screen-max + $minMax-media[min_480] + ")",
+  mobile_not_tablet: $only-screen + $minMax-media[min_480] + $max-width + $minMax-media[max_568] +"), " + $only-screen-max + $minMax-media[min_480] + ")",
   mobile480     : $only-screen + $minMax-media[min_480] + $max-width + $minMax-media[max_480] +"), " + $only-screen-max + $minMax-media[min_480] + ")",
   mobile568     : $only-screen + $minMax-media[min_568] + $max-width + $minMax-media[max_568] +")",
   tablet768     : $only-screen + $minMax-media[min_tablet768] + $max-width + $minMax-media[max_tablet768] +")",

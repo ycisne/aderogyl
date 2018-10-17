@@ -34,13 +34,15 @@
         width 20%
         top 30%
         z-index 4
-        +$responsive(desktop_all)
-            display block !important
         +$responsive(mobile_all)
             background $color-Blue-RegalBlue
             width 100%
             margin-top -27.2%
             font-family $font-alternative-condensed
+        +$responsive(tablet768)
+            margin-top -34.9%
+        +$responsive(desktop_all)
+            display block !important
         li, ul
             list-style-type none
             margin 0

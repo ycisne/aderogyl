@@ -34,6 +34,10 @@
                 width 90%
                 font-size 1em
                 display block
+                +$responsive(tablet768)
+                    font-size 1.3em
+                    padding-bottom 20px
+                    padding-top 20px
                 +$responsive(desktop_all)
                     display none
                 +$responsive(desktop1280 desktop1600 desktop_extended)
@@ -61,6 +65,8 @@
                     margin-left 20%
                     margin-top 3%
                     padding-left 10%
+                +$responsive(tablet768)
+                    margin-top 5%
             &:hover
                 +$responsive(desktop1024)
                     left -15%
@@ -93,6 +99,8 @@
                     margin-left 16%
                     margin-top 1%
                     padding-left 18%
+                +$responsive(tablet768)
+                    margin-top 3%
             &:hover
                 left 0
                 .ad__beneficios-vitaminas-icono
@@ -127,6 +135,8 @@
                     margin-left 15%
                     margin-top 3%
                     padding-left 17%
+                +$responsive(tablet768)
+                    margin-top 4%
             &:hover
                 left 30%
                 .ad__beneficios-vitaminas-icono
