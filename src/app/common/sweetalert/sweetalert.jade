@@ -1,0 +1,29 @@
+script(src="https://cdn.jsdelivr.net/npm/sweetalert2@7.28.5/dist/sweetalert2.all.min.js")
+//- Optional: include a polyfill for ES6 Promises for IE11 and Android browser
+script(src="https://cdn.jsdelivr.net/npm/promise-polyfill")
+script(language="JavaScript").
+    function salirAderogyl(option, e) {
+        if(e) { e.preventDefault(); }
+        var swalOptions = {
+                title: '<span style="font-family: \'Roboto Condensed\', sans-serif;"><strong>Atenci&oacute;n</strong></span>',
+                type: 'warning',
+                html: '<span style="font-family: \'Roboto Condensed\', sans-serif; text-align: justify">Al hacer clic en el bot&oacute;n siguiente, dejar&aacute; el ambiente del sitio ADEROGYL<sup>&reg;</sup> y se dirigir&aacute; a un sitio web asociado. Los enlaces son s&oacute;lo una facilidad ofrecida para los consumidores. La decisi&oacute;n de elecci&oacute;n del establecimiento es siempre del consumidor. SANOFI no se responsabiliza por servicios, ofertas y contenido en los sitios de las redes citadas, ni de ninguna otra, en las que se pueda encontrar ADEROGYL<sup>&reg;</sup>.</span>',
+                showCancelButton: true,
+                confirmButtonColor: '#004082',
+                cancelButtonColor: '#f44336',
+                confirmButtonText:'<span style="font-family: \'Roboto Condensed\', sans-serif;">Continuar</span>',
+                cancelButtonText:'<span style="font-family: \'Roboto Condensed\', sans-serif;">Cancelar</span>'
+            },
+            urls = {
+                sanofi: 'https://www.sanofi.com.mx/',
+                facebook: '',
+                youtube: '',
+                default: ''
+            },
+            url = option && urls[option] ? urls[option] : urls.default;
+        
+        swal(swalOptions).then((result) => {
+            if(result.value){ location.href = url; }
+        });
+        
+    }
