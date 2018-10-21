@@ -37,15 +37,19 @@
             +$responsive(desktop_extended)
                 font-size 14px
         &-btn
-            width 6em
+            width 173px
             margin 10% auto 0 auto
-            font-size 2em
+            font-size 21px
             background $color-Blue-PrussianBlue
-            border-radius .7em
-            padding .2em
+            border-radius 15px
+            padding 4px
             text-transform uppercase
             $text-shadow()
             text-align center
+            +$responsive(desktop_all)
+                font-size 28px
+                padding 6px
+                border-radius 20px
             +$responsive(desktop1280 desktop1600 desktop_extended)
                 margin-top 5%
             a
@@ -340,7 +344,6 @@
                     margin-top 5%
             .ad__presentacion-btn
                 +$responsive(mobile_all)
-                    font-size 1.5em
                     margin 0 auto
             .ad__presentacion-copy
                 +$responsive(desktop1600)
@@ -475,19 +478,17 @@
                 +$responsive(desktop1280)
                     bottom 18%
             .ad__presentacion-btn
-                font-size 1.2em
                 margin-top 8%
                 +$responsive(mobile_all)
-                    margin 0 0 0 35%
+                    margin 8px 0 0 35%
                 +$responsive(desktop1024)
-                    font-size 1.6em
+                    margin-top calc(8% - 2px)
                 +$responsive(desktop1280)
-                    margin-top 7%
+                    margin-top calc(7% - 11px)
                 +$responsive(desktop1600)
-                    margin-top 3%
+                    margin-top calc(3% - 3px)
                 +$responsive(desktop_extended)
-                    font-size 2em
-                    margin-top 4%
+                    margin-top calc(4% - 1px)
             .ad__modal-close
                 right 9px
                 top 3%
