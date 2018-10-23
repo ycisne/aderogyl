@@ -16,6 +16,8 @@
         align-items flex-end
         +$responsive(mobile_all)
             margin 15% 0 1% 0
+        +$responsive(landscape iphonex)
+            margin-top 12%
         +$responsive(desktop1280)
             margin-right 3%
         +$responsive(desktop_extended)
@@ -25,6 +27,13 @@
         z-index 2
         +$responsive(mobile_all)
             width 45%
+        +$responsive(landscape)
+            +$responsive(iphonex)
+                width 35%
+            +$responsive(mobile480)
+                width 60%
+            +$responsive(mobile568,"only screen and (min-device-width: 480px) and (max-device-width: 533px)")
+                width 45%
         &-caption
             width 100%
             margin-bottom 3%
@@ -93,6 +102,9 @@
         display flex
         align-items flex-start
         font-family $font-alternative-condensed
+        +$responsive(portrait)
+            margin-top 2em
+            margin-bottom -2em
         +$responsive(desktop1280)
             width 90%
             margin-right 10%
@@ -119,11 +131,20 @@
             span 
                 transform rotate(-1deg)
                 margin-top 0.28em // 10px
-                display inline-block
+                display block
                 font-size .7em
                 line-height 2.2em
                 +$responsive(mobile_not_tablet)
                     font-size .55em
+                +$responsive(mobile320)
+                    font-size .35em
+                +$responsive(mobile375)
+                    line-height 3em
+                    +$responsive(landscape)
+                        height 2em
+                +$responsive(mobile480)
+                    font-size .5em
+                    line-height 2.6em
         &-bottom
             $backgroundImg('../img/fondo-rojo2.png', 100%, 2.857em)
             // 100px
@@ -132,9 +153,18 @@
             z-index 1
             +$responsive(mobile_not_tablet)
                 height 2.5em
+            +$responsive(mobile320)
+                height 1.5em
+                margin-top -2em
+            +$responsive(mobile375)
+                height 1.8em
+                +$responsive(landscape)
+                    height 2.5em
+            +$responsive(mobile480)
+                margin-top -1.6em
             span 
                 transform rotate(-2deg)
-                display inline-block
+                display block
                 margin-top 1.52em // 38px
                 margin-right 0.4em // 10px
                 font-size 0.5em
@@ -142,3 +172,10 @@
                 +$responsive(mobile_not_tablet)
                     line-height 3em
                     font-size .42em
+                +$responsive(mobile320)
+                    font-size .3em
+                +$responsive(mobile375 mobile568)
+                    line-height 4em
+                +$responsive(landscape)
+                    +$responsive(mobile480)
+                        font-size .43em

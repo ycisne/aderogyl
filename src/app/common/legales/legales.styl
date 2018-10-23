@@ -11,6 +11,8 @@
                 padding 15px
                 text-align center
                 $text-shadow()
+                +$responsive(mobile_all)
+                    font-size 2em
         &-close
             width 40px
             a
@@ -36,3 +38,12 @@
                 font-family $font-alternative-condensed
             p
                 margin 10px 0
+            a
+                color $color-Yellow-GoldenYellow
+            +$responsive(mobile_all)
+                font-size .9em
+                height 75%
+                h2
+                    font-size 1.3em
+                h3
+                    font-size 1.1em

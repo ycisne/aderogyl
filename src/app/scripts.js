@@ -15,5 +15,6 @@ $(document).ready(function(){
     clickMenu($addCookiesBtn, 'addCookie');
     $logoInfantil.hide();
     activeAcordeon('#accordion li', 'acordeonActivo');
+    appendToggle();
     // document.cookie = 'aceptarAderogyl=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
 });

@@ -10,6 +10,8 @@
         +$responsive(mobile_all)
             width 50%
             padding 50px 0 0 15px
+            +$responsive(landscape)
+                width 40%
         +$responsive(desktop1280 desktop_extended)
             width calc(30% - 50px)
     .menuAbsolute
@@ -25,7 +27,7 @@
             padding 10px 15px
             color white
             font-size .8em
-            z-index 5
+            z-index 6
             display none
             +$responsive(mobile_all)
                 display block
@@ -170,7 +172,7 @@
         a
             $backgroundImg('../img/fondo-rojo.png', 13.33em, 5em)
             // 240px 90px
-            /*+$responsive(desktop1024)
+            /*+$responsive(tablet1024)
                 width 180px
                 height 60px*/
             .video-text
@@ -183,12 +185,12 @@
                 $text-shadow()
                 margin 0.166em 0.5em // 5px 15px
                 transition color 1s
-                /*+$responsive(desktop1024)
+                /*+$responsive(tablet1024)
                     font-size 20px*/
                 .video-ico
                     $backgroundImg('../img/ico-play.png', 1.066em, 1.066em)
                     // 32px 32px
-                    /*+$responsive(desktop1024)
+                    /*+$responsive(tablet1024)
                         width 25px
                         height 25px*/
                 span 

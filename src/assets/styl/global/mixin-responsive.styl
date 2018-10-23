@@ -1,41 +1,51 @@
-$minMax-media = {
-    min_320: "320px",
-    max_320: "479px",
-    min_480: "480px",
-    max_480: "567px",
-    min_568: "568px",
-    max_568: "767px",
-    min_tablet768 : "768px",
-    max_tablet768 : "1023px",
-    min_desktop1024: "1024px",
-    max_desktop1024: "1279px",
-    min_desktop1280 : "1280px",
-    max_desktop1280: "1599px",
-    min_desktop1600: "1600px",
-    max_desktop1600: "1899px",
-    min_desktop_extended: "1900px"
+$media_queries = {
+    mobile_all: "only screen and (min-width: 320px) and (max-width: 1023px), only screen and (max-width: 320px)",
+    landscape: "only screen and (orientation: landscape)",
+    portrait: "only screen and (orientation: portrait)",
+    pixelratio2: "only screen and (-webkit-min-device-pixel-ratio : 2)",
+    pixelratio3: "only screen and (-webkit-min-device-pixel-ratio : 3)",
+
+    /// Mobile
+    mobile_not_tablet: "only screen and (min-width: 320px) and (max-device-width: 767px), only screen and (max-device-width: 320px)",
+    mobile320: "only screen and (min-device-width: 320px) and (max-device-width: 480px), only screen and (max-device-width: 320px)",
+    mobile375: "only screen and (min-device-width: 375px) and (max-device-width: 668px)",
+    mobile360: "only screen and (min-device-width: 360px) and (max-device-width: 640px)",
+    mobile480: "only screen and (min-device-width: 480px) and (max-device-width: 568px)",
+    mobile568: "only screen and (min-device-width: 568px) and (max-device-width: 768px)",
+    
+    /// Modelos específicos de teléfono
+    // iPhone 
+    //iphone4: "only screen and (min-device-width: 320px) and (max-device-width: 480px)",
+    //iphone5: "only screen and (min-device-width: 320px) and (max-device-width: 568px)",
+    //iphone6-7-8: "only screen and (min-device-width: 375px) and (max-device-width: 667px)",
+    iphone_plus6-7-8: "only screen and (min-device-width: 414px) and (max-device-width: 736px)",
+    iphonex: "only screen and (min-device-width: 414px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio : 3)",
+    iphonexs: "only screen and (min-device-width: 414px) and (max-device-width: 896px)",
+    // --- Samsung Galaxy S4, S5, S7 y S8, HTC
+    samsung_galaxy: "only screen and (min-device-width: 360px) and (max-device-width: 640px)",
+    google_pixel: "only screen and (min-device-width: 411px) and (max-device-width: 731px)",
+    google_pixel_xl: "only screen and (min-device-width: 411px) and (max-device-width: 823px)",
+  
+    /// Tablet
+    tablet768: "only screen and (min-device-width: 768px) and (max-device-width: 1024px)",
+    tablet1024: "only screen and (min-device-width: 768px) and (max-device-width: 1024px), only screen and (min-device-width: 1024px) and (max-device-width: 1279px)",
+    
+    /// Desktop
+    desktop1280: "only screen and (min-device-width:1280px) and (max-device-width: 1599px)",
+    desktop1600: "only screen and (min-device-width:1600px) and (max-device-width: 1899px)",
+    desktop_extended: "only screen and (min-device-width:1900px)",
+    desktop_all: "only screen and (min-width:1024px)"
 }
 
-$only-screen = "only screen and (min-width: "
-$max-width = ") and (max-width: "
-$only-screen-max = " only screen and (max-width: "
-$only-screen-min = " only screen and (min-width: "
-$media_queries = {
-  mobile_all    : $only-screen + $minMax-media[min_480] + $max-width + $minMax-media[max_tablet768] +"), " + $only-screen-max + $minMax-media[min_480] + ")",
-  mobile_not_tablet: $only-screen + $minMax-media[min_480] + $max-width + $minMax-media[max_568] +"), " + $only-screen-max + $minMax-media[min_480] + ")",
-  mobile480     : $only-screen + $minMax-media[min_480] + $max-width + $minMax-media[max_480] +"), " + $only-screen-max + $minMax-media[min_480] + ")",
-  mobile568     : $only-screen + $minMax-media[min_568] + $max-width + $minMax-media[max_568] +")",
-  tablet768     : $only-screen + $minMax-media[min_tablet768] + $max-width + $minMax-media[max_tablet768] +")",
-  desktop1024   : $only-screen + $minMax-media[min_desktop1024] + $max-width + $minMax-media[max_desktop1024] +")",
-  desktop1280   : $only-screen + $minMax-media[min_desktop1280] + $max-width + $minMax-media[max_desktop1280] +")",
-  desktop1600   : $only-screen + $minMax-media[min_desktop1600] + $max-width + $minMax-media[max_desktop1600] +")",
-  desktop_extended   : $only-screen + $minMax-media[min_desktop_extended] +")",
-  desktop_all   : $only-screen + $minMax-media[min_desktop1024] + $max-width + $minMax-media[min_desktop_extended] +"), " + $only-screen-min + $minMax-media[min_desktop_extended] + ")"
-}
-$responsive(breakpoints)
+$responsive(breakpoints, free = false)
     conditions = ()
-    for breakpoint in breakpoints
-        push(conditions, $media_queries[breakpoint])
+    
+    if free
+        push(conditions, free)
+    else
+        for breakpoint in breakpoints
+            push(conditions, $media_queries[breakpoint])
+    
     conditions = join(", ", conditions)
     @media conditions
         {block}

@@ -34,6 +34,11 @@ img
     left 25%
     z-index 1
     animation fadeIn 3s infinite ease-out
+    +$responsive(mobile_all landscape)
+        height auto
+        width 90%
+        left 10%
+        top 30%
 .carousel-fade
     .item
         opacity 0
@@ -65,9 +70,9 @@ img
 .ad
     &__mobile
         display block
-        +$responsive(desktop1024 desktop1280 desktop1600 desktop_extended)
+        +$responsive(landscape)
             display none
     &__desktop
         display none
-        +$responsive(desktop1024 desktop1280 desktop1600 desktop_extended)
+        +$responsive(landscape)
             display block

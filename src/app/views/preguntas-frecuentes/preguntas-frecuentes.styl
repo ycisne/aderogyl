@@ -11,8 +11,12 @@
     +$responsive(mobile_all)
         $parallax('../img/fondo1.jpg')
         font-size .8em
-        margin 20% 0 2% 0
-        height 110%
+        margin 0
+        height auto
+        padding-top 130px
+        padding-bottom 30px
+        +$responsive(tablet768)
+            padding-bottom 130px
     &-listado
         z-index 1
         +$responsive(desktop_all)
@@ -134,6 +138,8 @@
             width 33%
             +$responsive(mobile_all)
                 width 50%
+                +$responsive(landscape)
+                    width 33%
     &3-left
         width 45%
         padding-right 5%
@@ -141,12 +147,16 @@
         +$responsive(mobile_all)
             width 50%
             padding 0
+            +$responsive(landscape)
+                margin-left 10%
     &3-right
         width 40%
         position relative
         text-align center
         +$responsive(mobile_all)
             width 45%
+            +$responsive(landscape)
+                width 30%
         +$responsive(desktop1280 desktop1600 desktop_extended)
             width 55%
         .ad-dodge-color
@@ -204,7 +214,7 @@
     &6-right
         text-align center
         +$responsive(mobile_all)
-            text-align left
+            text-align right 
         img
             width 75%
 #pregunta4

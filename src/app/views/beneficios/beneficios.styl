@@ -4,6 +4,12 @@
     $parallax('../img/fondo2.jpg')
     padding-right 0
     overflow hidden
+    +$responsive(mobile_not_tablet)
+        +$responsive(portrait)
+            +$responsive(mobile375 mobile360)
+                padding 30px 0 30px 5px
+        +$responsive(landscape)
+            overflow visible
     .ad-dodge-color
         width 50%
     &-vitaminas
@@ -13,7 +19,7 @@
         margin-top 15%
         width 100%
         z-index 1
-        +$responsive(mobile_all)
+        +$responsive(mobile_not_tablet)
             height 85%
             margin-left 0
             margin-top 20%
@@ -23,22 +29,18 @@
             position relative
             transition 1.5s
             z-index 1
-            +$responsive(mobile_all)
+            +$responsive(mobile_not_tablet)
                 width 95%
                 display flex
                 pointer-events none
-            +$responsive(desktop_all)
+            +$responsive(tablet768 desktop_all)
                 position absolute
             .ad__beneficios-vitaminas-descripcion
                 left 0
                 width 90%
                 font-size 1em
                 display block
-                +$responsive(tablet768)
-                    font-size 1.3em
-                    padding-bottom 20px
-                    padding-top 20px
-                +$responsive(desktop_all)
+                +$responsive(tablet768 desktop_all)
                     display none
                 +$responsive(desktop1280 desktop1600 desktop_extended)
                     font-size 1.2em
@@ -47,12 +49,12 @@
                         margin-bottom 0
             &:hover
                 .ad__beneficios-vitaminas-descripcion
-                    +$responsive(desktop_all)
+                    +$responsive(tablet768 desktop_all)
                         display block
                     +$responsive(desktop_extended)
                         width 120%
         &-a
-            +$responsive(desktop_all)
+            +$responsive(tablet768 desktop_all)
                 top 7%
                 left 10%
             +$responsive(desktop1600)
@@ -60,15 +62,15 @@
             .ad__beneficios-vitaminas-title
                 color $color-Orange-Tangerine
             .ad__beneficios-vitaminas-descripcion
-                +$responsive(mobile_all)
+                +$responsive(mobile_not_tablet)
                     width 77%
                     margin-left 20%
                     margin-top 3%
                     padding-left 10%
-                +$responsive(tablet768)
-                    margin-top 5%
+                    +$responsive(portrait)
+                        width 80% !important
             &:hover
-                +$responsive(desktop1024)
+                +$responsive(tablet1024)
                     left -15%
                 +$responsive(desktop1280 desktop1600)
                     left -2%
@@ -77,7 +79,7 @@
                 .ad__beneficios-vitaminas-icono
                     transform rotate(28deg)
                 .ad__beneficios-vitaminas-descripcion
-                    +$responsive(desktop_all)
+                    +$responsive(tablet768 desktop_all)
                         left 23%
                         top 10%
                         padding-left 15%
@@ -90,19 +92,31 @@
                         left 44%
                         padding-left 14%
         &-c
-            +$responsive(desktop_all)
+            +$responsive(tablet768 desktop_all)
                 bottom 0
                 left 22%
             .ad__beneficios-vitaminas-descripcion
-                +$responsive(mobile_all)
+                +$responsive(mobile_not_tablet)
                     width 81%
                     margin-left 16%
                     margin-top 1%
                     padding-left 18%
+                    +$responsive(landscape)
+                        margin-top 0 !important
+                    +$responsive(portrait)
+                        +$responsive(mobile375 mobile360)
+                            margin-left 15%
+                        +$responsive(mobile360)
+                            ul
+                                padding-left 23px
                 +$responsive(tablet768)
                     margin-top 3%
             &:hover
                 left 0
+                +$responsive(tablet768)
+                    left 0
+                    +$responsive(portrait)
+                        left -16%
                 .ad__beneficios-vitaminas-icono
                     transform rotate(-20deg)
                 .ad__beneficios-vitaminas-descripcion
@@ -120,25 +134,38 @@
             .ad__beneficios-vitaminas-title
                 color $color-Orange-Tangerine
         &-d
-            +$responsive(mobile_all)
+            +$responsive(mobile_not_tablet portrait)
                 margin-top 1%
-            +$responsive(desktop_all)
+            +$responsive(tablet768 desktop_all)
                 top 0
                 left 47%
+            +$responsive(tablet768)
+                top 0
+                left 47%
+                +$responsive(portrait)
+                    top 33%
+                    left 30%
             +$responsive(desktop1600)
                 top -12%
             +$responsive(desktop_extended)
                 left 35%
             .ad__beneficios-vitaminas-descripcion
-                +$responsive(mobile_all)
+                +$responsive(mobile_not_tablet)
                     width 83%
                     margin-left 15%
                     margin-top 3%
                     padding-left 17%
+                    +$responsive(portrait)
+                        +$responsive(mobile375 mobile360)
+                            margin-left 15%
                 +$responsive(tablet768)
                     margin-top 4%
             &:hover
                 left 30%
+                +$responsive(tablet768)
+                    left 30%
+                    +$responsive(portrait)
+                        left 0
                 .ad__beneficios-vitaminas-icono
                     transform rotate(18deg)
                 .ad__beneficios-vitaminas-descripcion
@@ -159,32 +186,42 @@
         &-icono
             transition .3s
             &.vitamina-a
-                +$responsive(mobile_all)
+                +$responsive(mobile_not_tablet)
                     width 30%
-                +$responsive(desktop1024)
+                +$responsive(mobile480 landscape)
+                    margin-bottom 2%
+                +$responsive(tablet1024)
                     width 40%
                 +$responsive(desktop1280 desktop1600)
                     width 47%
                 +$responsive(desktop_extended)
                     width 60%
             &.vitamina-c
-                +$responsive(mobile_all)
+                +$responsive(mobile_not_tablet)
                     width 35%
-                +$responsive(desktop1024)
+                +$responsive(tablet1024)
                     width 45%
                 +$responsive(desktop1280 desktop1600)
                     width 63%
                 +$responsive(desktop_extended)
                     width 70%
             &.vitamina-d
-                +$responsive(mobile_all)
+                +$responsive(mobile_not_tablet)
                     width 33%
-                +$responsive(desktop1024)
+                +$responsive(tablet1024)
                     width 50%
                 +$responsive(desktop1280 desktop1600)
                     width 60%
                 +$responsive(desktop_extended)
                     width 75%
+            &.vitamina-a,
+            &.vitamina-c,
+            &.vitamina-d
+                +$responsive(mobile_not_tablet)
+                    +$responsive(landscape)
+                        width 14%
+                        +$responsive(mobile480)
+                            width 22%
         &-descripcion
             background $color-Brown-Maroon-transparent
             border-radius 20px
@@ -195,6 +232,21 @@
             line-height 1.1em
             color white
             font-family $font-alternative-condensed
+            +$responsive(mobile_not_tablet)
+                border-radius 10px
+                +$responsive(landscape)
+                    font-size .8em !important
+                    padding-left 10% !important
+                    margin-left 4% !important
+                    width 96% !important
+                    margin-top 2% !important
+                    +$responsive(mobile480)
+                        margin-left 12% !important 
+                        width 85% !important
+                +$responsive(portrait)
+                    +$responsive(mobile375 mobile360)
+                        font-size .8em !important
+                        width 85% !important
         &-title
             font-family $font-secondary
             font-size 1.3em

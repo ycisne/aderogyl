@@ -2,7 +2,10 @@
 
 /// Para el logo infantil
 var $logoInfantil = $('.ad__header-logo-infantil'),
-    $dataLogoInfantil = 'data-infantil';
+    $dataLogoInfantil = 'data-infantil',
+/// Para el menú
+    $menuItemsCollapse = $('.ad__header-menu-principal').find('a'),
+    $btnMenuCollapse = $('.navbar-toggle');
 
 //////////////////
 
@@ -15,14 +18,14 @@ function logoInfantil(infantil){
     }
 }
 
-/// Ocultar navbar en mobile
-/*function hideNavMobile(){
-    if($('.navbar-toggle').css('display') == 'block'){
-        $('.navbar-collapse').find('li').find('a').attr({
-            'data-toggle': 'collapse',
-            'data-target': '.navbar-collapse'
+/// Agregar toggle collapse al menú
+function appendToggle(){
+    if($btnMenuCollapse.css('display') == 'block'){
+        $menuItemsCollapse.attr({
+            'data-toggle': "collapse",
+            'data-target': ".navbar-collapse"
         });
     } else {
-        $('.navbar-collapse').find('li').find('a').removeAttr('data-toggle data-target');
+        $menuItemsCollapse.removeAttr('data-toggle data-target');
     }
-}*/
+}
