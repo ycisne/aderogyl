@@ -5,19 +5,24 @@ $ieSelector(selector)
     *::-ms-backdrop, {selector}
         {block}
 
-$parallax(img)
-    //background url(img)
+$ie11Selector(selector)
+    _:-ms-fullscreen, :root .{selector}
+        {block}
+        
+$parallax()
     height 100%
     width 100%
+    margin 0
+    min-width 320px
     padding 30px
-    //background-attachment fixed
-    //background-position center
-    //background-repeat no-repeat
-    //background-size cover
     display flex
     align-items center
     position relative
-
+    +$responsive(mobile320)
+        padding 0
+    +$responsive(mobile480 mobile375 mobile360)
+        padding 10px
+        
 $backgroundImg($img, $width, $height)
     width $width
     background-image url($img)

@@ -12,6 +12,9 @@
             padding 50px 0 0 15px
             +$responsive(landscape)
                 width 40%
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                width 25%
         +$responsive(desktop1280 desktop_extended)
             width calc(30% - 50px)
     .menuAbsolute
@@ -58,7 +61,7 @@
                     +$responsive(mobile_all)
                         color white
                         font-size 1em
-                        height 50px
+                        height 50px   
                     +$responsive(desktop1280)
                         font-size 1.8em
                     +$responsive(desktop1600)

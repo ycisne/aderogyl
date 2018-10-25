@@ -1,14 +1,14 @@
 @require globalView
 
 .ad__queEs
-    $parallax('../img/fondo1.jpg')
+    $parallax()
     font-size 0.75em
     +$responsive(desktop1600)
         font-size .8em
     +$responsive(desktop1280 desktop_extended)
         font-size 1em
     &-mainImg
-        margin 5% 8% 1% 21%
+        margin 5% 10% 1% 20%
         position relative
         display flex
         justify-content center
@@ -16,29 +16,44 @@
         align-items flex-end
         +$responsive(mobile_all)
             margin 15% 0 1% 0
-        +$responsive(landscape iphonex)
-            margin-top 12%
-        +$responsive(desktop1280)
-            margin-right 3%
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                margin-top 1%
+        +$responsive(desktop1400)
+            margin-left 25%
+            margin-right 20%
+        +$responsive(desktop1600)
+            margin-left 25%
+            margin-right 25%
         +$responsive(desktop_extended)
-            margin 7% 15% 1% 25%
+            margin-right 20%
     &-img
-        width 60%
+        width 70%
         z-index 2
         +$responsive(mobile_all)
             width 45%
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                width 40%
         +$responsive(landscape)
             +$responsive(iphonex)
                 width 35%
             +$responsive(mobile480)
                 width 60%
-            +$responsive(mobile568,"only screen and (min-device-width: 480px) and (max-device-width: 533px)")
+            +$responsive(mobile568 mobile360)
                 width 45%
-        &-caption
+        /*&-caption
             width 100%
             margin-bottom 3%
-            text-align center
-    &-frase
+            text-align center*/
+    &-beneficios
+        padding 0
+        margin-top 10%
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                margin 15px 20% 0 20%
+                max-width 60%
+    /*&-frase
         width 60%
         margin-left -15%
         z-index 1
@@ -97,8 +112,8 @@
                     color $color-Yellow-GoldenYellow
                     margin-left 0.125em // 10px
                     font-family $font-secondary 
-                    line-height 1.4em // 112px
-    &-slogans
+                    line-height 1.4em // 112px*/
+    /*&-slogans
         display flex
         align-items flex-start
         font-family $font-alternative-condensed
@@ -178,4 +193,4 @@
                     line-height 4em
                 +$responsive(landscape)
                     +$responsive(mobile480)
-                        font-size .43em
+                        font-size .43em*/
