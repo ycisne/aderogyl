@@ -9,9 +9,10 @@
     position relative
     z-index 2
     +$responsive(tablet768)
-        padding 0 0 130px 0
-        margin 0 auto
-        width 90%
+        +$responsive(portrait)
+            padding 0 0 130px 0
+            margin 0 auto
+            width 90%
     +$responsive(mobile_not_tablet)
         $parallax()
         margin 0

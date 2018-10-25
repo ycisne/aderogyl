@@ -32,12 +32,10 @@
         z-index 2
         +$responsive(mobile_all)
             width 45%
-        +$responsive(iphonex)
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
                 width 40%
         +$responsive(landscape)
-            +$responsive(iphonex)
-                width 35%
             +$responsive(mobile480)
                 width 60%
             +$responsive(mobile568 mobile360)
@@ -49,7 +47,7 @@
     &-beneficios
         padding 0
         margin-top 10%
-        +$responsive(iphonex)
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
                 margin 15px 20% 0 20%
                 max-width 60%
