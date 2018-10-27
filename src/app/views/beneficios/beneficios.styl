@@ -77,6 +77,11 @@
                     position relative                        
                     +$responsive(portrait)
                         font-size .7em
+                +$responsive(iphone5)
+                    +$responsive(landscape)
+                        margin-left -9%
+                        justify-self flex-end
+                        font-size .62em
                 +$responsive(iphonex)
                     +$responsive(landscape)
                         display block
@@ -287,6 +292,8 @@
                         width 14%
                         +$responsive(mobile480)
                             width 22%
+                        +$responsive(iphone5)
+                            width  14%
                 +$responsive(iphonex)
                     +$responsive(landscape)
                         width 35%

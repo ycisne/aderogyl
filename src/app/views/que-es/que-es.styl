@@ -16,9 +16,9 @@
         align-items flex-end
         +$responsive(mobile_all)
             margin 15% 0 1% 0
-        +$responsive(iphonex)
+        +$responsive(iphonex mobile360)
             +$responsive(landscape)
-                margin-top 1%
+                margin-top 7%
         +$responsive(desktop1400)
             margin-left 25%
             margin-right 20%
@@ -51,6 +51,17 @@
             +$responsive(landscape)
                 margin 15px 20% 0 20%
                 max-width 60%
+                +$responsive(mobile480)
+                    max-width 100%
+            +$responsive(portrait)
+                margin-top 10px
+                .col-6
+                    flex 0 0 80%
+                    max-width 80%
+                    margin 0 auto
+                    +$responsive(mobile480)
+                        flex 0 0 50%
+                        max-width 50%
     /*&-frase
         width 60%
         margin-left -15%

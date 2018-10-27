@@ -6,7 +6,7 @@
     font-family $font-alternative
     position fixed
     width 100%
-    z-index 4
+    z-index 5
     height 70px
     overflow hidden
     top -100px
@@ -106,9 +106,9 @@
         top calc(30% + 70px)
 @keyframes viewCookiesHeaderMenu_mobile
     0%
-        top 30%
+        top -200px
     100%
-        top calc(30% + 90px)
+        top 130px
 @keyframes hideCookies
     0%
         top 0
@@ -136,9 +136,9 @@
         top 30%
 @keyframes hideCookiesHeaderMenu_mobile
     0%
-        top calc(30% + 90px)
+        top 130px
     100%
-        top 30%
+        top 90px
 .ad__has-cookies
     .ad__cookies
         display block
@@ -157,7 +157,7 @@
         +$responsive(desktop_all)
             animation viewCookiesTopMenu 1s linear .1s 1 normal forwards
     .ad__header-menu
-        top 30%
+        top -200px
         +$responsive(mobile_all)
             animation viewCookiesHeaderMenu_mobile 1s linear .1s 1 normal forwards
         +$responsive(desktop_all)

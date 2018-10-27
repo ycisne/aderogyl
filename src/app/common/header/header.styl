@@ -61,7 +61,11 @@
                     +$responsive(mobile_all)
                         color white
                         font-size 1em
-                        height 50px   
+                        height 50px
+                    +$responsive(mobile_not_tablet iphonex)
+                        +$responsive(landscape)
+                            height 30px
+                            font-size .8em
                     +$responsive(desktop1280)
                         font-size 1.8em
                     +$responsive(desktop1600)
@@ -73,6 +77,10 @@
                         padding 15px 0 0 0
                         line-height 1.1em
                         width calc(100% - 80px)
+                        +$responsive(mobile_not_tablet iphonex)
+                            +$responsive(landscape)
+                                padding 0
+                                line-height 30px
                         +$responsive(desktop1600 desktop_extended)
                             padding-top 18px
                     .boton-menu
@@ -87,6 +95,10 @@
                         +$responsive(mobile_all)
                             width 13%
                             height 50px
+                        +$responsive(mobile_not_tablet iphonex)
+                            +$responsive(landscape)
+                                height 30px
+                                width 7%
                         +$responsive(desktop1600 desktop_extended)
                             width 21%
                             height 80px
@@ -160,7 +172,7 @@
         position fixed
         top 0
         left 0
-        z-index 6
+        z-index 7
     &-video
         position absolute
         top 3.66em // 66px

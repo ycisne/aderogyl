@@ -14,8 +14,13 @@
         +$responsive(portrait)
             +$responsive(mobile480)
                 margin-top 22%
+            +$responsive(mobile568)
+                margin-top 0
     +$responsive(tablet768)
         margin-top 0
+    +$responsive(iphonex)
+        +$responsive(landscape)
+            margin-top 10%
     +$responsive(desktop1280)
         margin-top 15%
         width 55%
@@ -31,7 +36,7 @@
         margin-top 9%
         font-size 1em
     .ad__presentacion
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
                 height 300px
                 width 20%
@@ -42,14 +47,27 @@
             +$responsive(landscape)
                 height 400px
                 width 25%
+        +$responsive(mobile568)
+            +$responsive(portrait)
+                margin-top 0
+            +$responsive(landscape)
+                height 300px
+                width 20%
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                margin-top 0
+                margin-left 23%
     .ad__presentacion-img
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             margin-top 35%
             +$responsive(portrait)
-                +$responsive(mobile360)
+                +$responsive(mobile360 iphonex)
                     margin-top calc(35% + 10px)
             +$responsive(landscape)
                 margin-top 60%
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                margin 0
         +$responsive(tablet768)
             margin-top 20%
             +$responsive(portrait)
@@ -69,23 +87,22 @@
             +$responsive(portrait)
                 +$responsive(tablet768)
                     font-size 1em
-        +$responsive(mobile_not_tablet)
-            ul
-                margin 0 30px 20px 30px
-            li
-                &:before
-                    top 6px
+            +$responsive(iphonex)
+                font-size .6em
         ul
-            +$responsive(mobile_not_tablet)
-                margin 5px 20px 20px 20px !important
+            +$responsive(mobile_not_tablet iphonex)
+                margin 5px 20px 20px 20px
                 font-size .7em
                 li
                     &:before
                         top 6px
                 +$responsive(landscape)
-                    margin-bottom 10px !important
+                    margin-bottom 0px
+                    margin-top 0px
             +$responsive(tablet768)
                 margin 0 20px
+            +$responsive(iphonex)
+                margin 5px 20px 20px 20px
             +$responsive(desktop1600)
                 margin-left 15%
         h4
@@ -95,8 +112,16 @@
                 +$responsive(landscape)
                     margin-top 5px
                     margin-bottom 5px
-        .indicaciones-gotas
             +$responsive(mobile_not_tablet)
+                +$responsive(landscape)
+                    line-height 1em
+                    margin-top 0
+                    margin-bottom 3px
+                    font-size 1.3em
+            +$responsive(iphonex)
+                margin 0 0 0 35px
+        .indicaciones-gotas
+            +$responsive(mobile_not_tablet iphonex)
                 height 15px
     .ad__carrusel-indicaciones-ribbon-rojo
         +$responsive(mobile_all)
@@ -104,7 +129,7 @@
             +$responsive(landscape)
                 height 65px
                 margin-right -21px
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             padding 0 !important 
             text-align center
             span
@@ -115,11 +140,15 @@
                 padding-left 35px !important
                 span
                     line-height 2em
+        +$responsive(iphonex)
+            padding 0 !important 
+            span
+                line-height 2em
         img 
             +$responsive(mobile_all)
                 height 35px
                 +$responsive(portrait)
-                    +$responsive(mobile360)
+                    +$responsive(mobile360 iphonex)
                         height 30px
                     +$responsive(tablet768)
                         height 30px !important
@@ -136,6 +165,8 @@
             padding-left 25px
         +$responsive(tablet1024)
             padding 15px 0 15px 16%
+        +$responsive(iphonex)
+            padding 4px 15px 4px 50px
         +$responsive(desktop1280 desktop_extended)
             padding 15px 15px 15px 15%
         +$responsive(desktop1280)
@@ -155,6 +186,10 @@
         +$responsive(mobile_not_tablet)
             +$responsive(landscape)
                 margin-left 8%
+                width 10%
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                margin 0
                 width 10%
     .ad__carrusel-indicaciones-left
         padding 5px
@@ -180,10 +215,11 @@
                 margin 0 10px
                 line-height 1.5em
                 font-size 1.2em
-        +$responsive(mobile_not_tablet)
+                +$responsive(mobile568)
+                    margin-top -5px
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
-                text-align left
-                margin-left 30px
+                margin 0
     .carousel-item
         +$responsive(mobile_all)
             height 460px
@@ -196,18 +232,28 @@
                 h2
                     font-size 1.2em
                     padding 15px 0 0 15px
-                    +$responsive(mobile360)
+                    +$responsive(mobile360 iphonex)
                         margin-bottom 0
+                    small
+                        font-size .4em
                 ul
                     margin 0 10px
                 h4
                     margin 5px 0 5px 15px
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
-                height 350px
+                padding 5px 0
+                height 290px
+                +$responsive(mobile480)
+                    height 340px
+                +$responsive(mobile568)
+                    height 290px
                 h2
                     font-size 1.2em
-                    padding 15px 0 0 20px
+                    padding 10px 0 0 20px
+                    margin 0
+                small
+                    font-size .4em
         +$responsive(tablet768)
             padding-top 15px
             padding-left 45px
@@ -218,6 +264,13 @@
                 font-size 1.5em
                 padding 10px 20px
                 margin-bottom 0
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                padding 5px 0
+                h2
+                    font-size 1.1em
+                    padding 5px 0 0 20px
+                    margin 0
     .ad__modal-presentacion-carrusel
         +$responsive(mobile_all)
             width 70%
@@ -225,7 +278,7 @@
             font-size .9em
             +$responsive(landscape)
                 margin 0 -11% 0 0
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             position fixed
             margin 0
             z-index 3
@@ -237,16 +290,26 @@
                 height 460px
             +$responsive(landscape)
                 width 500px
-                top calc(50% - 175px)
+                top calc(50% - 145px)
                 left calc(50% - 250px)
-                height 350px
+                height 290px
+                +$responsive(mobile480)
+                    height 340px
+                    top calc(50% - 170px)
+                +$responsive(mobile568)
+                    height 290px
+                    top calc(50% - 145px)
         +$responsive(tablet768)
-            margin-left -15%
-            margin-top 10%
             width 70%
+            +$responsive(landscape)
+                margin-top 10%
+                margin-left -15%
             +$responsive(portrait)
                 font-size .9em
+                margin-top -7%
                 margin-left -11%
+        +$responsive(iphonex)
+            margin 0
         +$responsive(desktop1280)
             width 550px
     .ad__modal-close
@@ -255,11 +318,15 @@
             right inherit 
             left 0
         +$responsive(tablet768)
-            right 10%
-            top 14%
+            +$responsive(landscape)
+                right 10%
+                top 14%
             +$responsive(portrait)
                 right 6%
-                top 14%
+                top -7%
+        +$responsive(iphonex)
+            top 0
+            right inherit 
     .ad__carrusel-ingredientes
         +$responsive(mobile_all)
             margin-left 0
@@ -270,7 +337,14 @@
                 flex-flow row wrap
                 margin-bottom 0
                 font-size .8em
-        
+        +$responsive(mobile_not_tablet)
+            +$responsive(landscape)
+                font-size .6em
+                margin 0
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                font-size .55em
+                margin 0
         +$responsive(desktop1600)
             margin-left 8%
     .ad__carrusel-ingredientes-left
@@ -283,7 +357,7 @@
             ul
                 margin-left 0
                 padding-left 25px
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             font-size .8em
             padding 5px 10px
     .ad__carrusel-ingredientes-right
@@ -295,7 +369,7 @@
                 border-left none
                 border-top 3px solid $color-Yellow-GoldenYellow
                 margin 0 auto
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             font-size .8em
     .ad__carrusel-contenido
         +$responsive(mobile_all)
@@ -304,7 +378,7 @@
             +$responsive(portrait)
                 padding 0 7px 0 10px
                 font-size .8em
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(portrait)
                 font-size .6em !important
             +$responsive(landscape)
@@ -313,6 +387,11 @@
                 font-size 1.7em
             +$responsive(landscape)
                 font-size .7em
+                h3
+                    font-size 1.5em
+                    margin 0
+                li
+                    padding-bottom 3px
             +$responsive(portrait)
                 font-size 1.5em
                 margin-bottom 0
@@ -324,18 +403,27 @@
         +$responsive(mobile_all)
             +$responsive(landscape)
                 margin 3px 0
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             font-size .9em
         +$responsive(tablet768)
             +$responsive(portrait)
                 margin 0
     .carousel-control-prev
-        +$responsive(mobile_not_tablet)
-            +$responsive(landscape)
-                left 400px !important
-                bottom 3px !important
-    .carousel-control-next
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
                 left 440px !important
                 bottom 3px !important
+                +$responsive(mobile480)
+                    left calc(50% - 40px) !important
+                +$responsive(mobile568)
+                    left 440px !important
+    .carousel-control-next
+        +$responsive(mobile_not_tablet iphonex)
+            +$responsive(landscape)
+                left 475px !important
+                bottom 3px !important
+                +$responsive(mobile480)
+                    right calc(50% - 40px) !important
+                    left inherit !important
+                +$responsive(mobile568)
+                    left 475px !important

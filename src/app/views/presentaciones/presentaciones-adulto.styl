@@ -19,9 +19,12 @@
         +$responsive(portrait)
             +$responsive(mobile480)
                 margin-top 18%
-    +$responsive(mobile_not_tablet)
+    +$responsive(mobile_not_tablet iphonex)
         +$responsive(landscape)
             margin-left -130%
+    +$responsive(iphonex)
+        +$responsive(landscape)
+            margin-top 0
     +$responsive(tablet768)
         margin-top 6%
         +$responsive(landscape)
@@ -43,19 +46,34 @@
         margin-top 7%
     .ad__presentacion-img
         width 111%
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             width 135%
             margin-top 39%
             +$responsive(portrait)
                 width 125%
                 margin-top calc(40% + 59px)
             +$responsive(landscape)
-                +$responsive(mobile320)
-                    margin-top 30%
+                margin-top 50%
+                +$responsive(mobile480 pixelratio1)
+                    margin-top 73%
+                +$responsive(mobile360 mobile375)
+                    margin-top 70%
+                +$responsive(iphone5)
+                    width 120%
+                    margin-top 75%                
         +$responsive(tablet768)
             margin-top 10%
             +$responsive(portrait)
-                margin-top 40%
+                margin-top 24%
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                margin-top 27%
+        +$responsive(iphone_plus6-7-8)
+            +$responsive(landscape)
+                margin-top 35%
+        +$responsive(samsung_galaxy)
+            +$responsive(landscape)
+                margin-top 34%
     .ad__presentacion-copy
         +$responsive(desktop1280)
             bottom 18%
@@ -127,7 +145,7 @@
             font-size 1.1em
             margin-top 20px
             display block
-            +$responsive(mobile_not_tablet)
+            +$responsive(mobile_not_tablet iphonex)
                 margin-top 10px
                 font-size 1.3em
                 +$responsive(landscape)
@@ -142,19 +160,24 @@
         margin-top 0
         margin-right -5%
         position relative
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             font-size .8em
             z-index 3
             position fixed
             margin 0
             +$responsive(landscape)
-                top calc(50% - 175px)
+                top calc(50% - 145px)
                 width 500px
                 left calc(50% - 250px)
-                height 350px
+                height 290px
                 +$responsive(mobile480)
                     height 390px
                     top calc(50% - 195px)
+                    font-size 1em
+                +$responsive(iphone5)
+                    height 290px
+                    top calc(50% - 145px)
+                    font-size .9em
             +$responsive(portrait)
                 top calc(50% - 200px)
                 width 320px
@@ -167,6 +190,9 @@
             +$responsive(portrait)
                 margin 0 -32% 0 0
                 height 440px
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                margin 0
         +$responsive(desktop1280)
             width 650px
             margin-left -20%
@@ -199,15 +225,17 @@
                     height 530px
                 +$responsive(mobile480)
                     height 460px
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
                 height 300px
                 width 20%
-                margin-top 12%
-            +$responsive(landscape)
+                margin-top 0
                 +$responsive(mobile480)
                     height 400px
                     width 25%
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                margin-left -125%
         +$responsive(desktop1280)
             width 47%
             margin-top 13%
@@ -226,15 +254,24 @@
                 font-size 1.2em
                 padding 10px 20px
                 margin-bottom 0
+            small
+                +$responsive(mobile_not_tablet iphonex)
+                    +$responsive(landscape)
+                        font-size .4em
         &.ad__carrusel-adulto-slide2
-            +$responsive(mobile_not_tablet)
+            +$responsive(mobile_not_tablet iphonex)
                 padding 10px
-            +$responsive(mobile_all)
                 +$responsive(landscape)
-                    font-size 1.52em
+                    padding 0 10px
+                    font-size 1.2em
             +$responsive(tablet768)
+                 +$responsive(landscape)
+                    font-size 1.52em
                 +$responsive(portrait)
                     padding 10px
+             +$responsive(iphonex)
+                +$responsive(landscape)
+                    font-size 1.2em
             +$responsive(desktop1600 desktop_extended)
                 padding-top 20px
                 padding-left 20px
@@ -242,15 +279,22 @@
                 padding 7px 20px 0 15px
                 margin-bottom 2px
         &.ad__carrusel-adult-slide1
-            +$responsive(mobile_not_tablet)
+            +$responsive(mobile_not_tablet iphonex)
                 padding 10px 0
                 h2
                     font-size 1.3em
-        +$responsive(mobile_not_tablet)
+                    +$responsive(landscape)
+                        padding 0
+                        margin 0 0 3px 20px
+        +$responsive(mobile_not_tablet iphonex)
              +$responsive(landscape)
-                height 350px
+                height 290px
+                padding 0
+                font-size 1em
                 +$responsive(mobile480)
                     height 390px
+                +$responsive(iphone5)
+                    height 290px
             +$responsive(portrait)
                 height 400px
         +$responsive(mobile_all)
@@ -280,7 +324,7 @@
             h4
                 font-size 1.5em
                 margin 10px 10px 10px 29px
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             ul
                 margin 0 30px 20px 30px
             li
@@ -295,11 +339,15 @@
         padding 0
         width 60%
         margin 0 26% 0 auto
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
                 margin-top -26px
-                width 44%
-                margin-right auto  
+                width 35%
+                margin-right auto
+                +$responsive(mobile480) 
+                    width 45%
+                +$responsive(iphone5)
+                    width 33%
             +$responsive(portrait)
                 width 60%
                 margin -23px auto 0 auto
@@ -326,7 +374,7 @@
         +$responsive(mobile_all)
             margin 0
             font-size .55em
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
                 font-size .5em
             +$responsive(portrait)
@@ -336,7 +384,7 @@
             +$responsive(landscape)
                 margin-right 12%
     .ad__carrusel-ingredientes-left
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             width 42%
             padding 5px
             ul
@@ -345,7 +393,7 @@
                 width 90%
                 margin 0 auto
     .ad__carrusel-ingredientes-right
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             padding 2px 12px
             +$responsive(portrait)
                 width 90%
@@ -374,13 +422,18 @@
                 padding-left 10px
             p.ad__carrusel-contenido-highlighted
                 margin 0
-        +$responsive(mobile_not_tablet)
+                +$responsive(iphone5)
+                    +$responsive(landscape)
+                        margin-top 10px
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
-                margin-right 0
+                margin 0 35px 0 10px
                 padding 0
                 font-size .44em
                 +$responsive(mobile480)
                     font-size .5em
+                +$responsive(iphone5)
+                    font-size .44em
         +$responsive(tablet768)
             +$responsive(landscape)
                 font-size .7em
@@ -388,20 +441,27 @@
             +$responsive(portrait)
                 padding 10px 165px 10px 15px
                 font-size .6em
+        +$responsive(iphonex)
+            +$responsive(landscape)
+                font-size .44em
         +$responsive(desktop_extended)
             margin-right 17%
     .carousel-control-prev
-        +$responsive(mobile_not_tablet)
-            +$responsive(landscape)
-                left 400px !important
-                bottom 3px !important
-                +$responsive(mobile480)
-                    left calc(50% - 40px) !important
-    .carousel-control-next
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
                 left 440px !important
                 bottom 3px !important
                 +$responsive(mobile480)
+                    left calc(50% - 40px) !important
+                +$responsive(iphone5)
+                    left 440px !important
+    .carousel-control-next
+        +$responsive(mobile_not_tablet iphonex)
+            +$responsive(landscape)
+                left 475px !important
+                bottom 3px !important
+                +$responsive(mobile480)
                     right calc(50% - 40px) !important
                     left inherit !important
+                +$responsive(iphone5)
+                    left 475px !important

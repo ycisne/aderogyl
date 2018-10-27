@@ -6,9 +6,15 @@
     z-index 3
     +$responsive(mobile_all)
         flex-flow row wrap
+    +$responsive(iphonex)
+        +$responsive(landscape)
+            padding 0
+    +$responsive(mobile568)
+        +$responsive(landscape)
+            padding-top 65px
     &.ad__adulto,
     &.ad__infantil
-        z-index 5
+        z-index 7
     .ad__modal
         background $color-Blue-Smalt
 .ad
@@ -95,7 +101,7 @@
                 +$responsive(tablet768)
                     +$responsive(portrait)
                         right -9%
-                        top 20% !important
+                        top -5% !important
                     +$responsive(landscape)
                         top 5% !important
                 +$responsive(desktop1400)
@@ -118,9 +124,13 @@
                         font-size .5em
                         top 14% !important
                 +$responsive(tablet768)
+                    +$responsive(portrait)
+                        top 11% !important 
+                        right -15%
                     +$responsive(landscape)
                         top 4% !important
                         left 45%
+                        right inherit
                 +$responsive(desktop1400)
                     font-size 14px
                     left 45%
@@ -212,6 +222,9 @@
                     +$responsive(tablet768)
                         +$responsive(landscape)
                             padding 20px 20px 0 45px
+                    +$responsive(iphonex)
+                        +$responsive(landscape)
+                            padding 0
                     +$responsive(desktop1280)
                         padding-right 25px
                         padding-top 20px
@@ -442,7 +455,7 @@
             opacity 0
             animation viewModal .3s linear .1s 1 normal forwards
         .ad__presentacion
-            +$responsive(mobile_not_tablet)
+            +$responsive(mobile_not_tablet iphonex)
                 opacity 1
                 animation hideModal .3s linear .1s 1 normal forwards
 .ad__infantil
@@ -462,7 +475,7 @@
             opacity 0
             animation viewModal .3s linear .1s 1 normal forwards
         .ad__presentacion
-            +$responsive(mobile_not_tablet)
+            +$responsive(mobile_not_tablet iphonex)
                 opacity 1
                 animation hideModal .3s linear .1s 1 normal forwards
 .ad__transition
@@ -479,6 +492,6 @@
         opacity 1 !important
         animation hideModal .3s linear .1s 1 normal forwards !important
     .ad__presentacion
-        +$responsive(mobile_not_tablet)
+        +$responsive(mobile_not_tablet iphonex)
             opacity 0 !important
             animation viewModal .3s linear .1s 1 normal forwards !important
