@@ -16,9 +16,13 @@
         align-items flex-end
         +$responsive(mobile_all)
             margin 15% 0 1% 0
-        +$responsive(iphonex mobile360)
+        +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
-                margin-top 7%
+                +$responsive(mobile360)
+                    margin 15% auto 1% auto
+                    width 85%
+                    +$responsive(iphonex)
+                        margin-top 12%
         +$responsive(desktop1400)
             margin-left 25%
             margin-right 20%
@@ -30,176 +34,32 @@
     &-img
         width 70%
         z-index 2
-        +$responsive(mobile_all)
-            width 45%
-        +$responsive(mobile_not_tablet iphonex)
-            +$responsive(landscape)
-                width 40%
-        +$responsive(landscape)
-            +$responsive(mobile480)
-                width 60%
-            +$responsive(mobile568 mobile360)
+        +$responsive(mobile_all iphonex)
                 width 45%
-        /*&-caption
-            width 100%
-            margin-bottom 3%
-            text-align center*/
+            +$responsive(landscape)
+                +$responsive(mobile480)
+                    width 50%
+                +$responsive(iphonex)
+                    width 43%
     &-beneficios
         padding 0
         margin-top 10%
+        +$responsive(tablet768)
+            max-width 100%
         +$responsive(mobile_not_tablet iphonex)
             +$responsive(landscape)
                 margin 15px 20% 0 20%
                 max-width 60%
                 +$responsive(mobile480)
                     max-width 100%
-            +$responsive(portrait)
+                +$responsive(iphonex)
+                    max-width 60%
+            +$responsive(portrait iphonex)
                 margin-top 10px
                 .col-6
-                    flex 0 0 80%
+                    flex 0 0 80%f
                     max-width 80%
                     margin 0 auto
                     +$responsive(mobile480)
                         flex 0 0 50%
                         max-width 50%
-    /*&-frase
-        width 60%
-        margin-left -15%
-        z-index 1
-        display flex
-        flex-flow row wrap
-        color white
-        $text-shadow()
-        text-transform uppercase
-        +$responsive(desktop1600)
-            width 50%
-            margin-left -10%
-        +$responsive(desktop_extended)
-            margin-left -12%
-        &1
-            $backgroundImg('../img/fondo-azul.png', 100%, 1.75em)
-            // 140px
-            font-size 4.4em // 80px
-            padding-left 0.87em // 70px
-            padding-top 0.0625em // 5px
-            z-index 2
-            font-family $font-secondary
-            span 
-                transform rotate(-2deg)
-                display inline-block
-        &2
-            $backgroundImg('../img/fondo-rojo.png', 100%, 2em)
-            // 150px
-            font-size 4.16em // 75px
-            margin-top -0.53em // -40px
-            z-index 1
-            padding 0.13em 0 0 1.22em // 10px 0 0 92px
-            span 
-                transform rotate(-4deg)
-                display inline-block
-
-        &3
-            width 100%
-            z-index 3
-            height 1.875em // 150px
-            padding 0.0625em 0 0.25em 1.565em // 5px 0 20px 125px
-            font-size 4.4em // 80px
-            margin-top -0.625em // -50px
-            margin-bottom 0.5em // 40px
-            display flex
-            transform rotate(-4deg)
-            .frase3
-                &-item1
-                    color $color-Yellow-GoldenYellow
-                    margin-right 0.1em // 10px
-                    font-family $font-secondary 
-                    font-size 1.25em // 100px
-                    line-height 1.1em // 110px
-                &-item2
-                    margin 0 0.0625em // 0 5px
-                &-item3
-                    color $color-Yellow-GoldenYellow
-                    margin-left 0.125em // 10px
-                    font-family $font-secondary 
-                    line-height 1.4em // 112px*/
-    /*&-slogans
-        display flex
-        align-items flex-start
-        font-family $font-alternative-condensed
-        +$responsive(portrait)
-            margin-top 2em
-            margin-bottom -2em
-        +$responsive(desktop1280)
-            width 90%
-            margin-right 10%
-        +$responsive(desktop1600)
-            width 80%
-            margin-right 20%
-        +$responsive(desktop_extended)
-            width 70%
-            margin-right 30%
-    &-slogan
-        width 50%
-        color white
-        font-size 1.94em // 35px
-        text-transform uppercase
-        $text-shadow()
-        text-align center
-        display flex
-        flex-flow row wrap
-        &-top
-            $backgroundImg('../img/fondo-azul2.png', 100%, 2.28em)
-            // 80px
-            background-position: center top
-            z-index 2
-            span 
-                transform rotate(-1deg)
-                margin-top 0.28em // 10px
-                display block
-                font-size .7em
-                line-height 2.2em
-                +$responsive(mobile_not_tablet)
-                    font-size .55em
-                +$responsive(mobile320)
-                    font-size .35em
-                +$responsive(mobile375)
-                    line-height 3em
-                    +$responsive(landscape)
-                        height 2em
-                +$responsive(mobile480)
-                    font-size .5em
-                    line-height 2.6em
-        &-bottom
-            $backgroundImg('../img/fondo-rojo2.png', 100%, 2.857em)
-            // 100px
-            background-position: center top
-            margin-top -1.571em // -55px
-            z-index 1
-            +$responsive(mobile_not_tablet)
-                height 2.5em
-            +$responsive(mobile320)
-                height 1.5em
-                margin-top -2em
-            +$responsive(mobile375)
-                height 1.8em
-                +$responsive(landscape)
-                    height 2.5em
-            +$responsive(mobile480)
-                margin-top -1.6em
-            span 
-                transform rotate(-2deg)
-                display block
-                margin-top 1.52em // 38px
-                margin-right 0.4em // 10px
-                font-size 0.5em
-                line-height 3.2em
-                +$responsive(mobile_not_tablet)
-                    line-height 3em
-                    font-size .42em
-                +$responsive(mobile320)
-                    font-size .3em
-                +$responsive(mobile375 mobile568)
-                    line-height 4em
-                +$responsive(landscape)
-                    +$responsive(mobile480)
-                        font-size .43em*/

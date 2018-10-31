@@ -8,18 +8,24 @@
         z-index 4
         padding 80px 0 30px 50px
         +$responsive(mobile_all)
-            width 50%
-            padding 50px 0 0 15px
-            +$responsive(landscape)
-                width 40%
-        +$responsive(mobile_not_tablet iphonex)
-            +$responsive(landscape)
-                width 25%
+            background $color-Blue-Smalt
+            width 100%
+            top 40px
+            padding 5px 10px
+            z-index 4
+            box-shadow 1px 1px 2px rgba(0,0,0,0.3)
         +$responsive(desktop1280 desktop1600 desktop_extended)
             width calc(30% - 50px)
+        &-aderogyl,
+        &-infantil 
+            +$responsive(mobile_all)
+                width 30%
+                +$responsive(landscape)
+                    width 18%
     .menuAbsolute
         position absolute
         z-index 3
+    
     &-left-menu
         .navbar-toggle
             background $color-Blue-DarkCerulean
@@ -40,6 +46,7 @@
         top 30%
         z-index 4
         +$responsive(mobile_all)
+            z-index 5
             background $color-Blue-RegalBlue
             width 100%
             top 40px
@@ -141,7 +148,7 @@
         position fixed
         width 100%
         top 0
-        z-index 4
+        z-index 5
     &-logo-sanofi
         background white
         padding 0.22em 2.22em // 4px 40px
@@ -180,10 +187,20 @@
         display flex
         justify-content flex-end
         z-index 3
-        +$responsive(mobile_all)
-            top 3.22em
-            font-size .7em
+        +$responsive(mobile_not_tablet iphonex)
+            top 41px
+            font-size .44em
             right 0
+            +$responsive(landscape)
+                +$responsive(iphonex)
+                    font-size .6em
+                +$responsive(mobile360 mobile375)
+                    font-size .44em
+        +$responsive(tablet768)
+            +$responsive(portrait)
+                top 41px
+                right 0
+                font-size .7em
         a
             $backgroundImg('../img/fondo-rojo.png', 13.33em, 5em)
             // 240px 90px

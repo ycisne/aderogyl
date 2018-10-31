@@ -6,7 +6,7 @@
     font-family $font-alternative
     position fixed
     width 100%
-    z-index 5
+    z-index 6
     height 70px
     overflow hidden
     top -100px
@@ -99,6 +99,11 @@
         top 0
     100%
         top 90px
+@keyframes viewCookiesLogo_mobile
+    0%
+        top 40px
+    100%
+        top 130px
 @keyframes viewCookiesHeaderMenu
     0%
         top 30%
@@ -129,6 +134,11 @@
         top 90px
     100%
         top 0
+@keyframes hideCookiesLogo_mobile
+    0%
+        top 130px
+    100%
+        top 40px
 @keyframes hideCookiesHeaderMenu
     0%
         top calc(30% + 70px)
@@ -149,11 +159,15 @@
             top -70px
             animation viewCookies 1s linear .1s 1 normal forwards
     .ad__header-top-menu,
-    .ad__header-logo,
     .navbar-toggle
         top 0
         +$responsive(mobile_all)
             animation viewCookiesTopMenu_mobile 1s linear .1s 1 normal forwards
+    .ad__header-logo
+        top 0
+        +$responsive(mobile_all)
+            top 40px
+            animation viewCookiesLogo_mobile 1s linear .1s 1 normal forwards
         +$responsive(desktop_all)
             animation viewCookiesTopMenu 1s linear .1s 1 normal forwards
     .ad__header-menu
@@ -171,11 +185,14 @@
         +$responsive(desktop_all)
             animation hideCookies 1s linear .1s 1 normal forwards !important
     .ad__header-top-menu,
-    .ad__header-logo,
     .navbar-toggle
         +$responsive(mobile_all)
             top 90px !important
             animation hideCookiesTopMenu_mobile 1s linear .1s 1 normal forwards !important 
+    .ad__header-logo
+        +$responsive(mobile_all)
+            top 130px !important
+            animation hideCookiesLogo_mobile 1s linear .1s 1 normal forwards !important 
         +$responsive(desktop_all)
             top 70px !important
             animation hideCookiesTopMenu 1s linear .1s 1 normal forwards !important 
