@@ -1,26 +1,42 @@
 @require globalView
 
-/*+$responsive(desktop_extended)
-    /// Header
-    +$ie11Selector('.ad__header-menu-principal li a')
-        min-height 65px
-    /// Sección Que Es
-    +$ie11Selector('.ad__queEs-mainImg')
-        margin-top 5%
-        margin-left 15%
-    /// Sección Presentación
-    +$ie11Selector('.ad__modal-infantil .ad__presentacion')
-        margin-top -6%
-    +$ie11Selector('.ad__modal-adulto .ad__presentacion')
-        margin-top 4%
-    +$ie11Selector('.ad__infantil .ad__modal-presentacion-carrusel')
-        font-size 1.5em
-        margin-top -7%
-    +$ie11Selector('.ad__infantil .ad__modal-close')
-        top -9%
-        right -15%
-    +$ie11Selector('.ad__infantil .ad__modal-container .carousel-item')
-        height 650px
-    +$ie11Selector('.ad__infantil .ad__modal-container .carousel-item.ad__carrusel-infantil-slide2')
-        font-size 1.3em
-        padding 30px*/
++$ieSelector('.ad__header-menu-principal li a')
+    height 60px
++$ieSelector('.ad__faqs-listado li .bullet-faq')
+    margin-top 10px
++$ieSelector('.ad__faqs-acordeon-content img')
+    max-height 480px
++$ieSelector('.ad__faqs2-right img')
+    width 30%
++$responsive(mobile_all)
+    +$ieSelector('.ad__header-menu-principal li a')
+        height 50px
++$responsive(mobile_not_tablet iphonex)
+    +$responsive(landscape)
+        +$ieSelector('.ad__header-menu-principal li a')
+            height 30px
++$responsive(tablet1024)
+    +$ieSelector('.ad__modal-infantil .ad__modal-close')
+        right -4%
+    +$ieSelector('.ad__modal-adulto .ad__modal-close')
+        right 2%
++$responsive(desktop1280)
+    +$ieSelector('.ad__modal-infantil .ad__modal-close')
+        right 8%
+        top 10%
+    +$ieSelector('.ad__infantil .ad__modal-infantil .ad__modal-presentacion-carrusel')
+        margin-top 6%
+        margin-left -10%
+    +$ieSelector('.ad__adulto .ad__modal-adulto .ad__modal-presentacion-carrusel')
+        margin-top 9%
++$responsive(desktop1400)
+    +$ieSelector('.ad__modal-infantil .ad__modal-close')
+        right 15% !important
++$responsive(desktop1600)
+    +$ieSelector('.ad__header-menu-principal li a')
+        height 80px
+    +$ieSelector('.ad__modal-infantil .ad__modal-close')
+        right 20%
++$responsive(desktop_extended)
+    +$ieSelector('.ad__header-menu-principal li a')
+        height 80px

@@ -81,9 +81,9 @@
 }
 @keyframes viewCookies
     0%
-        top -70px
+        transform translateY(0)
     100%
-        top 0
+        transform translateY(70px)
 @keyframes viewCookies_mobile
     0%
         top -90px
@@ -91,14 +91,14 @@
         top 0
 @keyframes viewCookiesTopMenu
     0%
-        top 0
+        transform translateY(0)
     100%
-        top 70px
+        transform translateY(70px)
 @keyframes viewCookiesTopMenu_mobile
     0%
-        top 0
+        transform translateY(0)
     100%
-        top 90px
+        transform translateY(90px)
 @keyframes viewCookiesLogo_mobile
     0%
         top 40px
@@ -106,9 +106,9 @@
         top 130px
 @keyframes viewCookiesHeaderMenu
     0%
-        top 30%
+        transform translateY(0)
     100%
-        top calc(30% + 70px)
+        transform translateY(70px)
 @keyframes viewCookiesHeaderMenu_mobile
     0%
         top -200px
@@ -141,9 +141,9 @@
         top 40px
 @keyframes hideCookiesHeaderMenu
     0%
-        top calc(30% + 70px)
+        transform translateY(70px)
     100%
-        top 30%
+        transform translateY(0)
 @keyframes hideCookiesHeaderMenu_mobile
     0%
         top 130px
@@ -160,9 +160,11 @@
             animation viewCookies 1s linear .1s 1 normal forwards
     .ad__header-top-menu,
     .navbar-toggle
-        top 0
+        transform translateY(0)
         +$responsive(mobile_all)
             animation viewCookiesTopMenu_mobile 1s linear .1s 1 normal forwards
+         +$responsive(desktop_all)
+            animation viewCookiesTopMenu 1s linear .1s 1 normal forwards
     .ad__header-logo
         top 0
         +$responsive(mobile_all)
@@ -171,10 +173,11 @@
         +$responsive(desktop_all)
             animation viewCookiesTopMenu 1s linear .1s 1 normal forwards
     .ad__header-menu
-        top -200px
         +$responsive(mobile_all)
+            top -200px
             animation viewCookiesHeaderMenu_mobile 1s linear .1s 1 normal forwards
         +$responsive(desktop_all)
+            transform translateY(0)
             animation viewCookiesHeaderMenu 1s linear .1s 1 normal forwards
 .ad__no-cookies
     .ad__cookies
@@ -201,5 +204,5 @@
             top calc(30% + 90px) !important
             animation hideCookiesHeaderMenu_mobile 1s linear .1s 1 normal forwards !important
         +$responsive(desktop_all)
-            top calc(30% + 70px) !important
+            transform translateY(70px) !important 
             animation hideCookiesHeaderMenu 1s linear .1s 1 normal forwards !important
