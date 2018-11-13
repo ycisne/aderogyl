@@ -272,6 +272,7 @@
                     padding 5px 0 0 20px
                     margin 0
     .ad__modal-presentacion-carrusel
+        position relative
         +$responsive(mobile_all)
             width 70%
             margin 0 -7% 0 -10%
@@ -313,20 +314,9 @@
         +$responsive(desktop1280)
             width 550px
     .ad__modal-close
-        +$responsive(mobile_not_tablet)
-            top 0
-            right inherit 
-            left 0
-        +$responsive(tablet768)
-            +$responsive(landscape)
-                right 10%
-                top 14%
-            +$responsive(portrait)
-                right 6%
-                top -7%
-        +$responsive(iphonex)
-            top 0
-            right inherit 
+        right inherit 
+        left calc(100%  - 50px)
+        top 3%
     .ad__carrusel-ingredientes
         +$responsive(mobile_all)
             margin-left 0
